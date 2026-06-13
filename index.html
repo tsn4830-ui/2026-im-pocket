@@ -5,43 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2026 內科小手冊（光田版）</title>
 <style>
-:root{--blue:#1a5276;--bg:#f7f9fb;--line:#e1e8ee;--ink:#222;--mut:#667;}
+:root{--blue:#1a5276;--bg:#f7f9fb;--card:#fff;--line:#e1e8ee;--ink:#222;--mut:#667;--th:#eef4f9;--code:#b03;--codebg:#eef2f5;--bq:#f0f5f9;--bqln:#c7d6e0;--lnk:#1565c0;}
+html[data-theme="dark"]{--blue:#5dade2;--bg:#11161c;--card:#1b232c;--line:#2c3742;--ink:#e6edf3;--mut:#9bb0c0;--th:#222e39;--code:#ff9bb0;--codebg:#222e39;--bq:#1d2832;--bqln:#3a4b59;--lnk:#7ab8ff;}
 *{box-sizing:border-box}
 body{margin:0;font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:15px}
 header{position:sticky;top:0;z-index:30;background:var(--blue);color:#fff;padding:8px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
 header h1{font-size:16px;margin:0;white-space:nowrap}
-#menu{display:none;background:none;border:1px solid #fff6;color:#fff;border-radius:6px;padding:4px 9px;font-size:16px;cursor:pointer}
+#menu,#theme{background:none;border:1px solid #fff6;color:#fff;border-radius:6px;padding:4px 9px;font-size:15px;cursor:pointer}
+#menu{display:none}
 .searchwrap{flex:1;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-#q{flex:1;min-width:120px;padding:7px 10px;border-radius:8px;border:none;font-size:14px}
-#cnt{color:#dbeaf5;font-size:12px;white-space:nowrap}
+#q{flex:1;min-width:110px;padding:7px 10px;border-radius:8px;border:none;font-size:14px}
+#cnt{color:#eaf2f8;font-size:12px;white-space:nowrap}
 #oeglobal{display:none;background:#117a4f;color:#fff;text-decoration:none;padding:6px 10px;border-radius:8px;font-size:12px;white-space:nowrap}
 .layout{display:flex;max-width:1100px;margin:0 auto}
-nav#nav{width:230px;flex-shrink:0;border-right:1px solid var(--line);background:#fff;height:calc(100vh - 48px);position:sticky;top:48px;overflow:auto;padding:10px 0}
+nav#nav{width:230px;flex-shrink:0;border-right:1px solid var(--line);background:var(--card);height:calc(100vh - 48px);position:sticky;top:48px;overflow:auto;padding:10px 0}
 nav#nav a{display:block;padding:9px 16px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
-nav#nav a:hover{background:#eef4f9}
-nav#nav a.active{border-left-color:var(--blue);background:#eef4f9;color:var(--blue);font-weight:600}
+nav#nav a:hover{background:var(--th)}
+nav#nav a.active{border-left-color:var(--blue);background:var(--th);color:var(--blue);font-weight:600}
 main{flex:1;min-width:0;padding:16px 20px 80px}
 .disclaimer{background:#fff8e1;border:1px solid #f0d894;border-radius:8px;padding:10px 14px;font-size:13px;color:#7a5c00;margin-bottom:18px}
+html[data-theme="dark"] .disclaimer{background:#2a2410;border-color:#5a4d1a;color:#e8d48a}
 .chapter{scroll-margin-top:60px;border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:24px}
 .chhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-left:5px solid var(--blue);padding-left:12px;margin:8px 0 4px}
 .chtitle{color:var(--blue);font-size:21px;margin:0}
 .oebtn{background:#117a4f;color:#fff;text-decoration:none;padding:5px 11px;border-radius:8px;font-size:12.5px;white-space:nowrap}
 .oebtn:hover{background:#0d5e3c}
-main h1{font-size:18px;color:#0d3c5c;border-bottom:2px solid var(--line);padding-bottom:4px;margin-top:22px}
+main h1{font-size:18px;color:var(--blue);border-bottom:2px solid var(--line);padding-bottom:4px;margin-top:22px}
 main h2{font-size:17px;color:var(--blue)}
-main h3{font-size:15px;color:#2c3e50}
+main h3{font-size:15px;color:var(--ink)}
 table{border-collapse:collapse;width:100%;margin:10px 0;font-size:13.5px;display:block;overflow-x:auto}
 th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
-th{background:#eef4f9;color:#234}
-code{background:#eef2f5;padding:1px 5px;border-radius:4px;font-size:12.5px;color:#b03}
-blockquote{border-left:4px solid #c7d6e0;background:#f0f5f9;margin:10px 0;padding:6px 14px;color:#44545f;font-size:13.5px}
-a{color:#1565c0}
-mark.hl{background:#ffe36b;padding:0 1px}
+th{background:var(--th)}
+code{background:var(--codebg);padding:1px 5px;border-radius:4px;font-size:12.5px;color:var(--code)}
+blockquote{border-left:4px solid var(--bqln);background:var(--bq);margin:10px 0;padding:6px 14px;color:var(--mut);font-size:13.5px}
+a{color:var(--lnk)}
+mark.hl{background:#ffe36b;color:#000;padding:0 1px}
 footer{text-align:center;color:var(--mut);font-size:12px;padding:18px;border-top:1px solid var(--line)}
-.wm{position:fixed;right:8px;bottom:6px;color:#bbb;font-size:11px;pointer-events:none;z-index:5}
+.wm{position:fixed;right:8px;bottom:6px;color:var(--mut);opacity:.55;font-size:11px;pointer-events:none;z-index:5}
 @media(max-width:780px){
  #menu{display:block}
- nav#nav{position:fixed;top:48px;left:0;transform:translateX(-100%);transition:.2s;z-index:25;box-shadow:2px 0 10px rgba(0,0,0,.2)}
+ nav#nav{position:fixed;top:48px;left:0;transform:translateX(-100%);transition:.2s;z-index:25;box-shadow:2px 0 10px rgba(0,0,0,.3)}
  body.navopen nav#nav{transform:none}
  .chtitle{font-size:19px}
 }
@@ -56,6 +59,7 @@ footer{text-align:center;color:var(--mut);font-size:12px;padding:18px;border-top
   <span id="cnt"></span>
   <a id="oeglobal" target="_blank" rel="noopener">🔎 OpenEvidence 查此字</a>
  </div>
+ <button id="theme" aria-label="深色模式">🌙</button>
 </header>
 <div class="layout">
  <nav id="nav"><a href="#ch0" data-target="ch0">抗生素A：光田品項+腎調</a>
@@ -5164,7 +5168,7 @@ Sepsis Campaign 2021（Critical Care Medicine）</a></li>
 </ul>
 
 </section>
-  <footer>2026 內科小手冊（光田版）· 以學會最新指引 + 光田品項 + Washington Manual 38e 交叉確認<br>內容僅供參考，不構成醫療建議</footer>
+  <footer>2026 內科小手冊（光田版）· 學會最新指引 + 光田品項 + Washington Manual 38e 交叉確認<br>內容僅供參考，不構成醫療建議</footer>
  </main>
 </div>
 <div class="wm">阿婷醫師的讀書筆記</div>
@@ -5190,6 +5194,11 @@ document.getElementById('menu').addEventListener('click',()=>document.body.class
 navlinks.forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('navopen')));
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navlinks.forEach(a=>a.classList.toggle('active',a.dataset.target===e.target.id));}});},{rootMargin:'-50px 0px -70% 0px'});
 secs.forEach(s=>obs.observe(s));
+// 深色模式（記憶偏好）
+const tbtn=document.getElementById('theme');
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);tbtn.textContent=t==='dark'?'☀️':'🌙';}
+applyTheme(localStorage.getItem('imh-theme')|| (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+tbtn.addEventListener('click',()=>{const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';localStorage.setItem('imh-theme',t);applyTheme(t);});
 </script>
 </body>
 </html>
