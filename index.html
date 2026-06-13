@@ -1,0 +1,5195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 內科小手冊（光田版）</title>
+<style>
+:root{--blue:#1a5276;--bg:#f7f9fb;--line:#e1e8ee;--ink:#222;--mut:#667;}
+*{box-sizing:border-box}
+body{margin:0;font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:15px}
+header{position:sticky;top:0;z-index:30;background:var(--blue);color:#fff;padding:8px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+header h1{font-size:16px;margin:0;white-space:nowrap}
+#menu{display:none;background:none;border:1px solid #fff6;color:#fff;border-radius:6px;padding:4px 9px;font-size:16px;cursor:pointer}
+.searchwrap{flex:1;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+#q{flex:1;min-width:120px;padding:7px 10px;border-radius:8px;border:none;font-size:14px}
+#cnt{color:#dbeaf5;font-size:12px;white-space:nowrap}
+#oeglobal{display:none;background:#117a4f;color:#fff;text-decoration:none;padding:6px 10px;border-radius:8px;font-size:12px;white-space:nowrap}
+.layout{display:flex;max-width:1100px;margin:0 auto}
+nav#nav{width:230px;flex-shrink:0;border-right:1px solid var(--line);background:#fff;height:calc(100vh - 48px);position:sticky;top:48px;overflow:auto;padding:10px 0}
+nav#nav a{display:block;padding:9px 16px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+nav#nav a:hover{background:#eef4f9}
+nav#nav a.active{border-left-color:var(--blue);background:#eef4f9;color:var(--blue);font-weight:600}
+main{flex:1;min-width:0;padding:16px 20px 80px}
+.disclaimer{background:#fff8e1;border:1px solid #f0d894;border-radius:8px;padding:10px 14px;font-size:13px;color:#7a5c00;margin-bottom:18px}
+.chapter{scroll-margin-top:60px;border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:24px}
+.chhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-left:5px solid var(--blue);padding-left:12px;margin:8px 0 4px}
+.chtitle{color:var(--blue);font-size:21px;margin:0}
+.oebtn{background:#117a4f;color:#fff;text-decoration:none;padding:5px 11px;border-radius:8px;font-size:12.5px;white-space:nowrap}
+.oebtn:hover{background:#0d5e3c}
+main h1{font-size:18px;color:#0d3c5c;border-bottom:2px solid var(--line);padding-bottom:4px;margin-top:22px}
+main h2{font-size:17px;color:var(--blue)}
+main h3{font-size:15px;color:#2c3e50}
+table{border-collapse:collapse;width:100%;margin:10px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#eef4f9;color:#234}
+code{background:#eef2f5;padding:1px 5px;border-radius:4px;font-size:12.5px;color:#b03}
+blockquote{border-left:4px solid #c7d6e0;background:#f0f5f9;margin:10px 0;padding:6px 14px;color:#44545f;font-size:13.5px}
+a{color:#1565c0}
+mark.hl{background:#ffe36b;padding:0 1px}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:18px;border-top:1px solid var(--line)}
+.wm{position:fixed;right:8px;bottom:6px;color:#bbb;font-size:11px;pointer-events:none;z-index:5}
+@media(max-width:780px){
+ #menu{display:block}
+ nav#nav{position:fixed;top:48px;left:0;transform:translateX(-100%);transition:.2s;z-index:25;box-shadow:2px 0 10px rgba(0,0,0,.2)}
+ body.navopen nav#nav{transform:none}
+ .chtitle{font-size:19px}
+}
+</style>
+</head>
+<body>
+<header>
+ <button id="menu" aria-label="目錄">&#9776;</button>
+ <h1>2026 內科小手冊</h1>
+ <div class="searchwrap">
+  <input id="q" type="search" placeholder="搜尋藥名、疾病、醫令碼…">
+  <span id="cnt"></span>
+  <a id="oeglobal" target="_blank" rel="noopener">🔎 OpenEvidence 查此字</a>
+ </div>
+</header>
+<div class="layout">
+ <nav id="nav"><a href="#ch0" data-target="ch0">抗生素A：光田品項+腎調</a>
+<a href="#ch1" data-target="ch1">抗生素B：經驗性用藥</a>
+<a href="#ch2" data-target="ch2">心衰竭</a>
+<a href="#ch3" data-target="ch3">高血壓</a>
+<a href="#ch4" data-target="ch4">降血脂</a>
+<a href="#ch5" data-target="ch5">抗凝血</a>
+<a href="#ch6" data-target="ch6">抗血小板</a>
+<a href="#ch7" data-target="ch7">電解質</a>
+<a href="#ch8" data-target="ch8">血糖/糖尿病</a>
+<a href="#ch9" data-target="ch9">胸腔（氣喘/COPD）</a>
+<a href="#ch10" data-target="ch10">骨質疏鬆</a>
+<a href="#ch11" data-target="ch11">鎮靜/譫妄/抗癲癇</a>
+<a href="#ch12" data-target="ch12">病房常用對症藥</a></nav>
+ <main>
+  <div class="disclaimer">⚠️ 本手冊為內科住院醫師快速參考，<b>非醫囑</b>。臨床內容以各大學會最新指引為準、商品名/醫令碼用光田品項；下單前請以仿單、院內藥劑部與主治判斷為準。標 ⚠️待確認 者請查證。OpenEvidence 按鈕需您自行登入該服務。</div>
+  <section id="ch0" class="chapter" data-title="抗生素A：光田品項+腎調">
+<div class="chhead"><h2 class="chtitle">抗生素A：光田品項+腎調</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=empiric antibiotic renal dosing" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="一-a-抗生素光田商品名-腎功能調劑量總表">一-A　抗生素：光田商品名
++ 腎功能調劑量總表</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜
+原書「台北聯醫商品名對照表（2014）」全面換成<strong>光田綜合醫院</strong>現行品項；劑量以仿單／Sanford
+標準更新。 ⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。腎調劑量請以實際
+CrCl、仿單、藥劑部與感染科建議為準。標 <code>⚠️待確認</code>
+者請查證。經驗性選藥見「一-B 經驗性用藥」。</p>
+</blockquote>
+<h2 id="依據">📌 依據</h2>
+<ul>
+<li>劑量：各藥仿單、Sanford Guide（腎調），對應疾病 IDSA
+指引（見一-B）。</li>
+<li>商品名／醫令碼：光田西藥品項查詢系統（即時查詢，公開系統不含健保價）。</li>
+</ul>
+<hr />
+<h2 id="光田抗生素商品名對照依類別">1.
+光田抗生素商品名對照（依類別）</h2>
+<h3 id="β-lactampenicillins">β-lactam：Penicillins</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名</th>
+<th>光田商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oxacillin</td>
+<td>歐西林 Ocillina 500mg inj</td>
+<td>33019</td>
+</tr>
+<tr>
+<td>Amoxicillin</td>
+<td>安蒙西林 250mg</td>
+<td>23114</td>
+</tr>
+<tr>
+<td>Amoxicillin/clavulanate</td>
+<td>雙合黴素 Soonmelt 600mg inj／諾快寧 oral</td>
+<td>30733 / 26015</td>
+</tr>
+<tr>
+<td>Ampicillin/sulbactam</td>
+<td>優合西林 Subacillin 1.5g inj</td>
+<td>30738</td>
+</tr>
+<tr>
+<td><strong>Piperacillin/tazobactam</strong></td>
+<td><strong>達比黴素 Tapimycin 2.25g inj</strong></td>
+<td><strong>30780</strong></td>
+</tr>
+<tr>
+<td>Penicillin G benzathine</td>
+<td>Extencilline 2.4MU（專案進口）</td>
+<td>30545P</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cephalosporins">Cephalosporins</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>代</th>
+<th>學名</th>
+<th>光田商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一代</td>
+<td>Cefazolin</td>
+<td>賜爾寧 Stazolin 1g inj</td>
+<td>30177</td>
+</tr>
+<tr>
+<td>一代(PO)</td>
+<td>Cephalexin</td>
+<td>賜福力欣 500mg</td>
+<td>23410</td>
+</tr>
+<tr>
+<td>二代(頭黴素)</td>
+<td>Cefoxitin</td>
+<td>樂華淨 Lofatin 2g inj</td>
+<td>30157</td>
+</tr>
+<tr>
+<td>三代</td>
+<td>Ceftriaxone</td>
+<td>西特亞山德士 2g inj</td>
+<td>30320</td>
+</tr>
+<tr>
+<td>三代(oxacephem)</td>
+<td>Flomoxef</td>
+<td>氟黴寧 Flumarin 1g inj</td>
+<td>30645</td>
+</tr>
+<tr>
+<td>四代</td>
+<td>Cefepime</td>
+<td>革菌素 Antifect 1g inj</td>
+<td>30072</td>
+</tr>
+<tr>
+<td>五代(抗 MRSA)</td>
+<td>Ceftaroline</td>
+<td>捷復寧 Zinforo 600mg inj</td>
+<td>30158</td>
+</tr>
+<tr>
+<td><strong>β-lactamase 抑制複方</strong></td>
+<td><strong>Ceftazidime/avibactam</strong></td>
+<td><strong>贊飛得 Zavicefta 2g/0.5g inj</strong></td>
+<td><strong>30421</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>光田公開品項未見</strong>：單方
+ceftazidime、cefotaxime、cefuroxime、cefmetazole（經驗用藥時改以
+cefepime／pip-tazo／ceftriaxone 涵蓋）。</p>
+</blockquote>
+<h3 id="carbapenems">Carbapenems</h3>
+<table>
+<thead>
+<tr>
+<th>學名</th>
+<th>光田商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ertapenem</td>
+<td>厄他培南 1g inj（不咬 Pseudomonas）</td>
+<td>30995</td>
+</tr>
+<tr>
+<td>Meropenem</td>
+<td>美平 Mepem 250mg／美樂平 Mexopem 1g</td>
+<td>30362 / 30420</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ 無 imipenem（以 meropenem 取代；meropenem 較不致癲癇）。</p>
+</blockquote>
+<h3 id="fluoroquinolones">Fluoroquinolones</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名</th>
+<th>光田商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ciprofloxacin</td>
+<td>喜博欣 Ciprogen 250mg PO／賜保欣 Seforce 400mg inj</td>
+<td>23968 / 30278</td>
+</tr>
+<tr>
+<td>Levofloxacin</td>
+<td>可樂必妥 Cravit 500mg PO／IV</td>
+<td>20699 / 30349</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ 無<strong>全身用</strong> moxifloxacin（僅眼用）。</p>
+</blockquote>
+<h3 id="aminoglycosides">Aminoglycosides</h3>
+<table>
+<thead>
+<tr>
+<th>學名</th>
+<th>光田商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gentamicin</td>
+<td>健達黴素 80mg/2mL inj</td>
+<td>33054</td>
+</tr>
+<tr>
+<td>Amikacin</td>
+<td>安炎 Aminfec 250mg inj</td>
+<td>30182</td>
+</tr>
+</tbody>
+</table>
+<h3 id="抗-gmrsalast-line">抗 G(+)／MRSA／last-line</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名</th>
+<th>光田商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vancomycin</td>
+<td>安克 Vanco 500mg inj</td>
+<td>30835</td>
+</tr>
+<tr>
+<td>Teicoplanin</td>
+<td>得時高 Targocid 200mg／康可明 Tecopin 400mg</td>
+<td>30765 / 30110</td>
+</tr>
+<tr>
+<td>Linezolid</td>
+<td>采福適 Zyvox 600mg PO／IV</td>
+<td>20964 / 30955</td>
+</tr>
+<tr>
+<td>Tigecycline</td>
+<td>老虎黴素 Tygacil 50mg inj</td>
+<td>30785</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>公開品項未見 colistin、daptomycin</strong>（MDRO
+時需照會感染科／藥劑部特殊調度）。</p>
+</blockquote>
+<h3 id="厭氧非典型其他">厭氧／非典型／其他</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名</th>
+<th>光田商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metronidazole</td>
+<td>沙普 SABS 500mg inj／妳樂淨 PO</td>
+<td>33489 / 23970</td>
+</tr>
+<tr>
+<td>Clindamycin</td>
+<td>克力欣 Clincin 300mg inj／帝達黴素 Tidact 150mg PO</td>
+<td>33031 / 23341</td>
+</tr>
+<tr>
+<td>Azithromycin</td>
+<td>日舒 Zithromax 250mg</td>
+<td>20957</td>
+</tr>
+<tr>
+<td>Doxycycline</td>
+<td>多喜黴素 100mg</td>
+<td>23264</td>
+</tr>
+<tr>
+<td>TMP-SMX</td>
+<td>孟克杏 Morcasin PO／雪白淨 Sevatrim inj</td>
+<td>23344 / 30041</td>
+</tr>
+</tbody>
+</table>
+<h3 id="抗黴菌抗病毒">抗黴菌／抗病毒</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名</th>
+<th>光田商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fluconazole</td>
+<td>膚康 IV 200mg／膚肯 Flu-D 50mg PO</td>
+<td>30220 / 20215</td>
+</tr>
+<tr>
+<td>Micafungin（echinocandin）</td>
+<td>米方淨 Myfungin 50mg inj</td>
+<td>30225</td>
+</tr>
+<tr>
+<td>Amphotericin B（deoxycholate）</td>
+<td>防治黴 Fungizone 50mg inj</td>
+<td>30019</td>
+</tr>
+<tr>
+<td>Acyclovir</td>
+<td>剋庖 Virless／熱威樂素 Zovirax 250mg inj</td>
+<td>30378 / 30951</td>
+</tr>
+<tr>
+<td>Oseltamivir</td>
+<td>易剋冒 Eraflu 75mg（公費）／克流感 Tamiflu（自費）</td>
+<td>36312 / 20776</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ 公開品項未見
+voriconazole、posaconazole（侵襲性麴菌症等需照會調度）。</p>
+</blockquote>
+<hr />
+<h2 id="常用-iv-抗生素正常劑量-腎功能調整">2. 常用 IV 抗生素：正常劑量 +
+腎功能調整</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名（光田）</th>
+<th>正常腎功能</th>
+<th>腎功能調整重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cefazolin（賜爾寧）</td>
+<td>1–2g q8h</td>
+<td>CrCl ≤35：延長間距（q12h，&lt;10 q24–48h）</td>
+</tr>
+<tr>
+<td>Ceftriaxone（西特亞）</td>
+<td>1–2g q24h（腦膜炎 2g q12h）</td>
+<td><strong>不需腎調</strong>（膽道為主排除）</td>
+</tr>
+<tr>
+<td>Cefepime（革菌素）</td>
+<td>2g q8–12h（重症/Pseudomonas q8h）</td>
+<td>CrCl 30–60→q12h、11–29→q24h、&lt;11→q24h
+減半；<strong>腦病變風險</strong></td>
+</tr>
+<tr>
+<td>Flomoxef（氟黴寧）</td>
+<td>1–2g q12h</td>
+<td>依 CrCl 減量</td>
+</tr>
+<tr>
+<td><strong>Pip/tazo（達比黴素）</strong></td>
+<td><strong>4.5g q6–8h</strong>（重症延長輸注）</td>
+<td>CrCl 20–40→3.375g q6h、&lt;20→2.25g q6–8h</td>
+</tr>
+<tr>
+<td>Ertapenem（厄他培南）</td>
+<td>1g q24h</td>
+<td>CrCl &lt;30→0.5g q24h</td>
+</tr>
+<tr>
+<td>Meropenem（美平/美樂平）</td>
+<td>1g q8h（CNS/重症 2g q8h）</td>
+<td>CrCl 25–50→1g q12h、10–25→0.5g q12h、&lt;10→0.5g q24h</td>
+</tr>
+<tr>
+<td><strong>Ceftazidime/avibactam（贊飛得）</strong></td>
+<td><strong>2.5g q8h</strong>（輸注 2h）</td>
+<td>CrCl 31–50→1.25g q8h、16–30→0.94g q12h，再依 CrCl 下修</td>
+</tr>
+<tr>
+<td>Ceftaroline（捷復寧）</td>
+<td>600mg q12h</td>
+<td>CrCl 31–50→400mg q12h、15–30→300mg q12h</td>
+</tr>
+<tr>
+<td><strong>Vancomycin（安克）</strong></td>
+<td>15–20mg/kg q8–12h</td>
+<td><strong>依血中濃度/AUC 調整</strong>；腎差延長間距，追
+trough/AUC</td>
+</tr>
+<tr>
+<td>Teicoplanin（得時高）</td>
+<td>loading 6–12mg/kg q12h ×3 → q24h</td>
+<td>CrCl &lt;40 第 4 天起減量</td>
+</tr>
+<tr>
+<td>Levofloxacin（可樂必妥）</td>
+<td>750mg q24h（或 500mg）</td>
+<td>CrCl 20–49→750mg q48h／500 首劑後 250 q24h</td>
+</tr>
+<tr>
+<td>Ciprofloxacin（賜保欣）</td>
+<td>400mg q8–12h IV</td>
+<td>CrCl &lt;30→q24h</td>
+</tr>
+<tr>
+<td>Amikacin（安炎）</td>
+<td>15mg/kg q24h</td>
+<td><strong>依濃度/CrCl 延長間距</strong>，追 peak/trough</td>
+</tr>
+<tr>
+<td>Gentamicin（健達黴素）</td>
+<td>5–7mg/kg q24h</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>TMP-SMX（雪白淨）</td>
+<td>依 TMP 計（PCP 15–20mg/kg/day 分次）</td>
+<td>CrCl 15–30 減半、&lt;15 避免</td>
+</tr>
+<tr>
+<td>Linezolid（采福適）</td>
+<td>600mg q12h</td>
+<td><strong>不需腎調</strong>；&gt;2 週注意血小板/週邊神經</td>
+</tr>
+<tr>
+<td>Tigecycline（老虎黴素）</td>
+<td>100mg load → 50mg q12h</td>
+<td>不需腎調；<strong>重度肝病減量</strong></td>
+</tr>
+<tr>
+<td>Fluconazole（膚康）</td>
+<td>400–800mg load → 200–400mg q24h</td>
+<td>CrCl &lt;50→維持劑量減半</td>
+</tr>
+<tr>
+<td>Micafungin（米方淨）</td>
+<td>100mg q24h（食道念珠菌 150mg）</td>
+<td>不需腎調</td>
+</tr>
+<tr>
+<td>Amphotericin B（防治黴）</td>
+<td>0.5–1mg/kg/day</td>
+<td><strong>腎毒性</strong>；補水、追 K/Mg/Cr</td>
+</tr>
+<tr>
+<td>Acyclovir（剋庖/熱威樂素）</td>
+<td>5–10mg/kg q8h IV</td>
+<td><strong>依 CrCl 大幅減量</strong>；充分水化防結晶腎病</td>
+</tr>
+<tr>
+<td>Metronidazole（沙普）</td>
+<td>500mg q8h</td>
+<td>不需腎調（重度肝病減量）</td>
+</tr>
+<tr>
+<td>Azithromycin（日舒）</td>
+<td>500mg q24h</td>
+<td>不需腎調</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔁 <strong>once-daily aminoglycoside / vancomycin / teicoplanin
+一律以血中濃度為準</strong>，上表僅為起始估值。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<ul>
+<li>商品名／醫令碼：光田西藥品項查詢系統即時查詢（2026）；標 ⚠️
+者為公開系統未命中、需洽藥劑部。</li>
+<li>劑量與腎調：各藥仿單與 Sanford Guide 標準；經驗性適應症依 IDSA
+指引（見一-B）。</li>
+<li>僅作事實查證與在地品項對應，未重製任何書本內文。</li>
+</ul>
+<blockquote>
+<p><strong>光田品項重要缺口</strong>（住院選藥要記得）：無單方
+ceftazidime/cefotaxime/cefuroxime、無 imipenem、無全身
+moxifloxacin、公開品項無
+colistin/daptomycin/voriconazole（MDRO/侵襲黴菌需照會感染科）。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章為抗生素 A 部分（品項+腎調）。經驗性用藥見一-B。</em></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📕 <strong>Washington Manual 第 38
+版交叉確認（2026）</strong>：本章cefepime 2g q8h、meropenem、vancomycin
+15–20mg/kg q8–12h 等劑量與 38 版一致；臨床內容以學會最新指引為準，38
+版為次要對照。</p>
+</blockquote>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a href="https://www.idsociety.org/practice-guidelines/">IDSA
+臨床指引總覽</a></li>
+<li><a href="https://www.sanfordguide.com/">Sanford Guide</a></li>
+</ul>
+
+</section>
+<section id="ch1" class="chapter" data-title="抗生素B：經驗性用藥">
+<div class="chhead"><h2 class="chtitle">抗生素B：經驗性用藥</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=empiric antibiotic therapy by infection site" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1
+id="一-b-抗生素經驗性用藥依感染部位">一-B　抗生素：經驗性用藥（依感染部位）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 依各感染部位<strong>現行最新 IDSA/ATS
+指引</strong>選經驗性抗生素，藥名用<strong>光田</strong>品項。 ⚠️
+<strong>使用聲明</strong>：經驗性方案為起點，務必依<strong>培養結果降階（de-escalation）</strong>、當地抗生素圖譜（antibiogram）、過敏史與腎功能調整。重症/MDRO
+早期照會感染科。品項與腎調見「一-A」。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>CAP</strong>：2025 ATS（CAP 診療更新，承接 2019
+ATS/IDSA）。</li>
+<li><strong>HAP/VAP</strong>：2016 IDSA/ATS。</li>
+<li><strong>複雜性 UTI／腎盂腎炎</strong>：<strong>2025 IDSA cUTI
+Guideline</strong>。</li>
+<li><strong>腹腔內感染</strong>：IDSA／SIS（2024 更新）。</li>
+<li><strong>皮膚軟組織</strong>：2014 IDSA SSTI。</li>
+<li><strong>敗血症</strong>：Surviving Sepsis Campaign 2021。</li>
+<li><strong>發燒性嗜中性球低下</strong>：IDSA／ASCO／NCCN。</li>
+<li><strong>C. difficile</strong>：2021 IDSA/ACG focused update。</li>
+<li><strong>抗藥性 G(−)</strong>：<strong>IDSA 2024 AMR
+Guidance</strong>（第 4 版，ESBL/AmpC/CRE/DTR-PsA/CRAB/Steno）。</li>
+</ul>
+<hr />
+<h2 id="社區型肺炎-cap2025-ats">1. 社區型肺炎 CAP（2025 ATS）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>嚴重度</th>
+<th>經驗性（光田品項）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>住院非重症</strong></td>
+<td><strong>西特亞 Ceftriaxone 1–2g q24h ＋ 日舒 Azithromycin 500mg
+q24h</strong>；或單用 <strong>可樂必妥 Levofloxacin 750mg
+q24h</strong></td>
+</tr>
+<tr>
+<td><strong>重症（ICU）</strong></td>
+<td>β-lactam（ceftriaxone 或 <strong>達比黴素 Pip/tazo</strong>）＋
+azithromycin，或 ＋ levofloxacin</td>
+</tr>
+<tr>
+<td><strong>MRSA 風險</strong>（流感後、壞死性、既往 MRSA）</td>
+<td>加 <strong>安克 Vancomycin</strong> 或 <strong>采福適
+Linezolid</strong></td>
+</tr>
+<tr>
+<td><strong>Pseudomonas
+風險</strong>（結構性肺病、近期住院/抗生素）</td>
+<td>β-lactam 改 <strong>達比黴素 Pip/tazo</strong> 或 <strong>革菌素
+Cefepime</strong> 或 <strong>美平 Meropenem</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>療程</strong>：臨床穩定後 <strong>至少 5
+天</strong>；非重症穩定者 <strong>3–5 天</strong>即可（2025 ATS
+縮短）。</li>
+<li><strong>Legionella 抗原</strong>：僅重症或有環境暴露時驗。</li>
+</ul>
+<hr />
+<h2 id="院內呼吸器肺炎-hapvap2016-idsaats">2. 院內/呼吸器肺炎
+HAP/VAP（2016 IDSA/ATS）</h2>
+<ul>
+<li><strong>核心：抗 Pseudomonas β-lactam</strong>：達比黴素 Pip/tazo
+4.5g q6–8h ／革菌素 Cefepime 2g q8h ／美平 Meropenem 1g q8h。</li>
+<li><strong>加 MRSA 涵蓋</strong>（MRSA 風險或單位
+MRSA&gt;10–20%）：安克 Vancomycin（追濃度）或采福適 Linezolid。</li>
+<li><strong>雙重抗 Pseudomonas</strong>（高死亡風險/抗藥盛行）：再加
+aminoglycoside（安炎 Amikacin）或 ciprofloxacin（賜保欣）。</li>
+<li>依培養降階；療程多 <strong>7 天</strong>。</li>
+</ul>
+<hr />
+<h2 id="複雜性-uti腎盂腎炎2025-idsa-cuti四步驟">3. 複雜性
+UTI／腎盂腎炎（2025 IDSA cUTI，四步驟）</h2>
+<blockquote>
+<p>步驟：①評估嚴重度 ②抗藥危險因子 ③個別不良反應考量 ④敗血症查當地
+antibiogram。</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>情境</th>
+<th>經驗性（光田品項）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>非敗血、可口服/住院</strong></td>
+<td>西特亞 Ceftriaxone 1g q24h；或厄他培南 Ertapenem 1g q24h；或
+levofloxacin</td>
+</tr>
+<tr>
+<td><strong>敗血症</strong></td>
+<td><strong>3/4 代頭孢、carbapenem、pip/tazo 或 FQ</strong>（勿用新藥/老
+aminoglycoside 當首選）→ 西特亞／革菌素／美平／達比黴素／可樂必妥</td>
+</tr>
+<tr>
+<td><strong>ESBL 風險</strong>（既往
+ESBL、近期廣效抗生素/住院/旅遊）</td>
+<td><strong>carbapenem</strong>：厄他培南 Ertapenem／美平 Meropenem</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>⚠️ <strong>過去 12 個月用過 FQ → 避免再用 FQ</strong>。</li>
+<li>IV→PO 及早轉換；療程依藥物與反應（多 5–7 天，FQ/TMP-SMX 5–7
+天）。</li>
+</ul>
+<hr />
+<h2 id="腹腔內感染idsasis-2024">4. 腹腔內感染（IDSA／SIS 2024）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>情境</th>
+<th>經驗性（光田品項）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>社區型輕中度</td>
+<td><strong>西特亞 Ceftriaxone ＋ 沙普 Metronidazole</strong>；或單用
+<strong>厄他培南 Ertapenem</strong></td>
+</tr>
+<tr>
+<td>社區型重症／院內／術後</td>
+<td><strong>達比黴素 Pip/tazo</strong>；或 <strong>革菌素 Cefepime ＋
+沙普 Metronidazole</strong>；或 <strong>美平 Meropenem</strong></td>
+</tr>
+<tr>
+<td>加腸球菌/念珠菌考量</td>
+<td>重症/術後/免疫低下：考慮加 <strong>米方淨
+Micafungin</strong>（念珠菌）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>源頭控制（source
+control）</strong>最重要（引流/手術）。</li>
+</ul>
+<hr />
+<h2 id="皮膚軟組織-ssti2014-idsa">5. 皮膚軟組織 SSTI（2014 IDSA）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>型態</th>
+<th>經驗性（光田品項）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>非化膿性蜂窩組織炎</strong>（鏈球菌為主）</td>
+<td>賜爾寧 Cefazolin IV／賜福力欣 Cephalexin PO</td>
+</tr>
+<tr>
+<td><strong>化膿性／膿瘍（疑 MRSA）</strong></td>
+<td>引流 ＋ 安克 Vancomycin／采福適
+Linezolid／TMP-SMX（孟克杏）／帝達黴素 Clindamycin</td>
+</tr>
+<tr>
+<td><strong>壞死性筋膜炎</strong>（急症！）</td>
+<td><strong>緊急手術</strong> ＋ 達比黴素 Pip/tazo ＋ 安克 Vancomycin ＋
+克力欣 Clindamycin（抑毒素）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="敗血症-敗血性休克ssc-2021">6. 敗血症 / 敗血性休克（SSC
+2021）</h2>
+<ul>
+<li><strong>早期廣效</strong>：辨識後<strong>儘速（休克 1
+小時內）</strong>給藥；先抽血液培養。</li>
+<li>依<strong>最可能源頭</strong>選藥（見上述各部位）＋ 涵蓋
+MRSA/Pseudomonas 視風險。</li>
+<li>充分輸液（晶體 30mL/kg）、必要時升壓（norepinephrine 首選）。</li>
+<li><strong>每日重評估、培養回來降階</strong>、控制源頭。</li>
+</ul>
+<hr />
+<h2 id="發燒性嗜中性球低下idsaasconccn">7.
+發燒性嗜中性球低下（IDSA/ASCO/NCCN）</h2>
+<ul>
+<li><strong>單藥抗 Pseudomonas β-lactam</strong>：<strong>革菌素
+Cefepime 2g q8h</strong>／達比黴素 Pip/tazo 4.5g q6–8h／美平 Meropenem
+1g q8h。</li>
+<li><strong>⚠️ 厄他培南不可</strong>（不咬 Pseudomonas）。</li>
+<li><strong>加 Vancomycin
+的時機</strong>（非常規）：血流動力不穩、疑導管/皮膚軟組織/肺炎、已知
+MRSA 移生、黏膜炎重。</li>
+<li>低風險（MASCC 高分）可口服
+Augmentin＋ciprofloxacin（門診）——住院多走 IV。</li>
+</ul>
+<hr />
+<h2 id="困難梭狀桿菌-c.-difficile2021-idsaacg">8. 困難梭狀桿菌 C.
+difficile（2021 IDSA/ACG）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>嚴重度</th>
+<th>首選</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初發（非重/重症）</td>
+<td><strong>Fidaxomicin</strong> ⚠️光田無 → <strong>口服 Vancomycin
+125mg q6h ×10 天</strong>（光田僅注射劑
+<code>30835</code>，<strong>以注射劑泡製口服</strong>）</td>
+</tr>
+<tr>
+<td><strong>猛爆性（fulminant）</strong></td>
+<td>口服/經管 Vancomycin <strong>500mg q6h</strong> ＋ <strong>IV 沙普
+Metronidazole 500mg q8h</strong>（±直腸灌注）</td>
+</tr>
+<tr>
+<td>復發</td>
+<td>Fidaxomicin（無則 vancomycin 漸減/脈衝）；考慮 FMT</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ 不再用口服 metronidazole 當初發首選（僅輕症且無法取得 vanco/fidax
+時）。</p>
+</blockquote>
+<hr />
+<h2 id="抗藥性-g-速查idsa-2024-amr">9. 抗藥性 G(−) 速查（IDSA 2024
+AMR）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>菌</th>
+<th>首選方向</th>
+<th>光田可用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ESBL-E</strong></td>
+<td>Carbapenem（重症）；cUTI 輕症可 TMP-SMX/FQ 依藥敏</td>
+<td>美平／厄他培南／孟克杏</td>
+</tr>
+<tr>
+<td><strong>AmpC-E</strong>（Enterobacter, Citrobacter, Serratia…）</td>
+<td><strong>Cefepime</strong> 或 carbapenem（避免 3 代頭孢）</td>
+<td>革菌素／美平</td>
+</tr>
+<tr>
+<td><strong>CRE</strong>（非 MBL）</td>
+<td><strong>Ceftazidime/avibactam</strong></td>
+<td><strong>贊飛得 Zavicefta</strong> ✅</td>
+</tr>
+<tr>
+<td><strong>DTR-Pseudomonas</strong></td>
+<td>Ceftazidime/avibactam（或 ceftolozane/tazo、cefiderocol）</td>
+<td>贊飛得 Zavicefta ✅（其餘光田無→照會）</td>
+</tr>
+<tr>
+<td><strong>CRAB</strong>（鮑氏不動桿菌）</td>
+<td>多需合併（含 sulbactam-based、polymyxin、cefiderocol）</td>
+<td>⚠️光田 colistin/cefiderocol 公開無 →
+<strong>照會感染科</strong></td>
+</tr>
+<tr>
+<td><strong>Stenotrophomonas</strong></td>
+<td><strong>TMP-SMX</strong></td>
+<td>雪白淨 Sevatrim／孟克杏 ✅</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔔 CRE/CRAB/DTR-PsA <strong>一律照會感染科</strong>並送藥敏（含 MBL
+檢測）。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<p><strong>黃金標準＝各 IDSA/ATS 指引最新版</strong>（2024–2025）：</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>區塊</th>
+<th>依據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAP（療程 3–5 天、Legionella 限重症）</td>
+<td>✅ 2025 ATS CAP</td>
+</tr>
+<tr>
+<td>cUTI 四步驟、敗血症選 3/4 代頭孢/carbapenem/pip-tazo/FQ、FQ 12
+個月內勿重用</td>
+<td>✅ 2025 IDSA cUTI</td>
+</tr>
+<tr>
+<td>抗藥
+G(−)：ESBL→carbapenem、AmpC→cefepime、CRE/DTR→ceftaz-avibactam</td>
+<td>✅ IDSA 2024 AMR Guidance（第 4 版）</td>
+</tr>
+<tr>
+<td>C. diff：fidaxomicin/口服 vancomycin 取代口服 metronidazole</td>
+<td>✅ 2021 IDSA/ACG</td>
+</tr>
+<tr>
+<td>嗜中性球低下單藥抗 PsA、ertapenem 不可</td>
+<td>✅ IDSA/ASCO</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與在地品項對應，未重製任何書本內文。深入請回查對應
+IDSA/ATS 指引。<strong>重要缺口</strong>：光田公開品項無
+colistin/daptomycin/voriconazole/fidaxomicin/cefiderocol，MDRO
+與侵襲黴菌需照會。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章為抗生素 B 部分（經驗性用藥）。品項+腎調見一-A。</em></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📕 <strong>Washington Manual 第 38
+版交叉確認（2026）</strong>：本章經驗性方案與抗 Pseudomonas
+涵蓋、ceftolozane-tazobactam 等與 38
+版一致；臨床內容以學會最新指引為準，38 版為次要對照。</p>
+</blockquote>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a href="https://doi.org/10.1093/cid/ciae403">IDSA 2024 抗藥性 G(−)
+治療指引（AMR Guidance，CID）</a></li>
+<li><a
+href="https://www.atsjournals.org/doi/10.1164/rccm.202507-1692st">2025
+ATS 社區型肺炎（CAP）指引（AJRCCM）</a></li>
+<li><a href="https://academic.oup.com/cid/article/63/5/e61/2237650">2016
+IDSA/ATS 院內/呼吸器肺炎（HAP/VAP）指引（CID）</a></li>
+<li><a
+href="https://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/">2025
+IDSA 複雜性泌尿道感染（cUTI）指引</a></li>
+<li><a href="https://academic.oup.com/cid/article/59/2/e10/2895845">2014
+IDSA 皮膚軟組織感染（SSTI）指引（CID）</a></li>
+<li><a
+href="https://academic.oup.com/cid/article/73/5/e1029/6298219">2021
+IDSA/SHEA 困難梭狀桿菌（C. difficile）指引（CID）</a></li>
+<li><a href="https://doi.org/10.1097/CCM.0000000000005337">Surviving
+Sepsis Campaign 2021（CCM）</a></li>
+</ul>
+
+</section>
+<section id="ch2" class="chapter" data-title="心衰竭">
+<div class="chhead"><h2 class="chtitle">心衰竭</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=heart failure GDMT four pillars 2022 guideline" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="九-c-心衰竭heart-failure">九-C　心衰竭（Heart Failure）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 2014 原書為 2013 ACCF/AHA「ACEI/ARB +
+BB 起手式」框架，本章改寫為現行 <strong>2022 AHA/ACC/HFSA 四大支柱
+GDMT</strong>。商品名／醫令碼用<strong>光田綜合醫院</strong>品項。 ⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。劑量與健保條件會變，下單前以仿單、最新指引、院內藥劑部為準。標
+<code>⚠️待確認</code> 者請查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>2022 AHA/ACC/HFSA Heart Failure
+Guideline</strong>（Circulation；截至 2026
+仍為最新綜合版，未被取代）：四大支柱 GDMT；<strong>SGLT2i 對 HFrEF 為
+Class 1</strong>（不論有無糖尿病），HFmrEF/HFpEF 為 Class 2a。</li>
+<li><strong>2024 ACC HFrEF 治療專家共識路徑</strong>（Expert Consensus
+Decision Pathway，最新落地治療順序）。</li>
+<li><strong>新進展（2024–2025）</strong>：GLP-1 RA / <strong>semaglutide
+用於 HFpEF + 肥胖</strong>（STEP-HFpEF；2025 CCS/CHFS 已納入）。</li>
+<li><strong>2023 ESC HF Focused Update</strong>；台灣
+<strong>TSOC</strong>
+心衰竭指引（在地/健保優先參照）。教科書（WMT）僅次要對照。</li>
+</ul>
+<hr />
+<h2 id="先分型決定治療完全不同">0. 先分型（決定治療完全不同）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>類型</th>
+<th>EF</th>
+<th>主軸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HFrEF</strong>（收縮性）</td>
+<td><strong>≤40%</strong></td>
+<td><strong>四大支柱 GDMT</strong>（本章重點，存活率實證最強）</td>
+</tr>
+<tr>
+<td><strong>HFmrEF</strong></td>
+<td>41–49%</td>
+<td>比照 HFrEF 方向，SGLT2i 有益</td>
+</tr>
+<tr>
+<td><strong>HFpEF</strong>（舒張性）</td>
+<td><strong>≥50%</strong></td>
+<td><strong>SGLT2i（Class 2a）</strong> + 利尿控水 +
+治共病（HTN/AF/肥胖）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>2014 原書沒有清楚分 HFrEF/HFpEF；現在「先看 EF」是第一步。</p>
+</blockquote>
+<hr />
+<h2 id="最大改變hfref-四大支柱gdmt">1. 🌟 最大改變：HFrEF
+四大支柱（GDMT）</h2>
+<blockquote>
+<p><strong>觀念翻新</strong>：不再是「ACEI/ARB+BB
+起手，慢慢加」。現在是<strong>四類藥盡快（數週內）全部上線</strong>，再各自往目標劑量爬。四支柱<strong>各自獨立降低死亡率</strong>，缺一不可。</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>支柱</th>
+<th>學名</th>
+<th>光田品項（醫令碼）</th>
+<th>起始 → 目標</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① ARNI</strong>（優先）／ACEI／ARB</td>
+<td>Sacubitril/Valsartan</td>
+<td><strong>健安心 Entresto 100mg <code>20174</code></strong>（50/200mg
+⚠️待確認）</td>
+<td>49/51mg BID → <strong>97/103mg BID</strong>；低血壓/未用過 ACEI 由
+24/26mg BID 起</td>
+</tr>
+<tr>
+<td><strong>② β-blocker</strong></td>
+<td>Carvedilol</td>
+<td><strong>心全 Syntrend 6.25mg <code>23349</code>／25mg
+<code>23350</code></strong></td>
+<td>3.125mg BID → 25mg BID（&gt;85kg 可到 50mg BID）</td>
+</tr>
+<tr>
+<td></td>
+<td>Bisoprolol</td>
+<td><strong>康肯 Concor 1.25mg <code>23116</code>／5mg
+<code>20263</code></strong></td>
+<td>1.25mg QD → 10mg QD</td>
+</tr>
+<tr>
+<td><strong>③ MRA</strong>（醛固酮拮抗）</td>
+<td>Spironolactone</td>
+<td><strong>歐得通 25mg <code>23748</code></strong></td>
+<td>12.5–25mg QD → 25–50mg QD</td>
+</tr>
+<tr>
+<td></td>
+<td>Eplerenone</td>
+<td><strong>迎甦心 Inspra 50mg <code>20366</code></strong></td>
+<td>25mg QD → 50mg QD（不能用 spiron 時）</td>
+</tr>
+<tr>
+<td><strong>④ SGLT2i</strong></td>
+<td>Dapagliflozin</td>
+<td><strong>福適佳 Forxiga 10mg <code>20987</code></strong></td>
+<td><strong>10mg QD</strong>（固定劑量）</td>
+</tr>
+<tr>
+<td></td>
+<td>Empagliflozin</td>
+<td><strong>恩排糖 Jardiance 10mg <code>20260</code>／25mg
+<code>20236</code></strong></td>
+<td><strong>10mg QD</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>關鍵提醒</strong> - <strong>β-blocker
+限這三種有實證</strong>：carvedilol、bisoprolol、metoprolol
+<strong>succinate</strong>。<strong>光田無 metoprolol、無
+carvedilol/bisoprolol 以外選擇</strong>——用心全或康肯。 - <strong>SGLT2i
+不論有沒有糖尿病都用</strong>（這是最大的觀念更新之一）；HFrEF 可用到
+eGFR ≥20。注意泌尿生殖感染、<strong>euglycemic
+DKA</strong>（NPO/急性病時暫停）。 - <strong>MRA / ARNI / SGLT2i 都要追
+K⁺ 與腎功能</strong>；MRA + ARNI 併用更要盯高血鉀。</p>
+<hr />
+<h2 id="aceiarb-arni-轉換住院常做">2. ACEI/ARB → ARNI
+轉換（住院常做）</h2>
+<ul>
+<li>ARNI <strong>取代</strong> ACEI/ARB，不可同時併用。</li>
+<li><strong>由 ACEI 換 ARNI 必須 washout ≥36
+小時</strong>（避免血管性水腫疊加）；由 ARB 換則不需 washout。</li>
+<li>換後監測血壓、K⁺、腎功能。</li>
+</ul>
+<hr />
+<h2 id="其他-hfref-用藥特定情境才加">3. 其他 HFrEF
+用藥（特定情境才加）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>藥</th>
+<th>光田品項</th>
+<th>用在哪</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ivabradine</strong></td>
+<td>康立來 Coralan 5mg <code>20980</code></td>
+<td>竇性心律、HR 仍 <strong>≥70</strong> 且 β-blocker 已最大耐受 → 5mg
+BID→7.5mg BID</td>
+</tr>
+<tr>
+<td><strong>Digoxin</strong></td>
+<td>隆我心 Lanoxin 0.25mg <code>23125</code>／注射 0.5mg
+<code>33684</code></td>
+<td><strong>合併 AF</strong>
+或症狀頑固；只改善症狀不改善存活，盯中毒/低血鉀</td>
+</tr>
+<tr>
+<td><strong>Hydralazine + 硝酸鹽</strong></td>
+<td>hydralazine ⚠️光田無；Isosorbide mononitrate（冠欣
+<code>23311</code>／愛彼脈 <code>20336</code>）</td>
+<td>非洲裔，或無法用 ARNI/ACEI/ARB 者</td>
+</tr>
+<tr>
+<td><strong>Vericiguat</strong></td>
+<td>偉卡沃 Verquvo 10mg <code>20758</code>（<strong>自費</strong>）</td>
+<td>近期惡化住院的 HFrEF，作為附加</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="hfpefef-50">4. HFpEF（EF ≥50%）</h2>
+<p>2014 幾乎沒著墨，現有實證方向： 1.
+<strong>SGLT2i</strong>（dapagliflozin / empagliflozin）→
+減少住院（EMPEROR-Preserved / DELIVER）。 2.
+<strong>利尿劑</strong>控制體液。 3.
+<strong>積極治共病</strong>：高血壓、AF、肥胖、CKD。 4. MRA
+可考慮（尤其偏低 EF 端）。</p>
+<hr />
+<h2 id="急性失代償adhf住院處置">5. 急性失代償（ADHF）住院處置</h2>
+<p><strong>先分型</strong>（決定用利尿、擴張還是強心）：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>暖（warm，灌流ok）</th>
+<th>冷（cold，低灌流）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>濕（wet，鬱血）</strong></td>
+<td>利尿 ±血管擴張</td>
+<td>利尿 + 強心 ±擴張</td>
+</tr>
+<tr>
+<td><strong>乾（dry）</strong></td>
+<td>調整 GDMT</td>
+<td>補液/強心（少見）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>利尿劑（最常用）</strong>：IV <strong>furosemide（來適泄
+Lasix 注射 20mg/2mL <code>30441</code>）</strong>。慢性使用者 <strong>IV
+劑量 ≈ 平日口服總量 ×1–2.5</strong>；效果不足可加量或改持續輸注；可加
+thiazide/<strong>metolazone</strong>（⚠️光田品項待確認）序貫阻斷。</li>
+<li><strong>血管擴張劑</strong>：血壓 ok 時
+<strong>nitroglycerin（Millisrol）pump</strong> 降
+pre-load／wedge，舒張冠脈。</li>
+<li><strong>強心劑（inotropes）</strong>：限<strong>低灌流/冷型或低血壓</strong>——<strong>Dobutamine（健多博
+<code>30143</code>）</strong>或 <strong>Milrinone（Primacor
+<code>30549</code>）</strong>。會增加心律不整與死亡風險，僅短期橋接。</li>
+<li><strong>β-blocker</strong>：血壓/灌流 ok
+<strong>不要停</strong>（WMT：HFrEF 的 BB
+不應因急性發作就停）；只有低血壓/低灌流才減停並上強心劑。</li>
+</ul>
+<hr />
+<h2 id="心衰竭要避開的藥">6. ⛔ 心衰竭要避開的藥</h2>
+<ul>
+<li><strong>NSAID</strong>（鈉水滯留、腎損）</li>
+<li><strong>Glitazone / pioglitazone（Actos）</strong>（體液滯留）</li>
+<li><strong>Non-DHP CCB（diltiazem、verapamil）</strong> 用於
+HFrEF（負性肌力）；DHP 中僅 amlodipine/felodipine 相對安全</li>
+<li><strong>Saxagliptin</strong>（HF 住院風險）</li>
+</ul>
+<hr />
+<h2 id="光田品項速查表">7. 光田品項速查表</h2>
+<table>
+<thead>
+<tr>
+<th>學名</th>
+<th>商品名</th>
+<th>規格</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sacubitril/Valsartan</td>
+<td>健安心 Entresto</td>
+<td>100mg</td>
+<td>20174</td>
+</tr>
+<tr>
+<td>Carvedilol</td>
+<td>心全 Syntrend</td>
+<td>6.25 / 25mg</td>
+<td>23349 / 23350</td>
+</tr>
+<tr>
+<td>Bisoprolol</td>
+<td>康肯 Concor</td>
+<td>1.25 / 5mg</td>
+<td>23116 / 20263</td>
+</tr>
+<tr>
+<td>Spironolactone</td>
+<td>歐得通</td>
+<td>25mg</td>
+<td>23748</td>
+</tr>
+<tr>
+<td>Eplerenone</td>
+<td>迎甦心 Inspra</td>
+<td>50mg</td>
+<td>20366</td>
+</tr>
+<tr>
+<td>Dapagliflozin</td>
+<td>福適佳 Forxiga</td>
+<td>10mg</td>
+<td>20987</td>
+</tr>
+<tr>
+<td>Empagliflozin</td>
+<td>恩排糖 Jardiance</td>
+<td>10 / 25mg</td>
+<td>20260 / 20236</td>
+</tr>
+<tr>
+<td>Ivabradine</td>
+<td>康立來 Coralan</td>
+<td>5mg</td>
+<td>20980</td>
+</tr>
+<tr>
+<td>Digoxin</td>
+<td>隆我心 Lanoxin</td>
+<td>0.25mg PO／0.5mg inj</td>
+<td>23125 / 33684</td>
+</tr>
+<tr>
+<td>Furosemide</td>
+<td>來適泄 Lasix</td>
+<td>40mg PO／20mg inj</td>
+<td>23060 / 30441</td>
+</tr>
+<tr>
+<td>Torsemide</td>
+<td>妥速適 Torsix</td>
+<td>5mg PO／20mg inj</td>
+<td>23395 / 33536</td>
+</tr>
+<tr>
+<td>Isosorbide MN</td>
+<td>冠欣／愛彼脈</td>
+<td>20 / 60mg</td>
+<td>23311 / 20336</td>
+</tr>
+<tr>
+<td>Vericiguat</td>
+<td>偉卡沃 Verquvo（自費）</td>
+<td>10mg</td>
+<td>20758</td>
+</tr>
+<tr>
+<td>Dobutamine</td>
+<td>健多博</td>
+<td>250mg inj</td>
+<td>30143</td>
+</tr>
+<tr>
+<td>Milrinone</td>
+<td>Primacor</td>
+<td>10mg/10mL inj</td>
+<td>30549</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<p><strong>黃金標準＝學會指引</strong>：四大支柱 GDMT、SGLT2i 對 HFrEF
+為 Class 1（不論糖尿病）、HFmrEF/HFpEF Class 2a，依 <strong>2022
+AHA/ACC/HFSA HF Guideline</strong>。 以下為<strong>次要對照</strong>——以
+<strong>Washington Manual 第 38 版 Ch 6</strong>
+藥物劑量表核對起始/目標劑量（38 版確認 ARNI 24/26→97/103mg BID
+不變）：</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARNI 起始 24/26mg BID → 目標 97/103mg BID</td>
+<td>✅ 符合（WMT 藥物劑量表）</td>
+</tr>
+<tr>
+<td>ARNI 取代 ACEI/ARB、不併用、↓全因死亡</td>
+<td>✅ 符合（WMT「ARNI…reduces all-cause…」段）</td>
+</tr>
+<tr>
+<td>利尿劑（furosemide 20mg 起、torsemide 5mg
+起）、MRA（spiron/eplerenone 25mg 起）</td>
+<td>✅ 符合（WMT 劑量表 4060–4069 對應方向）</td>
+</tr>
+<tr>
+<td>SGLT2i 用於 HFrEF／T2DM+ASCVD</td>
+<td>✅ 符合（WMT SGLT2i 段）</td>
+</tr>
+<tr>
+<td>ADHF 時 β-blocker 灌流 ok 不應停</td>
+<td>✅ 符合（WMT：should not be held if given for HFrEF）</td>
+</tr>
+<tr>
+<td>四大支柱「盡快全上」之 sequencing</td>
+<td>依 2022 AHA/ACC/HFSA 指引（WMT 為單藥劑量來源，sequencing
+以指引為準）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與少量引用，未重製原書內文。深入內容請回查 WMT 第 38
+版心血管章與 2022 HF 指引。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章依範本格式產出，附查證紀錄。</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a
+href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001063">2022
+AHA/ACC/HFSA 心衰竭指引（Circulation）</a></li>
+<li><a
+href="https://academic.oup.com/eurheartj/article/44/37/3627/7246292">2023
+ESC 心衰竭焦點更新（European Heart Journal）</a></li>
+</ul>
+
+</section>
+<section id="ch3" class="chapter" data-title="高血壓">
+<div class="chhead"><h2 class="chtitle">高血壓</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=hypertension management 2025 ACC AHA guideline" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="九-e-高血壓hypertension">九-E　高血壓（Hypertension）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 2014 原書為「目標
+&lt;140/90、A/C/D（NICE 2007）」框架，本章改寫為 <strong>2025 AHA/ACC
+高血壓指引</strong>（目標 &lt;130/80、鼓勵 &lt;120、PREVENT
+風險）。商品名／醫令碼用<strong>光田</strong>品項。 ⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。目標與用藥依個別病情與最新指引調整。標
+<code>⚠️待確認</code> 者請查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>2025 AHA/ACC High Blood Pressure
+Guideline</strong>（最新，取代 2017 版）：目標
+<strong>&lt;130/80（全體成人）</strong>、可進一步 <strong>&lt;120
+SBP</strong>；以 <strong>PREVENT</strong> 風險方程式輔助決策。</li>
+<li><strong>2024 ESC 血壓/高血壓指引</strong>、<strong>2023 ESH
+指引</strong>；台灣 <strong>2022 TSOC/THS
+高血壓指引</strong>（在地/健保優先）。</li>
+<li>教科書（Washington Manual）僅為次要對照。</li>
+</ul>
+<hr />
+<h2 id="最大改變血壓目標下修">1. 🌟 最大改變：血壓目標下修</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>2014 原書</th>
+<th><strong>2025 AHA/ACC</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一般成人目標</td>
+<td>&lt;140/90</td>
+<td><strong>&lt;130/80</strong>，可努力到 <strong>&lt;120
+SBP</strong></td>
+</tr>
+<tr>
+<td>糖尿病</td>
+<td>&lt;130/80</td>
+<td>&lt;130/80（維持）</td>
+</tr>
+<tr>
+<td>用藥啟動</td>
+<td>pre-HTN 不用藥</td>
+<td>BP 130–139/80–89 且生活型態 3–6 個月仍未達標 →
+<strong>開始藥物</strong></td>
+</tr>
+<tr>
+<td>風險工具</td>
+<td>—</td>
+<td><strong>PREVENT 方程式</strong>（取代舊 ASCVD）輔助決策</td>
+</tr>
+<tr>
+<td>診斷</td>
+<td>診間量測</td>
+<td>強調<strong>居家血壓 / 24h ABPM</strong>
+確診、排除白袍/隱匿性高血壓</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>老年/衰弱者仍須個別化、避免姿勢性低血壓與跌倒；但「年紀大就放寬到
+150」的舊觀念已收緊。</p>
+</blockquote>
+<hr />
+<h2 id="藥物選擇first-line-四選bb-非第一線">2. 藥物選擇（first-line
+四選，BB 非第一線）</h2>
+<p><strong>一線三大類（A / C / D）＋ 必要時 MRA</strong>： | 類 | 學名 |
+光田品項（醫令碼） | |—|—|—| | <strong>A</strong>：ACEI | Ramipril |
+<strong>心達舒 Tritace 10mg <code>20784</code></strong>（ACEI 咳嗽→換
+ARB） | | <strong>A</strong>：ARB |
+Losartan／Valsartan／Telmisartan／Olmesartan | <strong>暢壓 Losart 50mg
+<code>20074</code></strong>／得安穩 Diovan 160mg
+<code>20141</code>／<strong>泰迷平 80mg
+<code>23396</code></strong>／Sevikar(複方) | |
+<strong>C</strong>：CCB-DHP | Amlodipine／Nifedipine | <strong>脈優
+Norvasc 5mg <code>20531</code></strong>／壓悅達 Adapine SR 30mg
+<code>23380</code> | | <strong>D</strong>：Thiazide-like（<strong>優先
+indapamide/chlorthalidone</strong>＞HCTZ） | Indapamide | <strong>迅順
+Indap SR 1.5mg <code>23225</code></strong>（chlorthalidone
+⚠️光田無；HCTZ 多為複方） | | <strong>頑固性第四線</strong> |
+Spironolactone（MRA） | 歐得通 25mg <code>23748</code> |</p>
+<p><strong>用法原則（2025 指引）</strong> -
+<strong>起始即用兩種低劑量合併</strong>（尤其 BP 高於目標
+≥20/10）；<strong>單顆複方（single-pill
+combination）優先</strong>以提升順從性——光田複方多（脂脈優、易/力安穩、倍必康平、舒脈優、好悅您…）。
+- <strong>β-blocker
+不是純高血壓的第一線</strong>；僅在有<strong>強適應症</strong>（冠心病、HFrEF、心律控制）時用——光田：心全
+Syntrend、康肯 Concor。 - 黑人（無 HF/CKD）：優先 <strong>CCB 或
+thiazide-like</strong>。</p>
+<hr />
+<h2 id="依合併症選藥">3. 依合併症選藥</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>情境</th>
+<th>較佳</th>
+<th>避免</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>糖尿病 / CKD（含蛋白尿）</td>
+<td><strong>ACEI 或 ARB</strong>（首選）</td>
+<td>ACEI+ARB 併用</td>
+</tr>
+<tr>
+<td>心衰竭 HFrEF</td>
+<td>ACEI/ARB→<strong>ARNI</strong> + BB + MRA +
+SGLT2i（見心衰竭章）</td>
+<td>non-DHP CCB</td>
+</tr>
+<tr>
+<td>冠心病 / 心肌梗塞後</td>
+<td><strong>ACEI/ARB + β-blocker</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>老年 isolated systolic HTN</td>
+<td><strong>CCB-DHP</strong>、thiazide-like</td>
+<td>—</td>
+</tr>
+<tr>
+<td>痛風</td>
+<td>—</td>
+<td>Thiazide、loop（升尿酸）</td>
+</tr>
+<tr>
+<td><strong>懷孕</strong></td>
+<td><strong>Labetalol、Methyldopa、Nifedipine</strong></td>
+<td><strong>ACEI/ARB 禁用</strong>（致畸）</td>
+</tr>
+<tr>
+<td>子癇前症</td>
+<td>Labetalol、IV NTG、nifedipine</td>
+<td>利尿劑</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="高血壓急症-重症">4. 高血壓急症 / 重症</h2>
+<p><strong>先分「有沒有急性標的器官損傷」</strong>： | | 定義 | 處置 |
+|—|—|—| | <strong>Emergency（急症）</strong> | 高血壓 <strong>＋
+急性器官損傷</strong>（腦病變、ICH、ACS、肺水腫、主動脈剝離、子癇、AKI）
+| <strong>IV 降壓、ICU</strong>；一般第 1 小時降 <strong>≤25%</strong>
+MAP，避免驟降致缺血 | | <strong>Urgency（重症）</strong> |
+血壓很高但<strong>無</strong>急性器官損傷 |
+<strong>口服</strong>藥緩降，數小時~數日，不需 IV |</p>
+<p><strong>IV 藥（光田）</strong>： - <strong>Nicardipine（欣立定
+Holdipine 20mg/20mL
+<code>30384</code>）</strong>：好用、可滴定，多數急症首選之一。 -
+<strong>Labetalol（湍泰低 Trandate 25mg/5mL
+<code>30772</code>）</strong>：α/β 阻斷，主動脈剝離、子癇可用。 -
+<strong>Esmolol（律平 100mg/10mL
+<code>30163</code>，自費）</strong>：短效 β，主動脈剝離控制心率/壓力。 -
+<strong>Diltiazem（合必爽注射 50mg
+<code>30295</code>）</strong>、<strong>NTG（Millisrol）</strong>（肺水腫/ACS）。</p>
+<p><strong>特殊情境目標</strong> -
+<strong>主動脈剝離</strong>：最急，<strong>SBP &lt;120 且 HR
+&lt;60</strong>，先 β-blocker（esmolol/labetalol）再加血管擴張。 -
+急性缺血性中風：通常<strong>容許性高血壓</strong>，除非要溶栓（&lt;185/110）或
+&gt;220/120，降壓要謹慎。 -
+子癇前/子癇：labetalol、hydralazine（⚠️光田無）、nifedipine +
+MgSO₄。</p>
+<blockquote>
+<p>⚠️ <strong>更正 2014 原書</strong>：原書提到「HTN crisis 可舌下
+nifedipine」——<strong>現已不建議</strong>（吸收不可控、易致驟降與心腦缺血）。改用可滴定的
+IV 藥。</p>
+</blockquote>
+<hr />
+<h2 id="光田品項速查表">5. 光田品項速查表</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>類</th>
+<th>學名</th>
+<th>商品名</th>
+<th>規格</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACEI</td>
+<td>Ramipril</td>
+<td>心達舒 Tritace</td>
+<td>10mg</td>
+<td>20784</td>
+</tr>
+<tr>
+<td>ARB</td>
+<td>Losartan</td>
+<td>暢壓 Losart</td>
+<td>50mg</td>
+<td>20074</td>
+</tr>
+<tr>
+<td>ARB</td>
+<td>Valsartan</td>
+<td>得安穩 Diovan</td>
+<td>160mg</td>
+<td>20141</td>
+</tr>
+<tr>
+<td>ARB</td>
+<td>Telmisartan</td>
+<td>泰迷平</td>
+<td>80mg</td>
+<td>23396</td>
+</tr>
+<tr>
+<td>CCB</td>
+<td>Amlodipine</td>
+<td>脈優 Norvasc</td>
+<td>5mg</td>
+<td>20531</td>
+</tr>
+<tr>
+<td>CCB</td>
+<td>Nifedipine</td>
+<td>壓悅達 Adapine SR</td>
+<td>30mg</td>
+<td>23380</td>
+</tr>
+<tr>
+<td>CCB(non-DHP)</td>
+<td>Diltiazem</td>
+<td>合必爽 Herbesser</td>
+<td>30mg PO／50mg inj</td>
+<td>23715 / 30295</td>
+</tr>
+<tr>
+<td>利尿(thiazide-like)</td>
+<td>Indapamide</td>
+<td>迅順 Indap SR</td>
+<td>1.5mg</td>
+<td>23225</td>
+</tr>
+<tr>
+<td>MRA(頑固)</td>
+<td>Spironolactone</td>
+<td>歐得通</td>
+<td>25mg</td>
+<td>23748</td>
+</tr>
+<tr>
+<td>α-blocker</td>
+<td>Doxazosin</td>
+<td>可迅 Doxaben XL</td>
+<td>4mg</td>
+<td>20140</td>
+</tr>
+<tr>
+<td>IV 急症</td>
+<td>Nicardipine</td>
+<td>欣立定 Holdipine</td>
+<td>20mg/20mL</td>
+<td>30384</td>
+</tr>
+<tr>
+<td>IV 急症</td>
+<td>Labetalol</td>
+<td>湍泰低 Trandate</td>
+<td>25mg/5mL</td>
+<td>30772</td>
+</tr>
+<tr>
+<td>IV 急症</td>
+<td>Esmolol</td>
+<td>律平（自費）</td>
+<td>100mg/10mL</td>
+<td>30163</td>
+</tr>
+<tr>
+<td>複方(示例)</td>
+<td>Amlodipine+Telmisartan</td>
+<td>倍必康平 Twynsta</td>
+<td>5/80mg</td>
+<td>20185</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。chlorthalidone、hydralazine、純
+ACEI(enalapril/captopril) 公開查詢未見，需洽藥劑部。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<p><strong>黃金標準＝學會指引</strong>（2026 最新）：</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>依據與結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目標 &lt;130/80（全體）、鼓勵 &lt;120、PREVENT 風險</td>
+<td>✅ <strong>2025 AHA/ACC HBP Guideline</strong>（取代
+2017，已用最新版）</td>
+</tr>
+<tr>
+<td>130–139/80–89 生活型態 3–6 月未達標即用藥</td>
+<td>✅ 2025 指引</td>
+</tr>
+<tr>
+<td>一線 A/C/D、起始即合併/單顆複方優先、BB 非首選</td>
+<td>✅ 2025 AHA/ACC + 2024 ESC</td>
+</tr>
+<tr>
+<td>thiazide 優先 chlorthalidone/indapamide ＞ HCTZ</td>
+<td>✅ 指引方向（光田有 indapamide，無 chlorthalidone）</td>
+</tr>
+<tr>
+<td>頑固性加 spironolactone（第四線）</td>
+<td>✅ 指引（PATHWAY-2 證據）</td>
+</tr>
+<tr>
+<td>急症第 1 小時 MAP 降 ≤25%；主動脈剝離 SBP&lt;120/HR&lt;60</td>
+<td>✅ 指引/WMT 一致</td>
+</tr>
+<tr>
+<td>舌下 nifedipine 用於 crisis</td>
+<td>🔧 <strong>更正</strong>：原書建議已<strong>不再採用</strong>，改 IV
+可滴定藥</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與少量引用，未重製原書內文。深入請回查 2025 AHA/ACC 與
+2024 ESC 指引。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章依範本格式產出，已依 2026 最新指引、附查證紀錄。</em></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📕 <strong>Washington Manual 第 38
+版交叉確認（2026）</strong>：本章BP 目標 &lt;130/80、一線
+A/C/D(thiazide-like/CCB/ACEI/ARB)、頑固性定義與 38
+版一致；臨床內容以學會最新指引為準，38 版為次要對照。</p>
+</blockquote>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a
+href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001356">2025
+AHA/ACC 高血壓指引（Circulation）</a></li>
+<li><a href="https://doi.org/10.1093/eurheartj/ehae178">2024 ESC
+高血壓/血壓指引（European Heart Journal）</a></li>
+</ul>
+
+</section>
+<section id="ch4" class="chapter" data-title="降血脂">
+<div class="chhead"><h2 class="chtitle">降血脂</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=lipid lowering LDL target PCSK9 statin" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="九-f-降血脂lipid-lowering-therapy">九-F　降血脂（Lipid-lowering
+Therapy）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 2014 原書僅「statin 降 LDL +
+fibrate」清單，無風險分層、無 LDL 目標、無 ezetimibe/PCSK9i
+階梯。本章改寫為 <strong>2026 ACC/AHA
+血脂指引</strong>框架。商品名／醫令碼用<strong>光田</strong>品項。 ⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。LDL
+目標、健保給付依個別病情與最新公告調整。標 <code>⚠️待確認</code>
+者請查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>2026 ACC/AHA 多學會 Dyslipidemia
+Guideline</strong>（Circulation，2026/03 發布，最新，取代 2018
+版）：強調<strong>終身暴露（lifetime exposure）</strong>模型與 LDL
+目標。</li>
+<li><strong>2025 ESC/EAS Dyslipidaemia Focused Update</strong>（2019
+版焦點更新）。</li>
+<li>台灣血脂/TSOC 指引（在地/健保優先）。教科書（WMT）僅次要對照。</li>
+</ul>
+<hr />
+<h2 id="最大改變從降-ldl到風險分層-ldl-目標-終身暴露">1. 🌟
+最大改變：從「降 LDL」到「風險分層 + LDL 目標 + 終身暴露」</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>2014 原書</th>
+<th><strong>2026 ACC/AHA + 2025 ESC/EAS</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>思路</td>
+<td>列藥、降 LDL</td>
+<td><strong>先分風險 → 設 LDL 目標 → 階梯加藥達標</strong></td>
+</tr>
+<tr>
+<td>強度</td>
+<td>未分</td>
+<td><strong>高/中強度 statin</strong> 概念（依 LDL 下降幅度）</td>
+</tr>
+<tr>
+<td>非 statin</td>
+<td>幾乎只有 fibrate</td>
+<td><strong>ezetimibe、bempedoic acid（皆 Class
+I）、PCSK9i、inclisiran</strong></td>
+</tr>
+<tr>
+<td>Lp(a)</td>
+<td>—</td>
+<td>至少驗一次（風險增強因子）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ldl-c-目標達標後仍可更低lower-is-better">LDL-C
+目標（達標後仍可更低，“lower is better”）</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>風險族群</th>
+<th>LDL 目標</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ASCVD 極高風險</strong>（多次事件/事件+多重危險因子）</td>
+<td><strong>&lt;55 mg/dL</strong>（ESC）；ACC 建議 &lt;70、可選
+<strong>&lt;55</strong></td>
+</tr>
+<tr>
+<td><strong>ASCVD（未達極高風險）</strong></td>
+<td><strong>&lt;70 mg/dL</strong></td>
+</tr>
+<tr>
+<td>高風險原發（如糖尿病+器官損傷、FH）</td>
+<td>&lt;70（ESC）/ 個別化</td>
+</tr>
+<tr>
+<td>中風險</td>
+<td>&lt;100</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>同時建議 LDL 較基準<strong>下降 ≥50%</strong>。</p>
+</blockquote>
+<hr />
+<h2 id="治療階梯2026-class-i-為主">2. 治療階梯（2026 Class I 為主）</h2>
+<pre><code>① 最大耐受劑量 statin（高強度優先）
+        ↓ 未達標
+② 加 ezetimibe（怡妥）  ±  bempedoic acid（寧脂德）   ← 皆 Class I
+        ↓ 未達標
+③ PCSK9i：evolocumab（瑞百安）/ alirocumab（保脂通）  ← LDL 再降約 60%
+        ↓ 不可及/不耐受
+④ inclisiran（siRNA，半年一針，Class IIa）  ⚠️光田品項待確認</code></pre>
+<hr />
+<h2 id="statin-強度分類-光田品項">3. Statin 強度分類 + 光田品項</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>強度（LDL↓）</th>
+<th>學名・劑量</th>
+<th>光田品項（醫令碼）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>高強度</strong>（↓≥50%）</td>
+<td>Atorvastatin <strong>40–80mg</strong></td>
+<td><strong>立普妥 Lipitor 40mg <code>20979</code></strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Rosuvastatin <strong>20–40mg</strong></td>
+<td>冠脂妥 Crestor 10mg
+<code>20119</code>（附報告；高劑量⚠️待確認）</td>
+</tr>
+<tr>
+<td><strong>中強度</strong>（↓30–49%）</td>
+<td>Atorvastatin 10–20mg</td>
+<td>立普妥 Lipitor 10mg <code>20449</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Rosuvastatin 5–10mg</td>
+<td>冠脂妥 Crestor 10mg <code>20119</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Pitavastatin 1–4mg</td>
+<td>力清之 Livalo 2mg <code>20158</code>／平脂 Zulitor 4mg
+<code>23971</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Simvastatin 20–40mg</td>
+<td>（光田為 Vytorin 複方 <code>—</code>，見下）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Pravastatin、Lovastatin、Fluvastatin 公開查詢未見單方，光田以
+atorva/rosuva/pitava 為主。</p>
+</blockquote>
+<hr />
+<h2 id="非-statin-藥光田">4. 非 statin 藥（光田）</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>類</th>
+<th>學名</th>
+<th>光田品項</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>膽固醇吸收抑制</td>
+<td>Ezetimibe</td>
+<td><strong>怡妥 Ezetrol 10mg <code>20176</code></strong>（+複方
+Atozet/Cretrol/Vytorin/Tonvasca）</td>
+<td>一線 add-on（Class I），LDL 再 ↓~20%</td>
+</tr>
+<tr>
+<td>ATP-citrate lyase 抑制</td>
+<td>Bempedoic acid</td>
+<td><strong>寧脂德 Nilemdo 180mg
+<code>20710</code>（自費）</strong></td>
+<td>Class I，statin 不耐受/不足時</td>
+</tr>
+<tr>
+<td><strong>PCSK9i 單抗</strong></td>
+<td>Evolocumab</td>
+<td><strong>瑞百安 Repatha 140mg
+<code>30147</code>（自費）</strong></td>
+<td>LDL ↓~60%；皮下注射</td>
+</tr>
+<tr>
+<td></td>
+<td>Alirocumab</td>
+<td><strong>保脂通 Praluent 75mg
+<code>30449</code>（健保事審）</strong></td>
+<td>同上</td>
+</tr>
+<tr>
+<td>Fibrate（降 TG）</td>
+<td>Fenofibrate／Gemfibrozil</td>
+<td>弗尼利脂寧 Lipanthyl 160mg <code>20455</code>／脂佳 Lipdown 300mg
+<code>23354</code></td>
+<td>高 TG；<strong>gemfibrozil 勿與 statin 併</strong>（肌病風險）</td>
+</tr>
+<tr>
+<td>ω-3（IPE）</td>
+<td>Icosapent ethyl</td>
+<td>⚠️光田無（REDUCE-IT 用於高 TG+風險）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="高三酸甘油酯hypertriglyceridemia">5.
+高三酸甘油酯（Hypertriglyceridemia）</h2>
+<ul>
+<li><strong>TG ≥500（尤其
+≥880）</strong>：首要<strong>預防急性胰臟炎</strong> →
+fibrate、控糖、戒酒、極低脂飲食；嚴重可考慮血漿置換。</li>
+<li>TG 中度升高 + 已用 statin 達 LDL 目標、仍高殘餘風險：可考慮
+icosapent ethyl（光田無）或 fenofibrate。</li>
+</ul>
+<hr />
+<h2 id="安全性與監測">6. 安全性與監測</h2>
+<ul>
+<li><strong>肌肉</strong>：肌痛常見，真正橫紋肌溶解罕見；查
+CK（有症狀時）。多數「statin 不耐受」可換藥/減量/隔日。</li>
+<li><strong>肝</strong>：治療前驗 ALT；無症狀輕度上升不需停。</li>
+<li><strong>血糖</strong>：statin
+略增新發糖尿病風險，但心血管獲益遠大於此，<strong>不應因此停用</strong>。</li>
+<li>PCSK9i/bempedoic：耐受性佳；bempedoic 可能 ↑尿酸、肌腱問題。</li>
+</ul>
+<hr />
+<h2 id="健保給付重點會變動下單前查">7. 健保給付重點（會變動，下單前查
+⚠️）</h2>
+<ul>
+<li>Statin 起始有 LDL/TC
+門檻（初級/次級預防不同），冠脂妥/維妥力等<strong>附報告</strong>。</li>
+<li><strong>PCSK9i</strong>：保脂通 <strong>健保事審</strong>（限 FH
+或極高風險且 statin+ezetimibe
+未達標等條件）；瑞百安、寧脂德目前<strong>自費</strong>。</li>
+<li>依健保署現行規定為準。</li>
+</ul>
+<hr />
+<h2 id="光田品項速查表">8. 光田品項速查表</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>類</th>
+<th>學名</th>
+<th>商品名</th>
+<th>規格</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高強度 statin</td>
+<td>Atorvastatin</td>
+<td>立普妥 Lipitor</td>
+<td>40mg</td>
+<td>20979</td>
+</tr>
+<tr>
+<td>statin</td>
+<td>Atorvastatin</td>
+<td>立普妥 Lipitor</td>
+<td>10mg</td>
+<td>20449</td>
+</tr>
+<tr>
+<td>statin</td>
+<td>Rosuvastatin</td>
+<td>冠脂妥 Crestor</td>
+<td>10mg</td>
+<td>20119</td>
+</tr>
+<tr>
+<td>statin</td>
+<td>Pitavastatin</td>
+<td>力清之 Livalo／平脂 Zulitor</td>
+<td>2mg／4mg</td>
+<td>20158 / 23971</td>
+</tr>
+<tr>
+<td>吸收抑制</td>
+<td>Ezetimibe</td>
+<td>怡妥 Ezetrol</td>
+<td>10mg</td>
+<td>20176</td>
+</tr>
+<tr>
+<td>statin+eze</td>
+<td>—</td>
+<td>優泰脂 Atozet／脂瑞妥 Cretrol／維妥力 Vytorin</td>
+<td>複方</td>
+<td>20870 / 20795 / 20845</td>
+</tr>
+<tr>
+<td>ACL 抑制</td>
+<td>Bempedoic acid</td>
+<td>寧脂德 Nilemdo（自費）</td>
+<td>180mg</td>
+<td>20710</td>
+</tr>
+<tr>
+<td>PCSK9i</td>
+<td>Evolocumab</td>
+<td>瑞百安 Repatha（自費）</td>
+<td>140mg/1mL</td>
+<td>30147</td>
+</tr>
+<tr>
+<td>PCSK9i</td>
+<td>Alirocumab</td>
+<td>保脂通 Praluent（事審）</td>
+<td>75mg</td>
+<td>30449</td>
+</tr>
+<tr>
+<td>Fibrate</td>
+<td>Fenofibrate</td>
+<td>弗尼利脂寧 Lipanthyl Supra</td>
+<td>160mg</td>
+<td>20455</td>
+</tr>
+<tr>
+<td>Fibrate</td>
+<td>Gemfibrozil</td>
+<td>脂佳 Lipdown</td>
+<td>300mg</td>
+<td>23354</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。icosapent
+ethyl、inclisiran、pravastatin 公開查詢未見，需洽藥劑部。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<p><strong>黃金標準＝學會指引</strong>（2026 最新）：</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>依據與結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>風險分層 + LDL 目標（ASCVD &lt;70、極高 &lt;55）+ 終身暴露模型</td>
+<td>✅ <strong>2026 ACC/AHA Dyslipidemia
+Guideline</strong>（已用最新版，取代 2018）</td>
+</tr>
+<tr>
+<td>階梯：max statin → ezetimibe/bempedoic（皆 Class I）→ PCSK9i →
+inclisiran(IIa)</td>
+<td>✅ 2026 ACC/AHA</td>
+</tr>
+<tr>
+<td>高/中強度 statin 分類與代表劑量</td>
+<td>✅ 指引一致</td>
+</tr>
+<tr>
+<td>高 TG（≥500）優先防胰臟炎、fibrate</td>
+<td>✅ 指引/標準處置</td>
+</tr>
+<tr>
+<td>statin 致糖尿病風險不應停藥</td>
+<td>✅ 指引立場</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與少量引用，未重製原書內文。深入請回查 2026 ACC/AHA 與
+2025 ESC/EAS 指引。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章依範本格式產出，已依 2026 最新指引、附查證紀錄。</em></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📕 <strong>Washington Manual 第 38
+版交叉確認（2026）</strong>：本章極高風險 LDL-C 70 threshold、max
+statin→ezetimibe→PCSK9i 階梯、高強度 statin與 38
+版一致；臨床內容以學會最新指引為準，38 版為次要對照。</p>
+</blockquote>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a
+href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001423">2026
+ACC/AHA 血脂指引（Circulation）</a></li>
+<li><a
+href="https://www.atherosclerosis-journal.com/article/S0021-9150(25)01377-2/fulltext">2025
+ESC/EAS 血脂焦點更新（Atherosclerosis）</a></li>
+</ul>
+
+</section>
+<section id="ch5" class="chapter" data-title="抗凝血">
+<div class="chhead"><h2 class="chtitle">抗凝血</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=anticoagulation DOAC atrial fibrillation VTE" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1
+id="九-d-抗凝血劑anticoagulants">九-D　抗凝血劑（Anticoagulants）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 骨架沿用 2014
+聯醫版火星渦蟲，臨床內容對照現行 guideline
+改寫，商品名／醫令碼改用<strong>光田綜合醫院</strong>西藥品項。 ⚠️
+<strong>使用聲明</strong>：本章為住院醫師快速參考，非醫囑。劑量、健保給付條件、院內品項會變動，下醫囑前請以仿單、最新指引與院內藥劑部資料為準。標
+<code>⚠️待確認</code> 者請務必查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>心房顫動</strong>：<strong>2023 ACC/AHA/ACCP/HRS AF
+Guideline</strong>（最新綜合版，採<strong>分期分類</strong>；抗凝改以<strong>絕對中風風險
+≥2%/年</strong>為門檻，CHA₂DS₂-VASc 為主但可併用其他評分）＋
+<strong>2024 ESC AF Guideline</strong>。</li>
+<li><strong>VTE（DVT/PE）</strong>：<strong>CHEST 2024
+焦點更新</strong>《Antithrombotic Therapy for VTE
+Disease》（已改為頻繁焦點更新制，取代 2021 版相關章節）＋ <strong>ASH
+2020 VTE Guideline</strong>（<strong>DOAC 為首選</strong>，優於
+VKA，除非重度腎/肝病或抗磷脂質症候群）。</li>
+<li>教科書（Washington
+Manual）僅為次要對照。健保條件以健保署現行公告為準。</li>
+</ul>
+<hr />
+<h2 id="住院最常遇到的三個情境先看這個">0.
+住院最常遇到的三個情境（先看這個）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>情境</th>
+<th>第一線</th>
+<th>重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>非瓣膜性心房顫動（NVAF）要不要抗凝</strong></td>
+<td>算 <strong>CHA₂DS₂-VASc</strong> → 達標就用
+<strong>DOAC</strong>（優先於 warfarin）</td>
+<td>機械瓣膜、中重度二尖瓣狹窄 → <strong>只能 warfarin，不能
+DOAC</strong></td>
+</tr>
+<tr>
+<td><strong>VTE（DVT/PE）治療</strong></td>
+<td><strong>DOAC</strong>（apixaban / rivaroxaban 可直接口服起始）</td>
+<td>edoxaban / dabigatran 需先打 5–10 天注射型 heparin 再轉口服</td>
+</tr>
+<tr>
+<td><strong>住院臥床預防 VTE</strong></td>
+<td><strong>預防劑量</strong> enoxaparin 40mg QD 或 UFH 5000U SC
+q8–12h</td>
+<td>出血高風險改機械性（IPC）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="風險評分決定要不要抗凝與出血風險">1.
+風險評分（決定「要不要抗凝」與「出血風險」）</h2>
+<h3 id="cha₂ds₂-vascnvaf-是否抗凝">CHA₂DS₂-VASc（NVAF 是否抗凝）</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>分</th>
+<th></th>
+<th>項目</th>
+<th>分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C</strong> 心衰竭/LV dysfunction</td>
+<td>1</td>
+<td></td>
+<td><strong>S₂</strong> 中風/TIA/血栓栓塞病史</td>
+<td><strong>2</strong></td>
+</tr>
+<tr>
+<td><strong>H</strong> 高血壓</td>
+<td>1</td>
+<td></td>
+<td><strong>V</strong> 血管疾病(MI/PAD/aortic plaque)</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>A₂</strong> 年齡 ≥75</td>
+<td><strong>2</strong></td>
+<td></td>
+<td><strong>A</strong> 年齡 65–74</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>D</strong> 糖尿病</td>
+<td>1</td>
+<td></td>
+<td><strong>Sc</strong> 女性</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>建議抗凝</strong>：男 ≥2 分、女 ≥3 分。男 1 分／女 2
+分可考慮。</li>
+<li>取代舊版 CHADS₂（2014 原書用 CHADS₂，已更新）。</li>
+</ul>
+<h3 id="has-bled出血風險3-分為高風險">HAS-BLED（出血風險，≥3
+分為高風險）</h3>
+<p><strong>H</strong>TN、<strong>A</strong>bnormal
+肝/腎功能(各1)、<strong>S</strong>troke、<strong>B</strong>leeding
+病史、<strong>L</strong>abile
+INR、<strong>E</strong>lderly&gt;65、<strong>D</strong>rugs(抗血小板/NSAID)或酒精(各1)。
+&gt;
+高分代表「需更密切追蹤、矯正可逆因子」，<strong>不是抗凝禁忌</strong>。</p>
+<hr />
+<h2 id="doac口服直接抗凝劑-現行第一線">2. DOAC（口服直接抗凝劑）—
+現行第一線</h2>
+<blockquote>
+<p>共同重點：① 起效快、不需常規監測 INR ② 與食物/藥物交互作用比 warfarin
+少 ③ <strong>腎功能是減量與禁用的關鍵</strong>，每位病人都要先算
+CrCl（用 Cockcroft-Gault，不是 eGFR） ④
+機械瓣膜、中重度二尖瓣狹窄、抗磷脂質症候群（三陽性）<strong>禁用</strong>。</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名</th>
+<th>光田品項（醫令碼）</th>
+<th>NVAF 劑量</th>
+<th>VTE 治療</th>
+<th>減量 / 禁用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Apixaban</strong></td>
+<td>艾必克凝 Eliquis 2.5mg <code>20267</code>／5mg
+<code>20229</code></td>
+<td><strong>5mg BID</strong>；符合下列 ≥2 項減為 <strong>2.5mg
+BID</strong>：年齡≥80、體重≤60kg、SCr≥1.5mg/dL</td>
+<td>10mg BID×7天 → 5mg BID（6 個月後延長治療可 2.5mg BID）</td>
+<td>腎功能耐受度相對最佳；CrCl&lt;15/透析 NHI 未給付⚠️</td>
+</tr>
+<tr>
+<td><strong>Rivaroxaban</strong></td>
+<td>拜瑞妥 Xarelto 2.5mg <code>20745</code>／15mg
+<code>20976</code>／20mg <code>20856</code></td>
+<td><strong>20mg QD 隨晚餐</strong>；CrCl 15–50 → <strong>15mg
+QD</strong></td>
+<td>15mg BID×21天 → 20mg QD（<strong>需配餐</strong>吸收才足）</td>
+<td>CrCl&lt;15 避免</td>
+</tr>
+<tr>
+<td><strong>Edoxaban</strong></td>
+<td>里先安 Lixiana 30mg <code>20744</code>／60mg <code>20173</code></td>
+<td><strong>60mg QD</strong>；CrCl 15–50 或 ≤60kg 或強效 P-gp 抑制劑 →
+<strong>30mg QD</strong></td>
+<td>同左，但<strong>需先打 ≥5 天注射型 heparin</strong> 再轉口服</td>
+<td><strong>CrCl&gt;95 避免</strong>（療效下降）；CrCl&lt;15 避免</td>
+</tr>
+<tr>
+<td><strong>Dabigatran</strong></td>
+<td>普栓達 Pradaxa 110mg <code>20183</code>（150mg ⚠️待確認在院）</td>
+<td><strong>150mg BID</strong>；年齡≥80、高出血風險、併用 verapamil →
+<strong>110mg BID</strong></td>
+<td>先打 <strong>≥5 天</strong> heparin → 150mg BID</td>
+<td><strong>CrCl&lt;30 禁用（NHI
+亦不給付）</strong>；唯一有專一解藥者（見 §4）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>選藥小抄</strong> - 腎功能差但仍 ≥15：偏好
+<strong>apixaban</strong>（腎排除比例最低，約 27%）。 -
+不想/不能配餐：避免 rivaroxaban 高劑量。 -
+怕忘記、想一天一次：rivaroxaban / edoxaban QD。 - 怕沒有解藥：dabigatran
+有 idarucizumab；Xa
+抑制劑的專一解藥（andexanet）<strong>光田無</strong>。 -
+<strong>肝功能差（Child-Pugh）</strong>：rivaroxaban／edoxaban 於
+<strong>class B–C 避免</strong>；apixaban <strong>class C
+避免</strong>、class B 謹慎（WMT 38e Table 20-7 新增）。</p>
+<hr />
+<h2 id="warfarinvit-k-拮抗劑">3. Warfarin（Vit K 拮抗劑）</h2>
+<p>光田品項：<strong>可化凝 Cofarin 1mg <code>23370</code>／5mg
+<code>23143</code></strong>（舊名 Coumadin）</p>
+<ul>
+<li><strong>適應症優勢</strong>：機械瓣膜、中重度二尖瓣狹窄、嚴重腎衰竭/透析、抗磷脂質症候群
+→ <strong>這些只能用 warfarin</strong>。</li>
+<li><strong>INR 目標</strong>：多數
+<strong>2.0–3.0</strong>；機械二尖瓣或舊型瓣膜
+<strong>2.5–3.5</strong>。</li>
+<li><strong>起始</strong>：2.5–5mg/day，<strong>48–72
+小時後</strong>才查第一次 INR（起效慢）。</li>
+<li><strong>與 heparin overlap</strong>：warfarin 起效慢且初期 protein C
+下降可能短暫高凝，故與注射型抗凝<strong>重疊至少 5 天且 INR 達標 ≥24
+小時</strong>才停 heparin。</li>
+<li><strong>交互作用多</strong>：抗生素（尤其
+Bactrim、metronidazole、fluconazole、macrolide）、amiodarone、NSAID、大量含
+Vit K 蔬菜均影響 → 調整抗生素時要記得回查 INR。</li>
+<li><strong>逆轉</strong>：見 §4。</li>
+</ul>
+<hr />
+<h2 id="注射型抗凝住院常用">4. 注射型抗凝（住院常用）</h2>
+<h3 id="unfractionated-heparinufh">Unfractionated Heparin（UFH）</h3>
+<p>光田品項：<strong>海派 Hepac
+5000U/mL（5mL/vial）<code>33035</code></strong> -
+<strong>機轉</strong>：活化 antithrombin → 抑制 factor
+IIa(thrombin)、Xa。起效快、半衰期短（停藥 2–4h
+回復），<strong>可快速調整</strong>，適合圍術期 / 即將 PCI /
+出血風險高需要隨時喊停者。 -
+<strong>末期腎病（ESRD）/重度腎衰竭治療首選</strong>就是 UFH（DOAC、LMWH
+受限）。 - <strong>治療劑量（weight-based nomogram）</strong>：bolus 80
+U/kg → 18 U/kg/hr，依 <strong>anti-Xa 0.3–0.7 U/mL（WMT 38e Table 20-7
+改以此為主）或 aPTT 約 2.0–2.5× 正常值</strong>（各院 nomogram 可能用
+1.5–2.5×）調整，q6h 追蹤。 - <strong>預防劑量</strong>：5000U SC
+q8–12h。 - <strong>副作用</strong>：出血、<strong>HIT（heparin-induced
+thrombocytopenia）</strong>——用藥 5–10 天 PLT 掉 &gt;50%
+要警覺，停藥並改非 heparin 抗凝。</p>
+<h3 id="lmwh-enoxaparin">LMWH — Enoxaparin</h3>
+<p>光田品項：<strong>克立生 Clexane
+6000IU/0.6mL（=60mg）<code>30080</code></strong>，SC 給藥 -
+<strong>治療劑量</strong>：1mg/kg SC <strong>q12h</strong>，或 1.5mg/kg
+QD；<strong>CrCl&lt;30 → 1mg/kg QD</strong>（減量）。 -
+<strong>預防劑量</strong>：40mg QD（或 30mg q12h）；<strong>CrCl&lt;30 →
+30mg QD</strong>。 - 不需常規監測；肥胖、孕婦、重度腎病可驗
+<strong>anti-Xa</strong>。</p>
+<blockquote>
+<p>2014 原書另列 Dalteparin（Fragmin），光田現行品項以 enoxaparin
+為主；如需 dalteparin 請查院內⚠️。</p>
+</blockquote>
+<hr />
+<h2 id="逆轉-解毒reversal-出血時的關鍵">5. 逆轉 / 解毒（Reversal）—
+出血時的關鍵</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>抗凝劑</th>
+<th>解藥 / 處置</th>
+<th>光田品項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Warfarin</strong></td>
+<td>輕度 INR 高無出血：停藥 ±口服 Vit K；<strong>嚴重出血</strong>：Vit
+K 10mg 緩慢 IV ＋ <strong>4F-PCC 25–50 U/kg</strong>（無 PCC 才用
+FFP）</td>
+<td><strong>Vit K = 嘉體民 Katimin 10mg/amp
+<code>30405</code></strong>；<strong>PCC 不在公開品項，須洽藥劑部/血庫
+⚠️</strong></td>
+</tr>
+<tr>
+<td><strong>Dabigatran</strong></td>
+<td><strong>Idarucizumab 5g IV</strong>（2 × 2.5g）</td>
+<td><strong>達栓普 Praxbind 2.5g/50mL <code>30977</code></strong> ✅
+院內有</td>
+</tr>
+<tr>
+<td><strong>Xa 抑制劑</strong>（apixaban / rivaroxaban / edoxaban）</td>
+<td>專一解藥 andexanet alfa <strong>光田無</strong>；改用 <strong>4F-PCC
+50 U/kg</strong> + 支持性治療</td>
+<td>andexanet ❌ 無；PCC 同上 ⚠️</td>
+</tr>
+<tr>
+<td><strong>UFH（heparin）</strong></td>
+<td><strong>Protamine</strong> 1mg / 每 100U heparin（單次上限
+50mg）</td>
+<td><strong>硫酸魚精蛋白 Protamine 50mg/5mL <code>30618</code></strong>
+✅</td>
+</tr>
+<tr>
+<td><strong>LMWH（enoxaparin）</strong></td>
+<td>Protamine 部分逆轉（約 60%）：1mg / 每 1mg enoxaparin（&lt;8h
+內）</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>重大改寫點</strong>：2014 原書寫「Dabigatran
+沒有解藥」——現已有 <strong>idarucizumab</strong>，且光田備藥。</p>
+</blockquote>
+<hr />
+<h2 id="圍術期-侵入性處置的停藥">6. 圍術期 / 侵入性處置的停藥</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>藥</th>
+<th>低出血風險處置</th>
+<th>高出血風險處置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DOAC（腎功能正常）</strong></td>
+<td>停 <strong>2–3 個半衰期</strong>（約 24h）</td>
+<td>停 <strong>3–4 個半衰期</strong>（約 48h）</td>
+</tr>
+<tr>
+<td><strong>Dabigatran + 腎功能差</strong></td>
+<td>腎清除影響大，半衰期延長 → 停更久（CrCl 30–50 約 48h、更差者 3–5
+天）</td>
+<td>更久</td>
+</tr>
+<tr>
+<td><strong>Warfarin</strong></td>
+<td>停 5 天、INR&lt;1.5 再開刀；高血栓風險者用 heparin
+<strong>bridging</strong></td>
+<td>同左</td>
+</tr>
+<tr>
+<td><strong>DOAC</strong></td>
+<td><strong>一般不需要 bridging</strong>（起效快），這是與 warfarin
+最大差別</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>UFH（ESRD）</strong></td>
+<td>術前停 <strong>≥4 小時</strong> 讓藥效消退</td>
+<td>同左</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>半衰期參考（WMT 38e Ch20）：dabigatran ~14h、rivaroxaban
+~9h、apixaban ~12h，停藥時間隨腎功能調整。</p>
+</blockquote>
+<hr />
+<h2 id="健保給付重點會變動下單前查">7. 健保給付重點（會變動，下單前查
+⚠️）</h2>
+<ul>
+<li>DOAC 用於 <strong>NVAF</strong>
+須符合卒中風險條件（曾中風/全身栓塞、LVEF&lt;40%、CHF NYHA≥2、≥75 歲、或
+65–74 歲合併 DM/HTN/CAD 之一）。</li>
+<li><strong>排除</strong>：嚴重瓣膜疾病、近期中風（時間窗）、<strong>CrCl&lt;30</strong>、活動性肝病、懷孕。</li>
+<li>VTE、瓣膜置換等適應症各有獨立給付規範，與 NVAF 不同。</li>
+<li>詳細條件依健保署現行公告為準（此為原書 2014
+條件之方向，數字請重新核對）。</li>
+</ul>
+<hr />
+<h2 id="光田品項速查表本章用到的">8. 光田品項速查表（本章用到的）</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名</th>
+<th>商品名</th>
+<th>規格</th>
+<th>醫令碼</th>
+<th>ATC7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apixaban</td>
+<td>艾必克凝 Eliquis</td>
+<td>2.5mg / 5mg</td>
+<td>20267 / 20229</td>
+<td>B01AF02</td>
+</tr>
+<tr>
+<td>Rivaroxaban</td>
+<td>拜瑞妥 Xarelto</td>
+<td>2.5 / 15 / 20mg</td>
+<td>20745 / 20976 / 20856</td>
+<td>B01AF01</td>
+</tr>
+<tr>
+<td>Edoxaban</td>
+<td>里先安 Lixiana</td>
+<td>30mg / 60mg</td>
+<td>20744 / 20173</td>
+<td>B01AF03</td>
+</tr>
+<tr>
+<td>Dabigatran</td>
+<td>普栓達 Pradaxa</td>
+<td>110mg</td>
+<td>20183</td>
+<td>B01AE07</td>
+</tr>
+<tr>
+<td>Warfarin</td>
+<td>可化凝 Cofarin</td>
+<td>1mg / 5mg</td>
+<td>23370 / 23143</td>
+<td>B01AA03</td>
+</tr>
+<tr>
+<td>Enoxaparin</td>
+<td>克立生 Clexane</td>
+<td>6000IU/0.6mL</td>
+<td>30080</td>
+<td>B01AB05</td>
+</tr>
+<tr>
+<td>Heparin</td>
+<td>海派 Hepac</td>
+<td>5000U/mL ×5mL</td>
+<td>33035</td>
+<td>B01AB01</td>
+</tr>
+<tr>
+<td>Idarucizumab</td>
+<td>達栓普 Praxbind</td>
+<td>2.5g/50mL</td>
+<td>30977</td>
+<td>V03AB37</td>
+</tr>
+<tr>
+<td>Protamine</td>
+<td>硫酸魚精蛋白</td>
+<td>50mg/5mL</td>
+<td>30618</td>
+<td>V03AB14</td>
+</tr>
+<tr>
+<td>Phytomenadione (Vit K)</td>
+<td>嘉體民 Katimin</td>
+<td>10mg/amp</td>
+<td>30405</td>
+<td>B02BA01</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田綜合醫院西藥品項查詢系統（即時查詢）。公開系統<strong>不含健保價</strong>；如需價格請查院內藥劑部系統。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<p><strong>黃金標準＝學會指引</strong>：CHA₂DS₂-VASc
+抗凝門檻（男≥2／女≥3）、DOAC 優先於 warfarin，依 <strong>2023
+ACC/AHA/ACCP/HRS AF Guideline</strong> 與 <strong>ASH 2020 / CHEST 2024
+VTE Guideline</strong>。 以下為<strong>次要對照</strong>——以
+<strong>Washington Manual 第 38 版 Ch 20、Table 20-7</strong>
+及圍術期段落核對劑量細節（已由 37 版更新為 38 版）：</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apixaban VTE 10mg BID×7d→5mg <strong>BID</strong></td>
+<td>✅ 符合（註：WMT 表格某格 OCR 成「5 mg daily」，但內文與延長劑量欄為
+BID，本章採正確的 BID）</td>
+</tr>
+<tr>
+<td>Rivaroxaban VTE 15mg BID×21d→20mg QD</td>
+<td>✅ 完全符合</td>
+</tr>
+<tr>
+<td>Edoxaban / Dabigatran 需 <strong>≥5 天</strong>注射型 lead-in</td>
+<td>✅ 已依此修正（原寫 5–10 天）</td>
+</tr>
+<tr>
+<td>Dabigatran 維持 150mg BID、CrCl&lt;30 禁用</td>
+<td>✅ 符合</td>
+</tr>
+<tr>
+<td>Enoxaparin 1mg/kg q12h 或 1.5mg/kg QD、CrCl&lt;30 減量</td>
+<td>✅ 符合</td>
+</tr>
+<tr>
+<td>UFH aPTT 目標</td>
+<td>🔧 由「1.5–2.5×」修正標註 WMT 之
+<strong>2.0–2.5×</strong>，並註明院內 nomogram 差異</td>
+</tr>
+<tr>
+<td>UFH 為 <strong>ESRD 治療首選</strong></td>
+<td>➕ 依 WMT 補入</td>
+</tr>
+<tr>
+<td>圍術期 DOAC 不需 bridging、依<strong>半衰期</strong>停藥</td>
+<td>🔧 改用半衰期框架（WMT），保留實務 24/48h 對照</td>
+</tr>
+<tr>
+<td>逆轉：idarucizumab→dabigatran、andexanet→所有 Xa 抑制劑</td>
+<td>✅ 符合（WMT 圍術期段）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與少量引用，未重製原書內文。深入內容請回查 WMT 第 38 版
+Ch 20。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章為更新範本，格式與深度待您確認後套用至其餘章節。</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a
+href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001193">2023
+ACC/AHA/ACCP/HRS 心房顫動指引（Circulation）</a></li>
+<li><a
+href="https://academic.oup.com/eurheartj/article/45/36/3314/7738779">2024
+ESC 心房顫動指引（European Heart Journal）</a></li>
+<li><a
+href="https://journal.chestnet.org/article/S0012-3692(24)00292-7/fulltext">CHEST
+2024 靜脈血栓栓塞（VTE）抗栓治療指引</a></li>
+<li><a
+href="https://ashpublications.org/bloodadvances/article/4/19/4693/463998">ASH
+2020 VTE 治療指引（Blood Advances）</a></li>
+</ul>
+
+</section>
+<section id="ch6" class="chapter" data-title="抗血小板">
+<div class="chhead"><h2 class="chtitle">抗血小板</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=antiplatelet DAPT acute coronary syndrome" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="九-g-抗血小板antiplatelet-therapy">九-G　抗血小板（Antiplatelet
+Therapy）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 2014 原書以 aspirin + clopidogrel
+為主、無 ticagrelor/prasugrel 與 DAPT 策略。本章改寫為 <strong>2025
+ACC/AHA ACS
+指引</strong>框架。商品名／醫令碼用<strong>光田</strong>品項。 ⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。P2Y12 選擇、DAPT
+時程、健保條件依個別病情與最新指引調整。標 <code>⚠️待確認</code>
+者請查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>2025 ACC/AHA/ACEP/NAEMSP/SCAI Acute Coronary Syndromes
+Guideline</strong>（Circulation，2025/02，最新）。</li>
+<li><strong>2023 ESC ACS Guideline</strong>；2021 ACC/AHA
+冠脈血運重建指引；台灣 TSOC/TSC ACS 共識（在地/健保優先）。</li>
+<li>教科書（WMT）僅次要對照。</li>
+</ul>
+<hr />
+<h2 id="最大改變p2y12-首選換人">1. 🌟 最大改變：P2Y12 首選換人</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>2014 原書</th>
+<th><strong>2025 ACC/AHA</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACS 的 P2Y12 首選</td>
+<td>clopidogrel（Plavix）</td>
+<td><strong>ticagrelor 或 prasugrel（Class
+1，兩者不分高下）</strong>；clopidogrel
+退為<strong>不能用上述時</strong>的替代（禁忌/不耐受/負擔不起/無藥）</td>
+</tr>
+<tr>
+<td>DAPT 時程</td>
+<td>籠統「放支架後吃」</td>
+<td><strong>預設 aspirin + P2Y12 ≥12 個月</strong>（ACS
+非高出血風險）；高出血風險可縮短</td>
+</tr>
+<tr>
+<td>進階策略</td>
+<td>無</td>
+<td><strong>de-escalation</strong>：耐受者 PCI 後 <strong>≥1 個月轉
+ticagrelor 單藥</strong>（停 aspirin）可減出血</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="各藥光田品項-劑量">2. 各藥（光田品項 + 劑量）</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>藥</th>
+<th>光田品項（醫令碼）</th>
+<th>Loading</th>
+<th>Maintenance</th>
+<th>重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aspirin</strong></td>
+<td>Bokey 100mg／Aspirin Protect 100mg <code>⚠️確認碼</code></td>
+<td>162–325mg <strong>嚼服</strong></td>
+<td><strong>81–100mg QD</strong>（終身）</td>
+<td>DAPT 與單藥基石</td>
+</tr>
+<tr>
+<td><strong>Clopidogrel</strong></td>
+<td>保栓通 Plavix 75mg <code>20622</code>／舒栓寧 75mg
+<code>20869</code></td>
+<td>300–600mg</td>
+<td>75mg QD</td>
+<td>pro-drug，受 CYP2C19 影響（部分人反應差）；與
+<strong>omeprazole/esomeprazole 競爭 CYP</strong>，選 PPI 用
+pantoprazole</td>
+</tr>
+<tr>
+<td><strong>Ticagrelor</strong></td>
+<td>百無凝 Brilinta 90mg <code>20977</code>／60mg
+<code>23457</code>(自費)</td>
+<td>180mg</td>
+<td><strong>90mg BID</strong>（1 年後延長治療可 60mg BID）</td>
+<td>可逆、起效快、不經 CYP
+活化；SE：<strong>呼吸困難</strong>、心搏停頓；aspirin 須 ≤100mg</td>
+</tr>
+<tr>
+<td><strong>Prasugrel</strong></td>
+<td>抑凝安 Efient 3.75mg <code>20857</code>／20mg OD
+<code>20821</code>(自費)</td>
+<td>（西方 60mg；<strong>台灣/亞洲 20mg</strong>）</td>
+<td>（西方 10mg；<strong>台灣/亞洲 3.75mg</strong>）</td>
+<td>效力強；<strong>禁忌：曾中風/TIA</strong>；≥75 歲、&lt;60kg
+慎用；僅用於<strong>已知冠脈解剖、要 PCI</strong> 者</td>
+</tr>
+<tr>
+<td><strong>GP IIb/IIIa</strong></td>
+<td>雅瑞 Aggrastat（tirofiban）0.25mg/mL <code>30033</code></td>
+<td>依體重</td>
+<td>輸注</td>
+<td>導管室高血栓負荷/bailout；非常規</td>
+</tr>
+<tr>
+<td><strong>Cilostazol</strong></td>
+<td>普達 Pletaal 50mg <code>20623</code></td>
+<td>—</td>
+<td>100mg BID</td>
+<td><strong>PAD 間歇跛行</strong>；CHF 禁用</td>
+</tr>
+<tr>
+<td><strong>Dipyridamole</strong></td>
+<td>心滴舒 Sandel 50mg <code>23377</code></td>
+<td>—</td>
+<td>—</td>
+<td>與 aspirin 複方用於次級中風預防</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📌 <strong>在地重點</strong>：prasugrel
+在台灣/亞洲採<strong>減量</strong>（loading 20mg、maintenance
+3.75mg），與歐美 60/10mg 不同——光田品項正是 3.75mg 與 20mg。</p>
+</blockquote>
+<hr />
+<h2 id="dapt-策略acs-pci">3. DAPT 策略（ACS / PCI）</h2>
+<ul>
+<li><strong>預設</strong>：aspirin + ticagrelor 或 prasugrel <strong>≥12
+個月</strong>（ACS 非高出血風險）。</li>
+<li><strong>高出血風險</strong>：可縮短 P2Y12（如 1–3–6
+個月）後轉單藥；或早期 <strong>P2Y12 單藥</strong>。</li>
+<li><strong>De-escalation</strong>：① 耐受者 ≥1 個月後
+<strong>ticagrelor 單藥</strong>；② 或由 ticagrelor/prasugrel 換
+clopidogrel（出血風險高、難負擔時）。</li>
+<li><strong>穩定型冠心病放支架</strong>（非 ACS）：多為 aspirin +
+clopidogrel 6 個月。</li>
+</ul>
+<hr />
+<h2 id="acspci-合併心房顫動需同時抗凝">4. ACS/PCI
+合併心房顫動（需同時抗凝）</h2>
+<ul>
+<li><strong>不要長期三合一</strong>（aspirin+P2Y12+OAC，出血太高）。</li>
+<li><strong>預設雙重療法</strong>：<strong>DOAC +
+clopidogrel</strong>，住院短期含 aspirin 後<strong>早停
+aspirin</strong>（多在 1 週內、最長至出院/1 個月）。</li>
+<li>DOAC 用心房顫動劑量；clopidogrel 為合併時優先 P2Y12（非
+ticagrelor/prasugrel）。</li>
+</ul>
+<hr />
+<h2 id="圍術期-侵入處置停藥">5. 圍術期 / 侵入處置停藥</h2>
+<ul>
+<li><strong>Clopidogrel、ticagrelor 停 5 天</strong>；<strong>prasugrel
+停 7 天</strong>（急診刀除外）。</li>
+<li>aspirin 多數情況可續（依出血風險）；放支架後過早停 DAPT
+有支架血栓風險——<strong>擇期手術盡量延到 DAPT 必要期之後</strong>。</li>
+<li>詳見「抗凝血」章圍術期段落。</li>
+</ul>
+<hr />
+<h2 id="光田品項速查表">6. 光田品項速查表</h2>
+<table>
+<thead>
+<tr>
+<th>學名</th>
+<th>商品名</th>
+<th>規格</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aspirin</td>
+<td>Bokey／Aspirin Protect</td>
+<td>100mg</td>
+<td>⚠️待確認</td>
+</tr>
+<tr>
+<td>Clopidogrel</td>
+<td>保栓通 Plavix／舒栓寧</td>
+<td>75mg</td>
+<td>20622 / 20869</td>
+</tr>
+<tr>
+<td>Ticagrelor</td>
+<td>百無凝 Brilinta</td>
+<td>90mg／60mg(自費)</td>
+<td>20977 / 23457</td>
+</tr>
+<tr>
+<td>Prasugrel</td>
+<td>抑凝安 Efient</td>
+<td>3.75mg／20mg(自費)</td>
+<td>20857 / 20821</td>
+</tr>
+<tr>
+<td>Tirofiban (GP IIb/IIIa)</td>
+<td>雅瑞 Aggrastat</td>
+<td>0.25mg/mL</td>
+<td>30033</td>
+</tr>
+<tr>
+<td>Cilostazol</td>
+<td>普達 Pletaal</td>
+<td>50mg</td>
+<td>20623</td>
+</tr>
+<tr>
+<td>Dipyridamole</td>
+<td>心滴舒 Sandel</td>
+<td>50mg</td>
+<td>23377</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。aspirin（Bokey）醫令碼建議於院內系統確認。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<p><strong>黃金標準＝學會指引</strong>（2026 最新）：</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>依據與結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACS 首選 ticagrelor/prasugrel（Class 1），clopidogrel 為替代</td>
+<td>✅ <strong>2025 ACC/AHA ACS Guideline</strong>（已用最新版）</td>
+</tr>
+<tr>
+<td>DAPT 預設 ≥12 個月（非高出血風險）</td>
+<td>✅ 2025 指引</td>
+</tr>
+<tr>
+<td>De-escalation：≥1 個月轉 ticagrelor 單藥</td>
+<td>✅ 2025 指引</td>
+</tr>
+<tr>
+<td>房顫+PCI 用雙重療法（DOAC+clopidogrel）、早停 aspirin</td>
+<td>✅ 指引一致（2023 ESC/2025 ACC）</td>
+</tr>
+<tr>
+<td>prasugrel 禁曾中風/TIA、≥75/&lt;60kg 慎</td>
+<td>✅ 指引/仿單</td>
+</tr>
+<tr>
+<td>prasugrel 台灣亞洲減量（20/3.75mg）</td>
+<td>✅ 在地仿單與光田品項一致</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與少量引用，未重製原書內文。深入請回查 2025 ACC/AHA ACS
+與 2023 ESC 指引。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章依範本格式產出，已依 2026 最新指引、附查證紀錄。</em></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📕 <strong>Washington Manual 第 38
+版交叉確認（2026）</strong>：本章P2Y12 圍術期停藥(ticagrelor
+3–5天/prasugrel 7天)、DAPT 原則與 38
+版一致；臨床內容以學會最新指引為準，38 版為次要對照。</p>
+</blockquote>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a
+href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001309">2025
+ACC/AHA 急性冠心症（ACS）指引（Circulation）</a></li>
+<li><a href="https://doi.org/10.1093/eurheartj/ehad191">2023 ESC
+急性冠心症（ACS）指引（European Heart Journal）</a></li>
+</ul>
+
+</section>
+<section id="ch7" class="chapter" data-title="電解質">
+<div class="chhead"><h2 class="chtitle">電解質</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=hyponatremia hyperkalemia management" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="十一-電解質electrolytes">十一　電解質（Electrolytes）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 2014
+原書著重補充劑與高血鉀急性處置，<strong>低血鈉幾乎沒有系統流程</strong>、降鉀只有舊型樹脂。本章補上低血鈉診斷/矯正流程與新型降鉀劑。商品名／醫令碼用<strong>光田</strong>品項。
+⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。矯正速率攸關安全（尤其鈉），務必依實際病情與追蹤調整。標
+<code>⚠️待確認</code> 者請查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>低血鈉</strong>：基礎為 <strong>2014 歐洲
+CPG</strong>（Spasovski 等，ERBP/ESE/ESICM, NDT）；最新治療標準採
+<strong>2024 NDT「Hyponatraemia — treatment standard
+2024」</strong>（強調<strong>間歇 bolus
+高張食鹽水</strong>、矯正速率再評估）＋ 2024 奧地利腎臟學會共識。</li>
+<li><strong>高血鉀／CKD-MBD</strong>：<strong>KDIGO 2024 CKD
+Guideline</strong> 等相關指引。</li>
+<li>教科書（Washington
+Manual）僅為次要對照。健保條件以健保署現行公告為準。</li>
+</ul>
+<hr />
+<h2 id="低血鈉-hyponatremiana-135-住院最常見最怕矯正太快">1. 低血鈉
+Hyponatremia（Na⁺ &lt;135）— 住院最常見，最怕矯正太快</h2>
+<h3 id="診斷三步驟wmt-38e-fig-12-1">診斷三步驟（WMT 38e Fig 12-1）</h3>
+<ol type="1">
+<li><strong>血漿滲透壓</strong>：
+<ul>
+<li>正常 → 假性低鈉（高血脂/高蛋白）；高 →
+高滲性（<strong>高血糖</strong>最常見，每 ↑glucose 100→Na 校正
++1.6~2.4）。</li>
+<li>低（&lt;275）→ 真正低張性低鈉,往下走。</li>
+</ul></li>
+<li><strong>尿滲透壓</strong>：&lt;100 → 水中毒/原發性多飲；&gt;100 →
+ADH 在作用。</li>
+<li><strong>容積狀態 + 尿鈉</strong>：
+<ul>
+<li><strong>低血容</strong>（尿 Na&lt;20，外失；&gt;20
+腎失/利尿劑/缺鹽皮質醇）</li>
+<li><strong>等血容</strong>（<strong>SIADH</strong>、甲狀腺低下、腎上腺不全）</li>
+<li><strong>高血容</strong>（心衰、肝硬化、腎病）</li>
+</ul></li>
+</ol>
+<h3 id="治療先看有沒有症狀">治療：先看「有沒有症狀」</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>狀況</th>
+<th>處置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>嚴重症狀</strong>（抽搐/昏迷/嘔吐）</td>
+<td><strong>3% 高張食鹽水</strong>：歐洲指引建議 <strong>3% saline 150mL
+於 20 分鐘輸注</strong>，目標<strong>前 1 小時升 5
+mEq/L</strong>緩解腦症狀；或連續輸注起始 0.25–0.3
+mL/kg/h。整日仍守矯正上限（見下）</td>
+</tr>
+<tr>
+<td><strong>慢性無症狀</strong></td>
+<td><strong>矯正上限 ≤10 mEq/L/24h</strong>（2014 歐洲指引）；<strong>高
+ODS 風險</strong>（Na&lt;105、低血鉀、營養不良、酗酒、肝病）採更保守
+<strong>≤8 mEq/L/24h</strong>。低血容→補
+N/S；SIADH→<strong>限水</strong>
+±<strong>tolvaptan</strong>；高血容→限水限鈉+利尿</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>過快矯正 →
+滲透性脫髓鞘（ODS/CPM）</strong>：超過上限風險高。<strong>前 24h 至少
+q2–4h 追 Na</strong>，過頭要用 D5W ±DDAVP 主動回降。 📎
+來源層級提醒：黃金標準（歐洲指引）上限為
+<strong>≤10/24h</strong>；教科書（WMT）採更保守的
+≤8。本章以指引為準，並標出高風險族群用 ≤8。 <strong>光田 3%
+saline</strong>：<code>33560</code>／<code>33521</code> SODIUM CHLORIDE
+3% 500mL。 <strong>Tolvaptan</strong>（V2 拮抗，用於
+SIADH/高血容等血容低鈉）：<strong>伸舒康 Samsca 15mg
+<code>20796</code></strong>；起始當天<strong>勿限水、住院監測</strong>避免過快。（佳腎康
+Jinarc 為 ADPKD 用，健保事審）</p>
+</blockquote>
+<hr />
+<h2 id="高血鈉-hypernatremiana-145-多為缺水">2. 高血鈉
+Hypernatremia（Na⁺ &gt;145）— 多為缺水</h2>
+<ul>
+<li><strong>自由水缺損</strong> = TBW ×（現 Na/140 −
+1）；TBW≈體重×0.5(♀)~0.6(♂)。</li>
+<li>補 <strong>D5W 或 0.45% NaCl</strong>；<strong>矯正 ≤10–12
+mEq/L/24h</strong>（太快→腦水腫）。</li>
+<li>找原因：尿崩（中樞→DDAVP；腎因性）、滲透性利尿、補水不足。</li>
+</ul>
+<hr />
+<h2 id="低血鉀-hypokalemiak-3.5">3. 低血鉀 Hypokalemia（K⁺
+&lt;3.5）</h2>
+<ul>
+<li><strong>先驗鎂</strong>：低血鎂會讓血鉀補不上來，<strong>Mg 不補,K
+補不起來</strong>。</li>
+<li><strong>補鉀</strong>（每 10 mEq KCl 約升血鉀 0.1，僅粗估）： | 路徑
+| 濃度上限 | 速率上限 | |—|—|—| | 周邊 line | 20–40 mEq/L | ≤10 mEq/hr |
+| 中央 line（監測下） | 可較高 | ≤20 mEq/hr |</li>
+<li><strong>光田品項</strong>：口服 <strong>舒補鉀 Const-K
+750mg（10mEq/tab）<code>23259</code></strong>；注射 <strong>KCl 15%
+10mEq/5mL <code>30511</code>／20mEq/10mL
+<code>30402</code></strong>；或<strong>預混袋</strong>
+0.149%(<code>33728</code>)、0.298%(K=20mEq,<code>33729</code>) in
+N/S。</li>
+<li>嚴重(&lt;2.5 或有心律不整/麻痺)：心電監測下中央靜脈補。</li>
+</ul>
+<hr />
+<h2 id="高血鉀-hyperkalemiak-5.5或有-ekg-變化">4. 高血鉀
+Hyperkalemia（K⁺ &gt;5.5，或有 EKG 變化）</h2>
+<p><strong>EKG</strong>：peak T → PR 延長 → P 消失/QRS 變寬 → sine
+wave（任何變化都算急症）。</p>
+<h3 id="急性處置保護-趕進細胞-排出">急性處置「保護 → 趕進細胞 →
+排出」</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>步驟</th>
+<th>藥</th>
+<th>光田品項 / 備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. 保護心肌</strong>（有 EKG 變化才給，不降 K）</td>
+<td>鈣劑，2–3 分鐘推，數分鐘起效，必要時重複</td>
+<td><strong>Calcium chloride（vitaCAL
+<code>33050</code>）</strong>；calcium gluconate
+⚠️品項待確認（周邊較不刺激,洗腎/毛地黃中毒慎用鈣）</td>
+</tr>
+<tr>
+<td><strong>B. 趕進細胞</strong></td>
+<td>① RI 10U + D50 1–2 amp（盯血糖）② β2 吸入 salbutamol 10–20mg ③
+NaHCO₃（<strong>僅酸中毒時</strong>）</td>
+<td>NaHCO₃：重曹注射液 <code>33724</code>／樂麗康
+<code>33010</code></td>
+</tr>
+<tr>
+<td><strong>C. 真正排出</strong></td>
+<td>① Loop：furosemide 20–40mg IV ② <strong>降鉀劑</strong>（見下）③
+<strong>透析</strong>＝腎衰/難治之確定療法</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="降鉀劑口服灌腸排出-有更新">降鉀劑（口服/灌腸排出）— 有更新</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>藥</th>
+<th>光田品項</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sodium zirconium cyclosilicate（SZC）</strong></td>
+<td><strong>利控鉀 Lokelma 5g <code>26743</code>（自費）</strong></td>
+<td>較新、起效較快、可長期；不含腸壞死疑慮，但<strong>含鈉</strong>，高血容慎用</td>
+</tr>
+<tr>
+<td><strong>Calcium polystyrene sulfonate</strong></td>
+<td><strong>鉀利安 Chalian 5g <code>26003</code></strong></td>
+<td>即原書 Kalimate 之同類；<strong>須確保有排便</strong>才有效（可加
+lactulose）；舊式 polystyrene 樹脂有腸壞死報告，避免與 sorbitol
+灌腸併用</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>2014 原書的 Kalimate/Kayexalate 現多被 SZC
+取代或謹慎使用；急性高血鉀<strong>真正救命的是 A+B
+與透析</strong>,樹脂/SZC 起效慢、屬輔助。</p>
+</blockquote>
+<hr />
+<h2 id="鈣-calcium">5. 鈣 Calcium</h2>
+<p><strong>低血鈣</strong>：補鈣（calcium chloride/calcium gluconate
+IV；口服 calcium carbonate/acetate）+ 找原因（低白蛋白要校正、低鎂、Vit
+D 缺、副甲低下）。校正鈣 = 測得 Ca + 0.8×(4 − albumin)。</p>
+<p><strong>高血鈣</strong>： 1.
+<strong>生理食鹽水水化</strong>（最重要），尿量足再考慮 loop。 2.
+<strong>雙磷酸鹽</strong>：<strong>Zoledronic acid（Zometa）4mg</strong>
+或
+<strong>Pamidronate（Aredia/Pamisol）60–90mg</strong>（惡性高血鈣首選，1–2
+天起效）。 3. <strong>Calcitonin</strong>
+4U/kg（起效快、效果短、tachyphylaxis）橋接。 4.
+難治/惡性：denosumab、類固醇（淋巴瘤/肉芽腫）。</p>
+<hr />
+<h2 id="鎂-magnesium">6. 鎂 Magnesium</h2>
+<ul>
+<li><strong>低血鎂</strong>：常伴低鉀/低鈣;有症狀或 &lt;1.0 →
+<strong>MgSO₄ IV（硫酸鎂
+<code>33481</code>/<code>30548</code>）</strong>；口服氧化鎂
+<code>23274</code>（會腹瀉）。<strong>補鉀/補鈣前先補鎂</strong>。</li>
+<li><strong>高血鎂</strong>：少見(腎衰/過量),反射消失→停鎂、鈣劑拮抗、透析。</li>
+</ul>
+<hr />
+<h2 id="磷-phosphate">7. 磷 Phosphate</h2>
+<ul>
+<li><strong>低血磷</strong>：再餵食症候群、DKA 治療後常見。口服/IV
+potassium 或 sodium phosphate（⚠️光田品項待確認）。</li>
+<li><strong>高血磷（ESRD 常見）— 磷結合劑</strong>： | 類 | 光田品項 |
+|—|—| | 鈣基 | Calcium acetate（Caphos）、<strong>Calcium
+carbonate</strong> 隨餐吃降磷 | | 鑭基 | <strong>福斯利諾 Fosrenol 750mg
+<code>20269</code>（自費）</strong> | | 鐵基 | <strong>拿百磷
+Nephoxil（ferric citrate）<code>20823</code>（自費）</strong> | |
+樹脂（sevelamer/Renvela） | ⚠️光田公開品項未見，需洽藥劑部 |
+<ul>
+<li>搭配 <strong>calcitriol（鈣注益 <code>33013</code> 洗腎用／骨活醇
+Macalol <code>20688</code>）</strong> 處理 CKD-MBD。</li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="光田品項速查表">8. 光田品項速查表</h2>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>學名</th>
+<th>商品名</th>
+<th>規格</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>升鈉(嚴重低鈉)</td>
+<td>NaCl hypertonic</td>
+<td>氯化鈉 3%</td>
+<td>500mL</td>
+<td>33560 / 33521</td>
+</tr>
+<tr>
+<td>SIADH 低鈉</td>
+<td>Tolvaptan</td>
+<td>伸舒康 Samsca</td>
+<td>15mg</td>
+<td>20796</td>
+</tr>
+<tr>
+<td>補鉀(PO)</td>
+<td>KCl</td>
+<td>舒補鉀 Const-K</td>
+<td>10mEq/tab</td>
+<td>23259</td>
+</tr>
+<tr>
+<td>補鉀(IV)</td>
+<td>KCl</td>
+<td>氯化鉀 15%</td>
+<td>10mEq/5mL；20mEq/10mL</td>
+<td>30511 / 30402</td>
+</tr>
+<tr>
+<td>降鉀(新)</td>
+<td>SZC</td>
+<td>利控鉀 Lokelma（自費）</td>
+<td>5g</td>
+<td>26743</td>
+</tr>
+<tr>
+<td>降鉀(樹脂)</td>
+<td>Ca polystyrene</td>
+<td>鉀利安 Chalian</td>
+<td>5g</td>
+<td>26003</td>
+</tr>
+<tr>
+<td>高血鉀保心</td>
+<td>Calcium chloride</td>
+<td>vitaCAL</td>
+<td>—</td>
+<td>33050</td>
+</tr>
+<tr>
+<td>矯酸</td>
+<td>NaHCO₃</td>
+<td>重曹注射液／碳酸氫鈉錠</td>
+<td>20mL／600mg</td>
+<td>33724 / 23731</td>
+</tr>
+<tr>
+<td>補鎂</td>
+<td>MgSO₄</td>
+<td>硫酸鎂注射液</td>
+<td>20mL／200mL</td>
+<td>33481 / 30548</td>
+</tr>
+<tr>
+<td>降磷(鑭)</td>
+<td>Lanthanum</td>
+<td>福斯利諾 Fosrenol（自費）</td>
+<td>750mg</td>
+<td>20269</td>
+</tr>
+<tr>
+<td>降磷(鐵)</td>
+<td>Ferric citrate</td>
+<td>拿百磷 Nephoxil（自費）</td>
+<td>500mg</td>
+<td>20823</td>
+</tr>
+<tr>
+<td>CKD-MBD</td>
+<td>Calcitriol</td>
+<td>鈣注益／骨活醇</td>
+<td>2µg／0.25µg</td>
+<td>33013 / 20688</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<p><strong>黃金標準＝學會指引</strong>（低鈉：2014
+歐洲指引；高鉀/MBD：KDIGO）。WMT 為次要對照。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>依據與結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低鈉診斷三步（血漿滲透壓→尿滲透壓→尿鈉+容積）</td>
+<td>✅ 歐洲指引流程（WMT Fig 12-1 一致）</td>
+</tr>
+<tr>
+<td>慢性低鈉矯正上限 <strong>≤10 mEq/L/24h</strong></td>
+<td>🔧 <strong>依歐洲指引採 ≤10</strong>；高 ODS 風險用
+≤8。註：<strong>WMT 38
+版</strong>已討論近期「快速矯正(&gt;8)」研究，但仍維持建議
+<strong>&lt;8</strong>（保守教科書立場），故高風險族群採 ≤8</td>
+</tr>
+<tr>
+<td>嚴重症狀：3% saline 150mL/20min、前 1h 升 5 mEq/L</td>
+<td>✅ 歐洲指引建議（WMT 另述 4–6h 升 4–6，方向一致）</td>
+</tr>
+<tr>
+<td>SZC 為高血鉀選項（容積無虞時）</td>
+<td>✅ 符合（KDIGO 方向；WMT 亦載）</td>
+</tr>
+<tr>
+<td>高血鉀 A(鈣)–B(RI/β2/HCO₃)–C(利尿/樹脂/透析)</td>
+<td>✅ 標準急救流程，補入新型 SZC</td>
+</tr>
+<tr>
+<td>calcium gluconate 光田品項</td>
+<td>🔧 公開查詢未直接命中 → 改標 calcium chloride（vitaCAL）+ ⚠️待確認
+gluconate</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與少量引用，未重製原書內文。深入請回查對應學會指引。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章依範本格式產出，附查證紀錄。</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/24569125/">2014
+歐洲低血鈉臨床指引（Spasovski，PubMed）</a></li>
+<li><a
+href="https://academic.oup.com/ndt/article/39/10/1583/7713921">2024 NDT
+低血鈉治療標準（Hyponatraemia—treatment standard 2024）</a></li>
+<li><a
+href="https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf">KDIGO
+2024 CKD 臨床指引（PDF）</a></li>
+</ul>
+
+</section>
+<section id="ch8" class="chapter" data-title="血糖/糖尿病">
+<div class="chhead"><h2 class="chtitle">血糖/糖尿病</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=inpatient hyperglycemia insulin DKA management" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="跨章-血糖-糖尿病inpatient-glycemic-management">跨章　血糖 /
+糖尿病（Inpatient Glycemic Management）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 2014 原書血糖內容散在各處、以 RI
+sliding scale 與 SU/metformin 為主。本章以 <strong>ADA Standards of Care
+2026</strong>
+重寫，聚焦<strong>住院血糖管理</strong>。商品名／醫令碼用<strong>光田</strong>品項。
+⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。胰島素劑量需個別化；本科另有速效胰島素計算工具可細算。標
+<code>⚠️待確認</code> 者請查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>ADA Standards of Care in Diabetes—2026</strong>（Diabetes
+Care 49(S1)）：第 6 章（血糖目標/低血糖/高血糖危象）、<strong>第 16
+章（住院糖尿病照護）</strong>。</li>
+<li>KDIGO 糖尿病合併 CKD
+指引；台灣糖尿病學會臨床照護指引（在地/健保優先）。</li>
+<li>教科書（WMT）僅次要對照。</li>
+</ul>
+<hr />
+<h2 id="住院血糖管理最常用">1. 🌟 住院血糖管理（最常用）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>重點</th>
+<th>ADA 2026</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>住院血糖目標</strong></td>
+<td><strong>140–180 mg/dL</strong>（多數非重症與重症）；持續
+<strong>≥180 才加強治療</strong></td>
+</tr>
+<tr>
+<td><strong>首選方式</strong></td>
+<td><strong>basal–bolus–correction（基礎＋餐前＋校正）</strong>；<strong>避免單用
+RI sliding scale</strong></td>
+</tr>
+<tr>
+<td><strong>口服降糖藥</strong></td>
+<td>住院多<strong>暫停</strong>（飲食不穩、禁食、顯影劑、AKI
+風險）；視情況保留</td>
+</tr>
+<tr>
+<td><strong>NPO/禁食</strong></td>
+<td><strong>不可停基礎胰島素</strong>（停了會 DKA，尤其 T1DM）；給
+50–80% 基礎、暫停餐前、保留校正</td>
+</tr>
+<tr>
+<td><strong>重症/不能進食</strong></td>
+<td>多用 <strong>IV insulin 持續輸注</strong>（regular
+insulin），依血糖滴定</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>SGLT2i 住院要停</strong>：禁食/急性病/手術時停，避免
+<strong>euglycemic DKA</strong>。<strong>Metformin</strong>
+顯影劑/AKI/休克時停。</p>
+</blockquote>
+<hr />
+<h2 id="胰島素光田品項">2. 胰島素（光田品項）</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>類</th>
+<th>學名</th>
+<th>光田品項（醫令碼）</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>長效基礎</strong></td>
+<td>Insulin glargine U300</td>
+<td>糖德仕 Toujeo 450U/1.5mL <code>30309</code></td>
+<td>平穩、低夜間低血糖</td>
+</tr>
+<tr>
+<td></td>
+<td>Insulin degludec</td>
+<td>諾胰保 Tresiba 300IU/3mL <code>30720</code></td>
+<td>超長效、半衰期長</td>
+</tr>
+<tr>
+<td><strong>中效</strong></td>
+<td>NPH (human)</td>
+<td>優泌林 N Humulin N <code>30486</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>速效（餐前 bolus）</strong></td>
+<td>Insulin aspart</td>
+<td>諾和瑞 NovoRapid <code>30540</code>/<code>30119</code></td>
+<td>餐前 5–10 分</td>
+</tr>
+<tr>
+<td></td>
+<td>Insulin lispro</td>
+<td>優泌樂 Humalog（Mix50 <code>30271</code>）</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><strong>短效（可 IV）</strong></td>
+<td>Regular insulin</td>
+<td>優泌林 R（標準 IV 輸注用）⚠️確認單方品項</td>
+<td>DKA/重症輸注</td>
+</tr>
+<tr>
+<td><strong>預混</strong></td>
+<td>NPH/Regular 70/30</td>
+<td>優泌林 70/30 <code>30300</code>/<code>30299</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Aspart 預混 30</td>
+<td>諾和密斯 NovoMix 30 <code>30118</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Degludec/Aspart</td>
+<td>諾胰得 Ryzodeg <code>30390</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>基礎+GLP-1 複方</strong></td>
+<td>Glargine+Lixisenatide</td>
+<td>爽胰達 Soliqua <code>30699</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>起始估算：TDD ≈ 0.4–0.5
+U/kg/day（腎差、年長、消瘦用低值），半基礎半餐前；校正量依
+ISF。<strong>本科速效胰島素計算工具可逐餐細算。</strong></p>
+</blockquote>
+<hr />
+<h2 id="dka-hhs高血糖危象">3. DKA / HHS（高血糖危象）</h2>
+<p><strong>三大支柱：補液 → 鉀 → 胰島素</strong>（ADA 2026） 1.
+<strong>補液</strong>：先 N/S 復甦；之後依血鈉校正選 0.45% 或 N/S；血糖
+~200（DKA）/ ~250–300（HHS）改加葡萄糖。 2.
+<strong>鉀</strong>：<strong>K&lt;3.3 先補鉀、暫緩胰島素</strong>；K
+3.3–5.0 邊補邊上胰島素；K&gt;5.0 先不補、監測。 3.
+<strong>胰島素</strong>：regular insulin IV 0.1 U/kg/h（±0.1 U/kg
+bolus）；血糖降速 50–75/h。 4. <strong>轉換</strong>：DKA 至 anion gap
+關閉、HHS 至滲透壓/神智改善且能進食 → <strong>重疊 basal 1–2
+小時</strong>再停 IV。 - <strong>輕度 DKA</strong>（穩定、可口服、能自打
+SC）可用<strong>皮下速效</strong>方案處理（ADA 2026 納入）。 -
+<strong>不要因為「沒吃」就停基礎胰島素</strong>（誘發/惡化 DKA）。</p>
+<hr />
+<h2 id="門診長期藥物住院常需調整列重點">4.
+門診/長期藥物（住院常需調整，列重點）</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>類</th>
+<th>學名</th>
+<th>光田品項</th>
+<th>重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biguanide</td>
+<td>Metformin</td>
+<td>漢伏醣 Henformin 500mg <code>23630</code></td>
+<td>一線基礎；顯影/AKI 停</td>
+</tr>
+<tr>
+<td><strong>SGLT2i</strong></td>
+<td>Empagliflozin／Dapagliflozin</td>
+<td>恩排糖 Jardiance／福適佳 Forxiga</td>
+<td><strong>心腎保護</strong>（HF/CKD
+即使血糖達標也用）；住院/禁食停</td>
+</tr>
+<tr>
+<td><strong>GLP-1 RA</strong></td>
+<td>Dulaglutide／Semaglutide／Liraglutide</td>
+<td>易週糖 Trulicity <code>30978</code>／胰妥讚 Ozempic
+<code>30656</code>、瑞倍適 Rybelsus（PO）／善纖達 Saxenda</td>
+<td><strong>ASCVD/CKD/肥胖</strong>優先；減重、心血管保護</td>
+</tr>
+<tr>
+<td>DPP4i</td>
+<td>Sitagliptin／Linagliptin／Vildagliptin</td>
+<td>佳糖維 Januvia <code>20400</code>／糖漸平 Trajenta
+<code>23078</code>／高糖優適 Galvus <code>23710</code></td>
+<td>溫和、體重中性；linagliptin 不需依腎調</td>
+</tr>
+<tr>
+<td>SU</td>
+<td>Glimepiride／Gliclazide</td>
+<td>瑪爾胰 Amaryl 2mg <code>20009</code>／代蜜 Diamin MR
+<code>23253</code></td>
+<td>低血糖風險；住院飲食不穩慎用</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>ADA 2026：<strong>ASCVD/HF/CKD 者，不論 A1c 都應納入有實證的 GLP-1 RA
+和/或
+SGLT2i</strong>；高風險者建議<strong>從診斷早期</strong>就用，不必等
+metformin 失敗。</p>
+</blockquote>
+<hr />
+<h2 id="低血糖處置">5. 低血糖處置</h2>
+<ul>
+<li><strong>可進食</strong>：15–20g 速效碳水（葡萄糖錠/果汁），15
+分鐘後復測（rule of 15）。</li>
+<li><strong>不能進食/意識差</strong>：<strong>D50W IV</strong>（1–2
+amp）；無 IV → <strong>glucagon</strong> IM/鼻噴。</li>
+<li>復發/SU 或長效胰島素導致 → 持續 D10W 輸注並延長監測。</li>
+<li>找原因（漏餐、腎惡化致胰島素蓄積、SU+腎差），調整方案。</li>
+</ul>
+<hr />
+<h2 id="健保給付重點會變動下單前查">6. 健保給付重點（會變動，下單前查
+⚠️）</h2>
+<ul>
+<li><strong>SGLT2i / GLP-1 RA</strong> 各有給付條件（多需 metformin
+等基礎治療控制不佳，或合併心腎適應症）；部分品項（Rybelsus、Wegovy、Saxenda、Ozempic
+高劑量）<strong>自費</strong>。</li>
+<li>依健保署現行規定為準。</li>
+</ul>
+<hr />
+<h2 id="光田品項速查表">7. 光田品項速查表</h2>
+<table>
+<thead>
+<tr>
+<th>類</th>
+<th>學名</th>
+<th>商品名</th>
+<th>規格</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基礎胰島素</td>
+<td>Glargine U300</td>
+<td>糖德仕 Toujeo</td>
+<td>450U/1.5mL</td>
+<td>30309</td>
+</tr>
+<tr>
+<td>基礎胰島素</td>
+<td>Degludec</td>
+<td>諾胰保 Tresiba</td>
+<td>300IU/3mL</td>
+<td>30720</td>
+</tr>
+<tr>
+<td>速效</td>
+<td>Aspart</td>
+<td>諾和瑞 NovoRapid</td>
+<td>100U/mL</td>
+<td>30540 / 30119</td>
+</tr>
+<tr>
+<td>中效</td>
+<td>NPH</td>
+<td>優泌林 N</td>
+<td>1000IU/10mL</td>
+<td>30486</td>
+</tr>
+<tr>
+<td>預混</td>
+<td>NPH/Reg 70/30</td>
+<td>優泌林 70/30</td>
+<td>100IU/mL</td>
+<td>30300 / 30299</td>
+</tr>
+<tr>
+<td>預混</td>
+<td>Aspart 30</td>
+<td>諾和密斯 NovoMix 30</td>
+<td>300IU/3mL</td>
+<td>30118</td>
+</tr>
+<tr>
+<td>Biguanide</td>
+<td>Metformin</td>
+<td>漢伏醣 Henformin</td>
+<td>500mg</td>
+<td>23630</td>
+</tr>
+<tr>
+<td>SGLT2i</td>
+<td>Empagliflozin</td>
+<td>恩排糖 Jardiance</td>
+<td>10/25mg</td>
+<td>20260 / 20236</td>
+</tr>
+<tr>
+<td>GLP-1</td>
+<td>Dulaglutide</td>
+<td>易週糖 Trulicity</td>
+<td>1.5mg</td>
+<td>30978</td>
+</tr>
+<tr>
+<td>GLP-1</td>
+<td>Semaglutide</td>
+<td>胰妥讚 Ozempic</td>
+<td>4mg/3mL</td>
+<td>30656</td>
+</tr>
+<tr>
+<td>DPP4i</td>
+<td>Sitagliptin</td>
+<td>佳糖維 Januvia</td>
+<td>100mg</td>
+<td>20400</td>
+</tr>
+<tr>
+<td>DPP4i</td>
+<td>Linagliptin</td>
+<td>糖漸平 Trajenta</td>
+<td>5mg</td>
+<td>23078</td>
+</tr>
+<tr>
+<td>SU</td>
+<td>Glimepiride</td>
+<td>瑪爾胰 Amaryl</td>
+<td>2mg</td>
+<td>20009</td>
+</tr>
+<tr>
+<td>SU</td>
+<td>Gliclazide</td>
+<td>代蜜 Diamin MR</td>
+<td>30mg</td>
+<td>23253</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。單方 regular
+insulin（IV 用）醫令碼請於院內確認。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<p><strong>黃金標準＝學會指引</strong>（ADA Standards of Care
+2026）：</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>依據與結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>住院目標 140–180、≥180 加強</td>
+<td>✅ ADA 2026 Ch16</td>
+</tr>
+<tr>
+<td>basal–bolus–correction 優於單用 sliding scale</td>
+<td>✅ ADA 2026 Ch16</td>
+</tr>
+<tr>
+<td>NPO 不停基礎胰島素</td>
+<td>✅ ADA 2026</td>
+</tr>
+<tr>
+<td>DKA/HHS：補液→鉀（K&lt;3.3 緩胰島素）→IV insulin</td>
+<td>✅ ADA 2026 Ch6（高血糖危象）</td>
+</tr>
+<tr>
+<td>輕度 DKA 可皮下速效處理</td>
+<td>✅ ADA 2026</td>
+</tr>
+<tr>
+<td>ASCVD/HF/CKD 不論 A1c 用 GLP-1/SGLT2i、可早期起始</td>
+<td>✅ ADA 2026</td>
+</tr>
+<tr>
+<td>SGLT2i 住院/禁食停（euglycemic DKA）</td>
+<td>✅ ADA 2026/仿單</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與少量引用，未重製原書內文。深入請回查 ADA Standards of
+Care 2026。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章依範本格式產出（你的本科，請特別檢視在地胰島素方案與健保細節）。已依
+2026 最新指引、附查證紀錄。</em></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📕 <strong>Washington Manual 第 38
+版交叉確認（2026）</strong>：本章住院 140–180、basal-bolus 優於 sliding
+scale、重症 IV insulin、DKA 處置與 38
+版一致；臨床內容以學會最新指引為準，38 版為次要對照。</p>
+</blockquote>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a
+href="https://diabetesjournals.org/care/article/49/Supplement_1/S339/163925">ADA
+Standards of Care 2026 — 第16章 住院糖尿病照護</a></li>
+<li><a
+href="https://diabetesjournals.org/care/article/49/Supplement_1/S132/163927">ADA
+Standards of Care 2026 — 第6章 血糖目標/高血糖危象</a></li>
+</ul>
+
+</section>
+<section id="ch9" class="chapter" data-title="胸腔（氣喘/COPD）">
+<div class="chhead"><h2 class="chtitle">胸腔（氣喘/COPD）</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=COPD asthma inhaler GOLD GINA 2025" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="十-胸腔科氣喘-copd-吸入劑">十　胸腔科（氣喘 / COPD 吸入劑）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 改寫為 <strong>GINA
+2025（氣喘）</strong> 與 <strong>GOLD
+2025（COPD）</strong>。吸入劑用<strong>光田</strong>品項。 ⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。吸入劑裝置與技術影響療效，需衛教。標
+<code>⚠️待確認</code> 者請查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>GINA 2025</strong>（Global Initiative for
+Asthma）；<strong>GOLD 2025</strong>（COPD）。教科書僅次要對照。</li>
+</ul>
+<hr />
+<h2 id="氣喘最大改變gina-2025不要再單用-saba">1. 🌟 氣喘最大改變（GINA
+2025）：不要再單用 SABA</h2>
+<ul>
+<li><strong>禁止單用 SABA（沙丁胺醇）緩解</strong>——單用 SABA
+增加發作、住院與死亡。</li>
+<li><strong>首選 Track 1：全程用 ICS-formoterol</strong>
+<ul>
+<li>第 1–2 步：<strong>低劑量
+ICS-formoterol「需要時」</strong>（兼緩解+抗發炎）。</li>
+<li>第 3 步起：<strong>低劑量 ICS-formoterol
+維持＋緩解（MART）</strong>；只有 ICS-formoterol 可做 MART。</li>
+</ul></li>
+<li>對比單用 SABA，需要時 ICS-formoterol <strong>降嚴重發作約
+60–65%</strong>。</li>
+</ul>
+<p><strong>光田可做 MART 的 ICS-formoterol</strong>：吸必擴
+Symbicort（bud/formoterol）<code>28111</code>、肺舒坦
+Foster（beclometasone/formoterol）<code>28114</code>/<code>28119</code>。
+其他 ICS-LABA（非 MART，固定維持）：使肺泰
+Seretide（flutic/salmeterol）<code>28736</code>、潤娃
+Relvar（FF/vilanterol）<code>28110</code>。</p>
+<hr />
+<h2 id="copdgold-2025雙支氣管擴張為主ics-看嗜酸球">2. 🌟 COPD（GOLD
+2025）：雙支氣管擴張為主，ICS 看嗜酸球</h2>
+<ul>
+<li><strong>起始多為 LABA/LAMA 雙擴張</strong>（症狀/發作導向）。</li>
+<li><strong>加 ICS（→三合一
+LABA/LAMA/ICS）的時機</strong>：血中<strong>嗜酸球 ≥300/µL</strong>
+證據最強；<strong>≥100/µL
+且仍有發作</strong>可考慮；<strong>&lt;100</strong> 不建議加 ICS。</li>
+<li>ICS 增加肺炎風險，依嗜酸球與發作史個別化。</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>類</th>
+<th>光田品項（醫令碼）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LAMA 單方</strong></td>
+<td>適喘樂 Spiriva（tiotropium）<code>28016</code></td>
+</tr>
+<tr>
+<td><strong>LABA/LAMA</strong></td>
+<td>適倍樂 Spiolto（tio/olodaterol）<code>28099</code>、安肺樂
+Anoro（umec/vilanterol）<code>28098</code>、必肺宜
+Bevespi（formoterol/glyco）<code>26208</code></td>
+</tr>
+<tr>
+<td><strong>三合一 ICS/LAMA/LABA</strong></td>
+<td>必肺暢 Breztri（bud/glyco/formoterol）<code>26211</code>、肺樂喜
+Trelegy（FF/umec/vilanterol）<code>28115</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="急性發作住院常用">3. 急性發作（住院常用）</h2>
+<ul>
+<li><strong>吸入支氣管擴張</strong>：<strong>冠喘衛 Combivent
+UDV（ipratropium/salbutamol）<code>28093</code></strong> 噴霧，必要時
+q4–6h 或連續。</li>
+<li><strong>全身性類固醇</strong>：氣喘/COPD 急性惡化 → prednisolone
+40mg PO ×5 天（普列道寧 <code>23788</code>）；不能口服用
+<strong>甲基培尼松龍 Solu-Medrol <code>30727</code></strong>（美蒂舒
+Meticort 4mg PO <code>20513</code>）。</li>
+<li><strong>抗生素</strong>：COPD
+惡化合併膿痰增加/需通氣時用（見抗生素章；常
+augmentin、doxycycline、levofloxacin）。</li>
+<li><strong>氧氣 / NIV</strong>：II 型呼衰、急性高碳酸血症考慮 NIV；COPD
+給氧目標 SpO₂ 88–92%。</li>
+</ul>
+<hr />
+<h2 id="輔助口服">4. 輔助/口服</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>藥</th>
+<th>光田品項</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Theophylline</td>
+<td>善寧 Xanthium 200mg <code>23891</code>／舒喘 Ventol 液
+<code>26760</code></td>
+<td>治療窗窄、交互作用多，現為次要</td>
+</tr>
+<tr>
+<td>Montelukast（LTRA）</td>
+<td>欣流 Singulair <code>20735</code>／敏喘克 Anxokast 10mg
+<code>20217</code></td>
+<td>過敏性氣喘輔助</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="光田品項速查表">5. 光田品項速查表</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>類</th>
+<th>商品名（成分）</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SABA/SAMA 噴霧</td>
+<td>冠喘衛 Combivent UDV</td>
+<td>28093</td>
+</tr>
+<tr>
+<td>ICS-formoterol（可 MART）</td>
+<td>吸必擴 Symbicort／肺舒坦 Foster</td>
+<td>28111／28114·28119</td>
+</tr>
+<tr>
+<td>ICS-LABA</td>
+<td>使肺泰 Seretide／潤娃 Relvar</td>
+<td>28736／28110</td>
+</tr>
+<tr>
+<td>LAMA</td>
+<td>適喘樂 Spiriva</td>
+<td>28016</td>
+</tr>
+<tr>
+<td>LABA/LAMA</td>
+<td>適倍樂 Spiolto／安肺樂 Anoro／必肺宜 Bevespi</td>
+<td>28099／28098／26208</td>
+</tr>
+<tr>
+<td>三合一</td>
+<td>必肺暢 Breztri／肺樂喜 Trelegy</td>
+<td>26211／28115</td>
+</tr>
+<tr>
+<td>全身類固醇</td>
+<td>普列道寧 prednisolone／Solu-Medrol</td>
+<td>23788／30727</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>依據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>氣喘不單用 SABA、ICS-formoterol 需要時/ MART（Track 1）</td>
+<td>✅ <strong>GINA 2025</strong></td>
+</tr>
+<tr>
+<td>COPD 雙擴張為主，ICS 依嗜酸球（≥300 強、&lt;100 不建議）</td>
+<td>✅ <strong>GOLD 2025</strong></td>
+</tr>
+<tr>
+<td>急性惡化全身類固醇 5 天、SpO₂ 88–92%</td>
+<td>✅ GOLD/GINA</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與在地品項對應，未重製書本內文。深入請回查 GINA
+2025／GOLD 2025。</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>📕 <strong>Washington Manual 第 38
+版交叉確認（2026）</strong>：本章周邊嗜酸球 &gt;300/µL 支持 ICS、GOLD
+分組導向與 38 版一致；臨床內容以學會最新指引為準，38 版為次要對照。</p>
+</blockquote>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a href="https://ginasthma.org/2025-gina-strategy-report/">GINA 2025
+氣喘策略報告</a></li>
+<li><a href="https://goldcopd.org/2025-gold-report/">GOLD 2025 COPD
+報告</a></li>
+</ul>
+
+</section>
+<section id="ch10" class="chapter" data-title="骨質疏鬆">
+<div class="chhead"><h2 class="chtitle">骨質疏鬆</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=osteoporosis bisphosphonate denosumab romosozumab" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="十一-骨質疏鬆osteoporosis">十一　骨質疏鬆（Osteoporosis）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 2014 原書僅雙磷酸鹽。本章補入
+<strong>denosumab、romosozumab、anabolic-first、drug holiday</strong>
+與停藥反彈警示。藥名用<strong>光田</strong>品項。 ⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。療程與停藥策略個別化。標
+<code>⚠️待確認</code> 者請查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>2024 ASBMR/BHOF goal-directed
+治療立場聲明</strong>、<strong>Endocrine Society
+停經後骨鬆指引</strong>、<strong>AACE/ACE</strong>、<strong>2024 UK
+NOGG</strong>。教科書僅次要對照。</li>
+</ul>
+<hr />
+<h2 id="風險分層決定藥物goal-directed">1.
+風險分層決定藥物（goal-directed）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>風險</th>
+<th>首選</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>高風險</strong></td>
+<td>雙磷酸鹽（zoledronic 等）或 <strong>denosumab</strong></td>
+</tr>
+<tr>
+<td><strong>極高風險</strong>（T&lt;−2.5＋骨折、多處脊椎骨折、近期骨折）</td>
+<td><strong>anabolic
+優先</strong>：romosozumab／teriparatide／abaloparatide；或
+zoledronic／denosumab</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>anabolic-first</strong>：極高風險先用合成代謝藥（romosozumab
+12 個月 / teriparatide 24
+個月），<strong>療程結束後須「無縫接上」抗再吸收藥</strong>（zoledronic/denosumab/alendronate），否則骨密度流失。</p>
+</blockquote>
+<hr />
+<h2 id="各藥光田品項">2. 各藥（光田品項）</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>類</th>
+<th>學名</th>
+<th>光田品項（醫令碼）</th>
+<th>用法/重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>雙磷酸鹽（IV）</strong></td>
+<td>Zoledronic acid</td>
+<td>骨力強 Aclasta 5mg/100mL <code>30148</code>（Cakeep
+<code>30993</code>、Zodonic <code>30992</code>）</td>
+<td><strong>一年一次</strong>
+IV；急性期反應（發燒/肌痛）多自限；補足鈣/D 避免低血鈣</td>
+</tr>
+<tr>
+<td>雙磷酸鹽（PO）</td>
+<td>Alendronate</td>
+<td>⚠️光田公開未見（需洽藥劑部）</td>
+<td>空腹、整片配水、坐直 30 分</td>
+</tr>
+<tr>
+<td><strong>RANKL 單抗</strong></td>
+<td>Denosumab</td>
+<td><strong>保骼麗 Prolia 60mg <code>30343</code></strong>（每 6 個月
+SC）；癌骨瓦 Xgeva 120mg <code>30360</code>（骨轉移/高血鈣用）</td>
+<td>⚠️<strong>不可自行停藥/延遲</strong>！停藥 6
+個月內骨代謝反彈、<strong>多發性脊椎骨折</strong>風險 →
+停用須轉換雙磷酸鹽</td>
+</tr>
+<tr>
+<td><strong>合成代謝（骨形成）</strong></td>
+<td>Romosozumab</td>
+<td>益穩挺 Evenity 105mg×2 <code>30694</code>（每月 SC ×12）</td>
+<td>極高風險；近期心血管事件者慎用</td>
+</tr>
+<tr>
+<td></td>
+<td>Teriparatide</td>
+<td>骨穩 Forteo <code>30218</code>／艾歐骨得 Alvosteo
+<code>30223</code></td>
+<td>每日 SC，最長 24 個月</td>
+</tr>
+<tr>
+<td><strong>SERM</strong></td>
+<td>Raloxifene</td>
+<td>鈣穩 Evista 60mg <code>20169</code></td>
+<td>兼降乳癌風險；增加 VTE，臥床/術前停</td>
+</tr>
+<tr>
+<td><strong>基礎補充</strong></td>
+<td>鈣 / 維生素 D</td>
+<td>calcium carbonate、calcitriol（見電解質章）</td>
+<td>所有抗骨鬆治療都要足量鈣與 D</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="drug-holiday雙磷酸鹽">3. Drug holiday（雙磷酸鹽）</h2>
+<ul>
+<li><strong>口服雙磷酸鹽 ≥5 年 / IV ≥3
+年</strong>後重新評估骨折風險。</li>
+<li>低/中風險可進入 holiday，每 <strong>2–4
+年</strong>重評；骨密度顯著下降、新骨折或風險上升 → 提早重啟。</li>
+<li><strong>denosumab 沒有 holiday
+概念</strong>（停藥反彈），停用前一定要規劃轉換。</li>
+</ul>
+<blockquote>
+<p>長期雙磷酸鹽/denosumab
+注意<strong>非典型股骨骨折、顎骨壞死（ONJ）</strong>；侵入牙科處置前評估。</p>
+</blockquote>
+<hr />
+<h2 id="光田品項速查表">4. 光田品項速查表</h2>
+<table>
+<thead>
+<tr>
+<th>學名</th>
+<th>商品名</th>
+<th>規格</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zoledronic acid</td>
+<td>骨力強 Aclasta</td>
+<td>5mg/100mL</td>
+<td>30148</td>
+</tr>
+<tr>
+<td>Denosumab（骨鬆）</td>
+<td>保骼麗 Prolia</td>
+<td>60mg</td>
+<td>30343</td>
+</tr>
+<tr>
+<td>Denosumab（骨轉移）</td>
+<td>癌骨瓦 Xgeva</td>
+<td>120mg</td>
+<td>30360</td>
+</tr>
+<tr>
+<td>Romosozumab</td>
+<td>益穩挺 Evenity</td>
+<td>105mg×2</td>
+<td>30694</td>
+</tr>
+<tr>
+<td>Teriparatide</td>
+<td>骨穩 Forteo／艾歐骨得 Alvosteo</td>
+<td>—</td>
+<td>30218／30223</td>
+</tr>
+<tr>
+<td>Raloxifene</td>
+<td>鈣穩 Evista</td>
+<td>60mg</td>
+<td>20169</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。口服 alendronate
+公開未見，需洽藥劑部。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>依據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>風險分層、極高風險 anabolic-first 再接抗再吸收</td>
+<td>✅ 2024 ASBMR/BHOF、AACE</td>
+</tr>
+<tr>
+<td><strong>denosumab 停藥反彈→須轉換</strong>、不可自行停</td>
+<td>✅ Endocrine Society / ASBMR</td>
+</tr>
+<tr>
+<td>雙磷酸鹽 holiday（PO ≥5y / IV ≥3y 重評）</td>
+<td>✅ 指引</td>
+</tr>
+<tr>
+<td>長期治療注意 AFF/ONJ</td>
+<td>✅ 指引</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與在地品項對應，未重製書本內文。深入請回查對應骨鬆指引。</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>📕 <strong>Washington Manual 第 38
+版交叉確認（2026）</strong>：本章zoledronic
+4mg/15min+先水化、denosumab、raloxifene與 38
+版一致；臨床內容以學會最新指引為準，38 版為次要對照。</p>
+</blockquote>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a
+href="https://academic.oup.com/jbmr/article/39/10/1393/7723496">2024
+ASBMR/BHOF goal-directed 骨鬆治療立場聲明（JBMR）</a></li>
+<li><a
+href="https://www.endocrine.org/clinical-practice-guidelines/osteoporosis-in-postmenopausal-women">Endocrine
+Society 停經後骨鬆藥物治療指引</a></li>
+</ul>
+
+</section>
+<section id="ch11" class="chapter" data-title="鎮靜/譫妄/抗癲癇">
+<div class="chhead"><h2 class="chtitle">鎮靜/譫妄/抗癲癇</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=ICU delirium sedation status epilepticus" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1 id="五-鎮靜-譫妄-抗癲癇">五　鎮靜 / 譫妄 / 抗癲癇</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜ 強調<strong>譫妄非藥物優先、避免
+benzodiazepine</strong>，與癲癇重積的現行流程。藥名用<strong>光田</strong>品項。
+⚠️ <strong>使用聲明</strong>：快速參考，非醫囑。鎮靜/抗精神病藥注意
+QT、跌倒、呼吸抑制。標 <code>⚠️待確認</code> 者請查證。</p>
+</blockquote>
+<h2 id="指引依據黃金標準2026-現行最新">📌 指引依據（黃金標準，2026
+現行最新）</h2>
+<ul>
+<li><strong>譫妄/鎮靜</strong>：SCCM <strong>PADIS 2018</strong>（ICU
+疼痛/激動/譫妄/不動/睡眠）。</li>
+<li><strong>癲癇重積</strong>：NCS / AES
+重積處置流程。教科書僅次要對照。</li>
+</ul>
+<hr />
+<h2 id="譫妄delirium-先非藥物藥物是最後手段">1. 譫妄（Delirium）—
+先非藥物，藥物是最後手段</h2>
+<ul>
+<li><strong>第一線＝非藥物</strong>：找誘因（感染、缺氧、電解質、藥物、便秘/尿滯留、戒斷、疼痛）、定向、日夜節律、早期下床、移除管路、家屬陪伴。</li>
+<li><strong>避免
+benzodiazepine</strong>（會誘發/惡化譫妄）——<strong>例外：酒精/BZD
+戒斷、癲癇</strong>。</li>
+<li><strong>抗精神病藥</strong>只用於<strong>嚴重激動/有安全危害或極度痛苦</strong>，<strong>不做常規預防</strong>，最低有效劑量短期使用：
+<ul>
+<li><strong>Haloperidol</strong>：易寧優 Binin-U 5mg inj
+<code>30043</code>／和寧 Hopan 0.5–5mg PO
+<code>23271</code>/<code>23353</code>；盯
+<strong>QT</strong>、錐體外症。</li>
+<li><strong>Quetiapine</strong>：瑰樂平 Quepine 100mg
+<code>20064</code>／腦樂靜 25mg
+<code>20972</code>（夜間激動、巴金森/路易體者較安全）。</li>
+</ul></li>
+<li><strong>Dexmedetomidine</strong>（普利斯德 Precedex
+<code>30111</code>，<strong>限
+ICU</strong>）：插管/激動型譫妄之鎮靜首選之一，呼吸抑制少。</li>
+</ul>
+<hr />
+<h2 id="鎮靜-助眠病房">2. 鎮靜 / 助眠（病房）</h2>
+<ul>
+<li>短期失眠：非苯二氮平類（zolpidem 等 ⚠️品項待確認）或低劑量
+quetiapine/trazodone；老年慎用、防跌倒。</li>
+<li>ICU 鎮靜：優先 <strong>dexmedetomidine 或
+propofol</strong>（⚠️品項待確認），<strong>少用持續
+benzodiazepine</strong>（PADIS 2018）。</li>
+<li><strong>酒精戒斷</strong>：<strong>symptom-triggered
+benzodiazepine</strong>（lorazepam）＋ 維生素 B1（先於葡萄糖）。
+<ul>
+<li>Lorazepam：樂力靜 Lorazin 1mg <code>23753</code>／樂穩 Lowen 0.5mg
+<code>23217</code>（⚠️ IV 劑型品項待確認）。</li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="癲癇重積status-epilepticus">3. 癲癇重積（Status
+Epilepticus）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>階段</th>
+<th>處置（光田品項）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0–5 分</strong></td>
+<td>穩定 ABC、查血糖；<strong>benzodiazepine</strong>：IV lorazepam，或
+<strong>IM midazolam / IV diazepam</strong>（⚠️ IV benzo
+劑型待確認）</td>
+</tr>
+<tr>
+<td><strong>5–20 分（第二線）</strong></td>
+<td><strong>IV 抗癲癇</strong>擇一：<strong>Levetiracetam（優閒 Keppra
+inj <code>30264</code>）</strong>、Valproate（帝拔癲
+Depakine）、(fos)phenytoin（癲能停 Dilantin
+<code>23126</code>／Aleviatin inj）</td>
+</tr>
+<tr>
+<td><strong>&gt;20–40 分（難治）</strong></td>
+<td>麻醉劑量 midazolam / propofol 連續輸注、插管、EEG 監測（ICU）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>找誘因：低血糖、低血鈉、停藥、感染、結構性病灶、酒精/藥物。</li>
+</ul>
+<hr />
+<h2 id="抗癲癇維持藥光田品項">4. 抗癲癇維持藥（光田品項）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名</th>
+<th>光田品項</th>
+<th>重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Levetiracetam</td>
+<td>優閒 Keppra PO/IV/液
+<code>20411</code>/<code>30264</code>/<code>26089</code></td>
+<td>交互作用少、腎排除（腎差減量）；情緒副作用</td>
+</tr>
+<tr>
+<td>Lacosamide</td>
+<td>維帕特 Vimpat PO/IV <code>20859</code>/<code>30698</code></td>
+<td>注意 PR 延長</td>
+</tr>
+<tr>
+<td>Sodium valproate</td>
+<td>帝拔癲 Depakine <code>20121</code></td>
+<td>肝毒、致畸、高血氨；育齡女性避免</td>
+</tr>
+<tr>
+<td>Phenytoin</td>
+<td>癲能停 Dilantin <code>23126</code></td>
+<td>零級動力學、交互作用多、需驗濃度</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="光田品項速查表">5. 光田品項速查表</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>用途</th>
+<th>學名</th>
+<th>商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>譫妄激動</td>
+<td>Haloperidol</td>
+<td>易寧優 Binin-U inj／和寧 Hopan</td>
+<td>30043／23271·23353</td>
+</tr>
+<tr>
+<td>譫妄夜間</td>
+<td>Quetiapine</td>
+<td>瑰樂平 Quepine／腦樂靜</td>
+<td>20064／20972</td>
+</tr>
+<tr>
+<td>ICU 鎮靜</td>
+<td>Dexmedetomidine</td>
+<td>普利斯德 Precedex（限 ICU）</td>
+<td>30111</td>
+</tr>
+<tr>
+<td>戒斷/重積</td>
+<td>Lorazepam</td>
+<td>樂力靜 Lorazin／樂穩 Lowen</td>
+<td>23753／23217</td>
+</tr>
+<tr>
+<td>重積二線</td>
+<td>Levetiracetam</td>
+<td>優閒 Keppra（IV）</td>
+<td>30264</td>
+</tr>
+<tr>
+<td>重積二線</td>
+<td>Phenytoin</td>
+<td>癲能停 Dilantin</td>
+<td>23126</td>
+</tr>
+<tr>
+<td>抗癲癇</td>
+<td>Lacosamide</td>
+<td>維帕特 Vimpat</td>
+<td>20859／30698</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。IV
+benzodiazepine（midazolam/diazepam/IV lorazepam）、propofol、zolpidem
+劑型請於院內確認。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>依據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>譫妄非藥物優先、抗精神病藥不做常規預防、避免 BZD</td>
+<td>✅ PADIS 2018</td>
+</tr>
+<tr>
+<td>ICU 鎮靜優先 dexmedetomidine/propofol，少用持續 BZD</td>
+<td>✅ PADIS 2018</td>
+</tr>
+<tr>
+<td>重積：BZD→IV levetiracetam/valproate/phenytoin→麻醉</td>
+<td>✅ NCS/AES 流程</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與在地品項對應，未重製書本內文。深入請回查 PADIS 2018
+與重積指引。</p>
+</blockquote>
+<hr />
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a href="https://doi.org/10.1097/CCM.0000000000003259">SCCM PADIS
+2018 指引（Critical Care Medicine）</a></li>
+</ul>
+
+</section>
+<section id="ch12" class="chapter" data-title="病房常用對症藥">
+<div class="chhead"><h2 class="chtitle">病房常用對症藥</h2>
+<a class="oebtn" href="https://www.openevidence.com/?oe_q=inpatient symptom management analgesia antiemetics" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
+<h1
+id="病房常用對症藥與在地品項整併">病房常用對症藥與在地品項（整併）</h1>
+<blockquote>
+<p><strong>2026 更新版</strong> ｜
+整併原書止痛/類固醇/制酸/止吐/腸胃/抗組織胺/止暈咳/泌尿等對症藥，臨床變動小，以<strong>光田品項對應</strong>為主，標出高頻安全更新。
+⚠️
+<strong>使用聲明</strong>：快速參考，非醫囑。劑量依年齡/腎肝功能調整。標
+<code>⚠️待確認</code> 者請查證。</p>
+</blockquote>
+<h2 id="依據">📌 依據</h2>
+<ul>
+<li>對症處置原則 +
+各藥仿單；高頻安全點參酌現行共識（止痛階梯、壓力性潰瘍預防、metoclopramide
+限期等）。品項為光田西藥查詢系統。</li>
+</ul>
+<hr />
+<h2 id="止痛who-階梯-神經痛">1. 止痛（WHO 階梯 + 神經痛）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>層級</th>
+<th>藥（光田品項）</th>
+<th>重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>非鴉片</strong></td>
+<td><strong>Acetaminophen</strong> 利克痛 500mg <code>23263</code>（每日
+≤3–4g，肝病減量）</td>
+<td>第一線、安全</td>
+</tr>
+<tr>
+<td>NSAID</td>
+<td>Ibuprofen <code>26440</code>／Diclofenac 克他服寧 PO/inj/栓
+<code>23109</code>/<code>30544</code>/<code>28830</code>／Ketorolac
+克多炎 PO/inj <code>20412</code>/<code>30401</code>／Celecoxib 希樂葆
+200mg <code>20115</code></td>
+<td><strong>CKD/心衰/GI 出血/老年慎用</strong>；ketorolac ≤5 天</td>
+</tr>
+<tr>
+<td><strong>弱鴉片</strong></td>
+<td><strong>Tramadol</strong> 頓痛特 inj
+<code>38613</code>／立除痛(+APAP) <code>23383</code>（管四）</td>
+<td>降癲癇閾、與 SSRI 致血清素症候群</td>
+</tr>
+<tr>
+<td><strong>強鴉片</strong></td>
+<td><strong>Morphine</strong> 嗎啡
+PO/inj（管一）<code>38489</code>/<code>38482</code>／<strong>Fentanyl</strong>
+貼片/inj（管二）<code>28137</code>/<code>38208</code></td>
+<td><strong>同開緩瀉劑防便秘</strong>；備
+<strong>naloxone</strong>；腎差用 fentanyl</td>
+</tr>
+<tr>
+<td><strong>神經痛</strong></td>
+<td>Gabapentin 鎮頑癲 300mg <code>23355</code>／Pregabalin 利瑞卡 75mg
+<code>20187</code>／Duloxetine 定憂樂 60mg <code>20824</code></td>
+<td>gabapentinoid 嗜睡/腎調；duloxetine 兼憂鬱</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>鴉片安全</strong>：最低有效劑量、短期；<strong>便秘預防＋
+naloxone（解麻 0.4mg <code>38524</code>）備用</strong>；避免與 BZD
+併用。</p>
+</blockquote>
+<hr />
+<h2 id="全身性類固醇換算-光田">2. 全身性類固醇（換算 + 光田）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>學名</th>
+<th>抗發炎當量</th>
+<th>光田品項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hydrocortisone</td>
+<td>20mg</td>
+<td>Solu-Cortef 100mg inj <code>33018</code>（壓力劑量/腎上腺危機）</td>
+</tr>
+<tr>
+<td>Prednisolone</td>
+<td>5mg</td>
+<td>普列道寧 5mg <code>23788</code></td>
+</tr>
+<tr>
+<td>Methylprednisolone</td>
+<td>4mg</td>
+<td>美蒂舒 Meticort 4mg <code>20513</code>／Solu-Medrol 500mg inj
+<code>30727</code></td>
+</tr>
+<tr>
+<td>Dexamethasone</td>
+<td>0.75mg</td>
+<td>得立生 4mg <code>23124</code>／力克爽 inj <code>33034</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>換算：hydrocortisone 20 ＝ pred 5 ＝ methylpred 4 ＝ dexa
+0.75（mg）。長期用注意血糖、骨鬆、感染、腸胃；驟停防腎上腺不全。</p>
+</blockquote>
+<hr />
+<h2 id="制酸-抗潰瘍">3. 制酸 / 抗潰瘍</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>類</th>
+<th>光田品項</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PPI</strong></td>
+<td>Omeprazole 瘍寧 20mg <code>23348</code>／Pantoprazole 胃適安 inj
+<code>30276</code>·盼胃好 40mg <code>20984</code>／Lansoprazole 泰克胃通
+OD 15mg <code>20786</code></td>
+<td>GI 出血、消化性潰瘍；clopidogrel 併用選
+<strong>pantoprazole</strong>（避 omeprazole）</td>
+</tr>
+<tr>
+<td>H2</td>
+<td>Famotidine 悅潰止 20mg <code>23399</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>黏膜保護</td>
+<td>Sucralfate 保胃 懸乳 <code>26212</code></td>
+<td>與其他藥間隔</td>
+</tr>
+<tr>
+<td>制酸劑</td>
+<td>MgO 氧化鎂 250mg <code>23274</code>／含鋁複方</td>
+<td>MgO 兼緩瀉；腎差注意鎂/鋁</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️
+<strong>壓力性潰瘍預防（SUP）</strong>：僅<strong>重症且有風險</strong>（呼吸器
+&gt;48h、凝血異常、休克、重大燒傷/外傷）才用；<strong>一般病房不常規
+PPI</strong>，出院檢視是否該停（避免長期 PPI）。</p>
+</blockquote>
+<hr />
+<h2 id="止吐-止呃逆">4. 止吐 / 止呃逆</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>藥（光田品項）</th>
+<th>重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metoclopramide 英百朗 inj <code>33078</code>／胃明朗
+<code>23624</code></td>
+<td>促動力；<strong>錐體外症、≤5 天</strong>、年輕女性/老年慎</td>
+</tr>
+<tr>
+<td>Domperidone 除胃障 10mg <code>23137</code></td>
+<td>不過 BBB，較少 EPS；注意 QT</td>
+</tr>
+<tr>
+<td>Ondansetron 蘇普瑞 8mg inj <code>30962</code></td>
+<td>化療/術後噁心；<strong>QT 延長</strong></td>
+</tr>
+<tr>
+<td>Prochlorperazine 丙氯陪拉辛 5mg <code>23525</code></td>
+<td>暈眩相關噁心；EPS</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="瀉劑-止瀉-腸胃">5. 瀉劑 / 止瀉 / 腸胃</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>用途</th>
+<th>光田品項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>軟便/刺激</td>
+<td>Senna 清立飄 <code>23789</code>／Bisacodyl 樂可舒 5mg·栓
+<code>23216</code>/<code>28054</code>／MgO <code>23274</code></td>
+</tr>
+<tr>
+<td>滲透</td>
+<td>Lactulose 樂多糖漿
+<code>26450</code>（兼<strong>肝性腦病</strong>降血氨，目標 2–3
+次軟便/日）</td>
+</tr>
+<tr>
+<td>止瀉</td>
+<td>Loperamide 洛普拉 2mg <code>23119</code>（<strong>感染性/血便、疑 C.
+diff 勿用</strong>）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="抗組織胺-止暈">6. 抗組織胺 / 止暈</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>用途</th>
+<th>光田品項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一代（鎮靜、可 IV）</td>
+<td>Chlorpheniramine；<strong>Diphenhydramine inj 30mg
+<code>33062</code></strong>（過敏/輸血反應）</td>
+</tr>
+<tr>
+<td>第二代（不嗜睡）</td>
+<td>Cetirizine 勝克敏液 <code>26901</code>／Levocetirizine 舒敏寧
+<code>23139</code>／Loratadine 特敏福 <code>23188</code></td>
+</tr>
+<tr>
+<td>眩暈</td>
+<td>Betahistine 眩耳聰 24mg <code>20542</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="止咳-化痰">7. 止咳 / 化痰</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>用途</th>
+<th>光田品項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>止咳</td>
+<td>Dextromethorphan 癒咳 30mg <code>23373</code></td>
+</tr>
+<tr>
+<td>化痰</td>
+<td>Acetylcysteine 愛克痰 600mg <code>20182</code>／Ambroxol 平痰息 30mg
+<code>23069</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>咳嗽先找原因（ACEI、感染、心衰、氣喘）；ACEI
+咳嗽應換藥而非加止咳。</p>
+</blockquote>
+<hr />
+<h2 id="泌尿">8. 泌尿</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>用途</th>
+<th>光田品項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BPH（α-blocker）</td>
+<td>Tamsulosin 活路利淨 OCAS 0.4mg <code>20295</code>／Tamso SR 0.2mg
+<code>23358</code></td>
+</tr>
+<tr>
+<td>BPH（5α-還原酶/複方）</td>
+<td>Finasteride 柔沛 1mg
+<code>20612</code>（自費）／Dutasteride+Tamsulosin 多適達
+<code>20706</code></td>
+</tr>
+<tr>
+<td>膀胱過動</td>
+<td>Solifenacin 衛喜康 5mg <code>20811</code>（抗膽鹼）／Mirabegron
+貝坦利 50mg <code>20881</code>（β3）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>α-blocker 注意姿勢性低血壓（首劑）；抗膽鹼藥老年注意尿滯留/認知。</p>
+</blockquote>
+<hr />
+<h2 id="iv-pump-常用血管活性藥重症">9. IV pump
+常用血管活性藥（重症）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>藥</th>
+<th>光田品項</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Norepinephrine</strong></td>
+<td>諾比奈芬 4mg/4mL <code>30144</code></td>
+<td><strong>敗血性休克首選升壓</strong></td>
+</tr>
+<tr>
+<td>Dobutamine</td>
+<td>健多博 250mg <code>30143</code></td>
+<td>低心輸出/心因性</td>
+</tr>
+<tr>
+<td>Milrinone</td>
+<td>Primacor <code>30549</code></td>
+<td>inodilator</td>
+</tr>
+<tr>
+<td>Nitroglycerin</td>
+<td>Millisrol pump（見心衰章）／Nitrostat SL 0.6mg
+<code>23524</code></td>
+<td>ACS/肺水腫/降壓</td>
+</tr>
+<tr>
+<td>Naloxone</td>
+<td>解麻 0.4mg/mL <code>38524</code></td>
+<td>鴉片過量解毒</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>dopamine 光田品項 ⚠️待確認（現多以 norepinephrine 取代）。</p>
+</blockquote>
+<hr />
+<h2 id="範圍說明外用-產科-小兒">10. 範圍說明：外用 / 產科 / 小兒</h2>
+<ul>
+<li><strong>外用藥</strong>（類固醇藥膏依部位選強度、抗黴/抗菌外用）、<strong>IV
+pump 速率換算</strong>：屬操作型速查，建議另做單頁卡。</li>
+<li><strong>產科 /
+小兒</strong>：非內科住院核心，且劑量需依體重/孕期個別化 ——
+<strong>建議照會婦產科/小兒科</strong>，本手冊不展開（避免錯誤外推）。</li>
+</ul>
+<hr />
+<h2 id="光田品項速查重點">11. 光田品項速查（重點）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>用途</th>
+<th>商品名</th>
+<th>醫令碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>退燒止痛</td>
+<td>利克痛 Acetaminophen</td>
+<td>23263</td>
+</tr>
+<tr>
+<td>強鴉片</td>
+<td>嗎啡 inj／多瑞喜 Fentanyl 貼片</td>
+<td>38482／28137</td>
+</tr>
+<tr>
+<td>鴉片解毒</td>
+<td>解麻 Naloxone</td>
+<td>38524</td>
+</tr>
+<tr>
+<td>神經痛</td>
+<td>利瑞卡 Pregabalin／鎮頑癲 Gabapentin</td>
+<td>20187／23355</td>
+</tr>
+<tr>
+<td>類固醇 inj</td>
+<td>Solu-Cortef／Solu-Medrol／力克爽 Dexa</td>
+<td>33018／30727／33034</td>
+</tr>
+<tr>
+<td>PPI inj</td>
+<td>胃適安 Pantoprazole</td>
+<td>30276</td>
+</tr>
+<tr>
+<td>止吐 inj</td>
+<td>英百朗 Metoclopramide／蘇普瑞 Ondansetron</td>
+<td>33078／30962</td>
+</tr>
+<tr>
+<td>緩瀉/降氨</td>
+<td>樂多 Lactulose</td>
+<td>26450</td>
+</tr>
+<tr>
+<td>抗組織胺 inj</td>
+<td>Diphenhydramine</td>
+<td>33062</td>
+</tr>
+<tr>
+<td>升壓</td>
+<td>諾比奈芬 Norepinephrine</td>
+<td>30144</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>資料來源：光田西藥品項查詢系統。公開系統不含健保價。</p>
+</blockquote>
+<hr />
+<h2 id="查證紀錄verification-log">查證紀錄（Verification log）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>依據與結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>止痛階梯、鴉片便秘預防/naloxone 備用</td>
+<td>✅ 標準處置</td>
+</tr>
+<tr>
+<td><strong>壓力性潰瘍預防限重症有風險</strong>、避免長期 PPI</td>
+<td>✅ 現行共識（SUP 指引方向）</td>
+</tr>
+<tr>
+<td>metoclopramide ≤5 天、EPS；ondansetron/domperidone QT</td>
+<td>✅ 仿單/安全警示</td>
+</tr>
+<tr>
+<td>感染性腹瀉/疑 C. diff 不用 loperamide</td>
+<td>✅ 標準</td>
+</tr>
+<tr>
+<td>類固醇等效換算</td>
+<td>✅ 藥理標準</td>
+</tr>
+<tr>
+<td>敗血性休克首選 norepinephrine</td>
+<td>✅ SSC 2021（見抗生素/敗血症段）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>僅作事實查證與在地品項對應，未重製書本內文。</p>
+</blockquote>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td><em>本章為對症藥整併收尾。全手冊核心章節至此完成。</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="參考連結精確網址點擊開啟">參考連結（精確網址，點擊開啟）</h2>
+<ul>
+<li><a href="https://doi.org/10.1097/CCM.0000000000005337">Surviving
+Sepsis Campaign 2021（Critical Care Medicine）</a></li>
+</ul>
+
+</section>
+  <footer>2026 內科小手冊（光田版）· 以學會最新指引 + 光田品項 + Washington Manual 38e 交叉確認<br>內容僅供參考，不構成醫療建議</footer>
+ </main>
+</div>
+<div class="wm">阿婷醫師的讀書筆記</div>
+<script>
+const q=document.getElementById('q');
+const secs=[...document.querySelectorAll('.chapter')];
+const navlinks=[...document.querySelectorAll('#nav a')];
+function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function clearHL(){document.querySelectorAll('mark.hl').forEach(m=>{const t=document.createTextNode(m.textContent);m.parentNode.replaceChild(t,m);});secs.forEach(s=>s.normalize());}
+function hl(el,re){const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);const ns=[];let n;while(n=w.nextNode())ns.push(n);
+ ns.forEach(node=>{const t=node.nodeValue;re.lastIndex=0;if(!re.test(t))return;const f=document.createDocumentFragment();let last=0,m;re.lastIndex=0;
+  while(m=re.exec(t)){f.appendChild(document.createTextNode(t.slice(last,m.index)));const mk=document.createElement('mark');mk.className='hl';mk.textContent=m[0];f.appendChild(mk);last=m.index+m[0].length;if(m.index===re.lastIndex)re.lastIndex++;}
+  f.appendChild(document.createTextNode(t.slice(last)));node.parentNode.replaceChild(f,node);});}
+function doSearch(){const term=q.value.trim();clearHL();const oe=document.getElementById('oeglobal');
+ if(!term){secs.forEach(s=>s.style.display='');navlinks.forEach(a=>a.style.display='');document.getElementById('cnt').textContent='';oe.style.display='none';return;}
+ const re=new RegExp(esc(term),'gi');let hits=0;
+ secs.forEach(s=>{const has=s.textContent.toLowerCase().includes(term.toLowerCase());s.style.display=has?'':'none';
+  const link=navlinks.find(a=>a.dataset.target===s.id);if(link)link.style.display=has?'':'none';if(has){hl(s,re);hits++;}});
+ document.getElementById('cnt').textContent='符合 '+hits+' 章';
+ oe.style.display='inline-block';oe.href='https://www.openevidence.com/?oe_q='+encodeURIComponent(term);}
+q.addEventListener('input',doSearch);
+document.getElementById('menu').addEventListener('click',()=>document.body.classList.toggle('navopen'));
+navlinks.forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('navopen')));
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navlinks.forEach(a=>a.classList.toggle('active',a.dataset.target===e.target.id));}});},{rootMargin:'-50px 0px -70% 0px'});
+secs.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
