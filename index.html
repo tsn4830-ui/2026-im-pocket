@@ -40,9 +40,13 @@ code{background:var(--codebg);padding:1px 5px;border-radius:4px;font-size:12.5px
 blockquote{border-left:4px solid var(--bqln);background:var(--bq);margin:10px 0;padding:6px 14px;color:var(--mut);font-size:13.5px}
 a{color:var(--lnk)}
 mark.hl{background:#ffe36b;color:#000;padding:0 1px}
-.drugsearch{width:100%;max-width:420px;padding:8px 12px;margin:8px 0 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:var(--card);color:var(--ink)}
+.drugfilter{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0 12px}
+.drugsearch{flex:1;min-width:180px;max-width:420px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:var(--card);color:var(--ink)}
+#drugcat{padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:14px}
+#drugcnt{font-size:12px;color:var(--mut)}
 .drugtable thead th{position:sticky;top:48px;z-index:2}
 .drugtable td:first-child{color:var(--mut);white-space:nowrap;font-size:12.5px}
+.drugtable td.pay{font-size:12px;color:var(--mut);min-width:230px;line-height:1.45}
 footer{text-align:center;color:var(--mut);font-size:12px;padding:18px;border-top:1px solid var(--line)}
 .wm{position:fixed;right:8px;bottom:6px;color:var(--mut);opacity:.55;font-size:11px;pointer-events:none;z-index:5}
 @media(max-width:780px){
@@ -82,181 +86,184 @@ footer{text-align:center;color:var(--mut);font-size:12px;padding:18px;border-top
  <main>
   <div class="disclaimer">⚠️ 本手冊為內科住院醫師快速參考，<b>非醫囑</b>。臨床內容以各大學會最新指引為準、商品名/醫令碼用光田品項；下單前請以仿單、院內藥劑部與主治判斷為準。標 ⚠️待確認 者請查證。OpenEvidence 按鈕需您自行登入該服務。</div>
   <section id="drugs" class="chapter" data-title="藥品速查">
-<div class="chhead"><h2 class="chtitle">💊 藥品總速查（光田品項）</h2></div>
+<div class="chhead"><h2 class="chtitle">💊 藥品總速查（光田品項＋健保給付）</h2></div>
+<div class="drugfilter">
+<select id="drugcat"><option value="">全部分類</option><option value="制酸">制酸</option><option value="制酸/緩瀉">制酸/緩瀉</option><option value="化痰">化痰</option><option value="升壓">升壓</option><option value="心衰竭">心衰竭</option><option value="心衰竭/升壓">心衰竭/升壓</option><option value="抗凝血">抗凝血</option><option value="抗生素">抗生素</option><option value="抗生素(MDRO)">抗生素(MDRO)</option><option value="抗病毒">抗病毒</option><option value="抗癲癇">抗癲癇</option><option value="抗組織胺">抗組織胺</option><option value="抗血小板">抗血小板</option><option value="抗黴菌">抗黴菌</option><option value="止吐">止吐</option><option value="止咳">止咳</option><option value="止暈">止暈</option><option value="止瀉">止瀉</option><option value="止痛">止痛</option><option value="止痛(解毒)">止痛(解毒)</option><option value="泌尿">泌尿</option><option value="瀉劑">瀉劑</option><option value="瀉劑/降氨">瀉劑/降氨</option><option value="神經痛">神經痛</option><option value="胸腔">胸腔</option><option value="腸胃">腸胃</option><option value="血管擴張">血管擴張</option><option value="血糖">血糖</option><option value="鎮靜/戒斷">鎮靜/戒斷</option><option value="鎮靜/譫妄">鎮靜/譫妄</option><option value="降血脂">降血脂</option><option value="電解質">電解質</option><option value="類固醇">類固醇</option><option value="骨鬆">骨鬆</option><option value="高血壓">高血壓</option><option value="高血壓急症">高血壓急症</option></select>
 <input id="drugq" class="drugsearch" type="search" placeholder="篩選學名 / 商品名 / 醫令碼…（共 169 項）">
-<table class="drugtable"><thead><tr><th>分類</th><th>學名</th><th>商品名（光田）</th><th>醫令碼</th></tr></thead>
+<span id="drugcnt"></span></div>
+<table class="drugtable"><thead><tr><th>分類</th><th>學名</th><th>商品名（光田）</th><th>醫令碼</th><th>健保給付重點</th></tr></thead>
 <tbody>
-<tr><td>抗凝血</td><td>Apixaban</td><td>艾必克凝 Eliquis 2.5mg / 5mg</td><td><code>20267 / 20229</code></td></tr>
-<tr><td>抗凝血</td><td>Rivaroxaban</td><td>拜瑞妥 Xarelto 2.5 / 15 / 20mg</td><td><code>20745 / 20976 / 20856</code></td></tr>
-<tr><td>抗凝血</td><td>Edoxaban</td><td>里先安 Lixiana 30 / 60mg</td><td><code>20744 / 20173</code></td></tr>
-<tr><td>抗凝血</td><td>Dabigatran</td><td>普栓達 Pradaxa 110mg</td><td><code>20183</code></td></tr>
-<tr><td>抗凝血</td><td>Warfarin</td><td>可化凝 Cofarin 1 / 5mg</td><td><code>23370 / 23143</code></td></tr>
-<tr><td>抗凝血</td><td>Enoxaparin</td><td>克立生 Clexane 6000IU/0.6mL</td><td><code>30080</code></td></tr>
-<tr><td>抗凝血</td><td>Heparin (UFH)</td><td>海派 Hepac 5000U/mL ×5mL</td><td><code>33035</code></td></tr>
-<tr><td>抗凝血</td><td>Idarucizumab(解藥)</td><td>達栓普 Praxbind 2.5g/50mL</td><td><code>30977</code></td></tr>
-<tr><td>抗凝血</td><td>Protamine(解藥)</td><td>硫酸魚精蛋白 50mg/5mL</td><td><code>30618</code></td></tr>
-<tr><td>抗凝血</td><td>Vitamin K</td><td>嘉體民 Katimin 10mg/amp</td><td><code>30405</code></td></tr>
-<tr><td>抗血小板</td><td>Aspirin</td><td>Bokey 100mg</td><td><code>⚠️院內確認</code></td></tr>
-<tr><td>抗血小板</td><td>Clopidogrel</td><td>保栓通 Plavix / 舒栓寧 75mg</td><td><code>20622 / 20869</code></td></tr>
-<tr><td>抗血小板</td><td>Ticagrelor</td><td>百無凝 Brilinta 90 / 60mg</td><td><code>20977 / 23457</code></td></tr>
-<tr><td>抗血小板</td><td>Prasugrel</td><td>抑凝安 Efient 3.75 / 20mg</td><td><code>20857 / 20821</code></td></tr>
-<tr><td>抗血小板</td><td>Tirofiban</td><td>雅瑞 Aggrastat 0.25mg/mL</td><td><code>30033</code></td></tr>
-<tr><td>抗血小板</td><td>Cilostazol</td><td>普達 Pletaal 50mg</td><td><code>20623</code></td></tr>
-<tr><td>抗血小板</td><td>Dipyridamole</td><td>心滴舒 Sandel 50mg</td><td><code>23377</code></td></tr>
-<tr><td>心衰竭</td><td>Sacubitril/Valsartan</td><td>健安心 Entresto 100mg</td><td><code>20174</code></td></tr>
-<tr><td>心衰竭</td><td>Carvedilol</td><td>心全 Syntrend 6.25 / 25mg</td><td><code>23349 / 23350</code></td></tr>
-<tr><td>心衰竭</td><td>Bisoprolol</td><td>康肯 Concor 1.25 / 5mg</td><td><code>23116 / 20263</code></td></tr>
-<tr><td>心衰竭</td><td>Spironolactone</td><td>歐得通 25mg</td><td><code>23748</code></td></tr>
-<tr><td>心衰竭</td><td>Eplerenone</td><td>迎甦心 Inspra 50mg</td><td><code>20366</code></td></tr>
-<tr><td>心衰竭</td><td>Dapagliflozin</td><td>福適佳 Forxiga 10mg</td><td><code>20987</code></td></tr>
-<tr><td>心衰竭</td><td>Empagliflozin</td><td>恩排糖 Jardiance 10 / 25mg</td><td><code>20260 / 20236</code></td></tr>
-<tr><td>心衰竭</td><td>Ivabradine</td><td>康立來 Coralan 5mg</td><td><code>20980</code></td></tr>
-<tr><td>心衰竭</td><td>Digoxin</td><td>隆我心 Lanoxin 0.25mg PO / 0.5mg inj</td><td><code>23125 / 33684</code></td></tr>
-<tr><td>心衰竭</td><td>Furosemide</td><td>來適泄 Lasix 40mg PO / 20mg inj</td><td><code>23060 / 30441</code></td></tr>
-<tr><td>心衰竭</td><td>Torsemide</td><td>妥速適 Torsix 5mg PO / 20mg inj</td><td><code>23395 / 33536</code></td></tr>
-<tr><td>心衰竭</td><td>Vericiguat</td><td>偉卡沃 Verquvo 10mg（自費）</td><td><code>20758</code></td></tr>
-<tr><td>心衰竭/升壓</td><td>Dobutamine</td><td>健多博 250mg inj</td><td><code>30143</code></td></tr>
-<tr><td>心衰竭/升壓</td><td>Milrinone</td><td>Primacor 10mg/10mL inj</td><td><code>30549</code></td></tr>
-<tr><td>升壓</td><td>Norepinephrine</td><td>諾比奈芬 4mg/4mL</td><td><code>30144</code></td></tr>
-<tr><td>高血壓</td><td>Ramipril (ACEI)</td><td>心達舒 Tritace 10mg</td><td><code>20784</code></td></tr>
-<tr><td>高血壓</td><td>Losartan (ARB)</td><td>暢壓 Losart 50mg</td><td><code>20074</code></td></tr>
-<tr><td>高血壓</td><td>Valsartan (ARB)</td><td>得安穩 Diovan 160mg</td><td><code>20141</code></td></tr>
-<tr><td>高血壓</td><td>Telmisartan (ARB)</td><td>泰迷平 80mg</td><td><code>23396</code></td></tr>
-<tr><td>高血壓</td><td>Amlodipine (CCB)</td><td>脈優 Norvasc 5mg</td><td><code>20531</code></td></tr>
-<tr><td>高血壓</td><td>Nifedipine (CCB)</td><td>壓悅達 Adapine SR 30mg</td><td><code>23380</code></td></tr>
-<tr><td>高血壓</td><td>Diltiazem (non-DHP)</td><td>合必爽 Herbesser 30mg PO / 50mg inj</td><td><code>23715 / 30295</code></td></tr>
-<tr><td>高血壓</td><td>Indapamide (thiazide-like)</td><td>迅順 Indap SR 1.5mg</td><td><code>23225</code></td></tr>
-<tr><td>高血壓</td><td>Doxazosin (α-block)</td><td>可迅 Doxaben XL 4mg</td><td><code>20140</code></td></tr>
-<tr><td>高血壓急症</td><td>Nicardipine inj</td><td>欣立定 Holdipine 20mg/20mL</td><td><code>30384</code></td></tr>
-<tr><td>高血壓急症</td><td>Labetalol inj</td><td>湍泰低 Trandate 25mg/5mL</td><td><code>30772</code></td></tr>
-<tr><td>高血壓急症</td><td>Esmolol inj</td><td>律平 100mg/10mL（自費）</td><td><code>30163</code></td></tr>
-<tr><td>血管擴張</td><td>Nitroglycerin</td><td>Nitrostat SL 0.6mg</td><td><code>23524</code></td></tr>
-<tr><td>降血脂</td><td>Atorvastatin</td><td>立普妥 Lipitor 10 / 40mg</td><td><code>20449 / 20979</code></td></tr>
-<tr><td>降血脂</td><td>Rosuvastatin</td><td>冠脂妥 Crestor 10mg</td><td><code>20119</code></td></tr>
-<tr><td>降血脂</td><td>Pitavastatin</td><td>力清之 Livalo 2mg / 平脂 Zulitor 4mg</td><td><code>20158 / 23971</code></td></tr>
-<tr><td>降血脂</td><td>Ezetimibe</td><td>怡妥 Ezetrol 10mg</td><td><code>20176</code></td></tr>
-<tr><td>降血脂</td><td>Bempedoic acid</td><td>寧脂德 Nilemdo 180mg（自費）</td><td><code>20710</code></td></tr>
-<tr><td>降血脂</td><td>Evolocumab (PCSK9i)</td><td>瑞百安 Repatha 140mg（自費）</td><td><code>30147</code></td></tr>
-<tr><td>降血脂</td><td>Alirocumab (PCSK9i)</td><td>保脂通 Praluent 75mg（事審）</td><td><code>30449</code></td></tr>
-<tr><td>降血脂</td><td>Fenofibrate</td><td>弗尼利脂寧 Lipanthyl 160mg</td><td><code>20455</code></td></tr>
-<tr><td>降血脂</td><td>Gemfibrozil</td><td>脂佳 Lipdown 300mg</td><td><code>23354</code></td></tr>
-<tr><td>電解質</td><td>NaCl 3%（升鈉）</td><td>氯化鈉 3% 500mL</td><td><code>33560 / 33521</code></td></tr>
-<tr><td>電解質</td><td>Tolvaptan</td><td>伸舒康 Samsca 15mg</td><td><code>20796</code></td></tr>
-<tr><td>電解質</td><td>KCl（口服）</td><td>舒補鉀 Const-K 10mEq/tab</td><td><code>23259</code></td></tr>
-<tr><td>電解質</td><td>KCl（注射）</td><td>氯化鉀 15% 10mEq/5mL / 20mEq/10mL</td><td><code>30511 / 30402</code></td></tr>
-<tr><td>電解質</td><td>SZC（降鉀）</td><td>利控鉀 Lokelma 5g（自費）</td><td><code>26743</code></td></tr>
-<tr><td>電解質</td><td>Ca polystyrene（降鉀）</td><td>鉀利安 Chalian 5g</td><td><code>26003</code></td></tr>
-<tr><td>電解質</td><td>Calcium chloride</td><td>vitaCAL</td><td><code>33050</code></td></tr>
-<tr><td>電解質</td><td>NaHCO₃</td><td>重曹注射液 / 碳酸氫鈉錠</td><td><code>33724 / 23731</code></td></tr>
-<tr><td>電解質</td><td>MgSO₄</td><td>硫酸鎂注射液</td><td><code>33481 / 30548</code></td></tr>
-<tr><td>電解質</td><td>Lanthanum（降磷）</td><td>福斯利諾 Fosrenol 750mg（自費）</td><td><code>20269</code></td></tr>
-<tr><td>電解質</td><td>Ferric citrate（降磷）</td><td>拿百磷 Nephoxil 500mg（自費）</td><td><code>20823</code></td></tr>
-<tr><td>電解質</td><td>Calcitriol</td><td>鈣注益 / 骨活醇 Macalol</td><td><code>33013 / 20688</code></td></tr>
-<tr><td>血糖</td><td>Glargine U300</td><td>糖德仕 Toujeo 450U/1.5mL</td><td><code>30309</code></td></tr>
-<tr><td>血糖</td><td>Degludec</td><td>諾胰保 Tresiba 300IU/3mL</td><td><code>30720</code></td></tr>
-<tr><td>血糖</td><td>Aspart（速效）</td><td>諾和瑞 NovoRapid</td><td><code>30540 / 30119</code></td></tr>
-<tr><td>血糖</td><td>NPH（中效）</td><td>優泌林 N</td><td><code>30486</code></td></tr>
-<tr><td>血糖</td><td>NPH/Reg 70/30</td><td>優泌林 70/30</td><td><code>30300 / 30299</code></td></tr>
-<tr><td>血糖</td><td>Aspart 預混30</td><td>諾和密斯 NovoMix 30</td><td><code>30118</code></td></tr>
-<tr><td>血糖</td><td>Metformin</td><td>漢伏醣 Henformin 500mg</td><td><code>23630</code></td></tr>
-<tr><td>血糖</td><td>Dulaglutide (GLP-1)</td><td>易週糖 Trulicity 1.5mg</td><td><code>30978</code></td></tr>
-<tr><td>血糖</td><td>Semaglutide (GLP-1)</td><td>胰妥讚 Ozempic 4mg/3mL</td><td><code>30656</code></td></tr>
-<tr><td>血糖</td><td>Sitagliptin (DPP4)</td><td>佳糖維 Januvia 100mg</td><td><code>20400</code></td></tr>
-<tr><td>血糖</td><td>Linagliptin (DPP4)</td><td>糖漸平 Trajenta 5mg</td><td><code>23078</code></td></tr>
-<tr><td>血糖</td><td>Glimepiride (SU)</td><td>瑪爾胰 Amaryl 2mg</td><td><code>20009</code></td></tr>
-<tr><td>血糖</td><td>Gliclazide (SU)</td><td>代蜜 Diamin MR 30mg</td><td><code>23253</code></td></tr>
-<tr><td>胸腔</td><td>SABA/SAMA 噴霧</td><td>冠喘衛 Combivent UDV</td><td><code>28093</code></td></tr>
-<tr><td>胸腔</td><td>ICS-formoterol(MART)</td><td>吸必擴 Symbicort / 肺舒坦 Foster</td><td><code>28111 / 28114·28119</code></td></tr>
-<tr><td>胸腔</td><td>ICS-LABA</td><td>使肺泰 Seretide / 潤娃 Relvar</td><td><code>28736 / 28110</code></td></tr>
-<tr><td>胸腔</td><td>LAMA</td><td>適喘樂 Spiriva</td><td><code>28016</code></td></tr>
-<tr><td>胸腔</td><td>LABA/LAMA</td><td>適倍樂 Spiolto / 安肺樂 Anoro / 必肺宜 Bevespi</td><td><code>28099 / 28098 / 26208</code></td></tr>
-<tr><td>胸腔</td><td>三合一 ICS/LAMA/LABA</td><td>必肺暢 Breztri / 肺樂喜 Trelegy</td><td><code>26211 / 28115</code></td></tr>
-<tr><td>胸腔</td><td>Theophylline</td><td>善寧 Xanthium 200mg</td><td><code>23891</code></td></tr>
-<tr><td>胸腔</td><td>Montelukast</td><td>欣流 Singulair / 敏喘克 Anxokast</td><td><code>20735 / 20217</code></td></tr>
-<tr><td>骨鬆</td><td>Zoledronic acid</td><td>骨力強 Aclasta 5mg/100mL</td><td><code>30148</code></td></tr>
-<tr><td>骨鬆</td><td>Denosumab</td><td>保骼麗 Prolia 60mg / 癌骨瓦 Xgeva 120mg</td><td><code>30343 / 30360</code></td></tr>
-<tr><td>骨鬆</td><td>Romosozumab</td><td>益穩挺 Evenity 105mg</td><td><code>30694</code></td></tr>
-<tr><td>骨鬆</td><td>Teriparatide</td><td>骨穩 Forteo / 艾歐骨得 Alvosteo</td><td><code>30218 / 30223</code></td></tr>
-<tr><td>骨鬆</td><td>Raloxifene</td><td>鈣穩 Evista 60mg</td><td><code>20169</code></td></tr>
-<tr><td>鎮靜/譫妄</td><td>Haloperidol</td><td>易寧優 Binin-U inj / 和寧 Hopan</td><td><code>30043 / 23271·23353</code></td></tr>
-<tr><td>鎮靜/譫妄</td><td>Quetiapine</td><td>瑰樂平 Quepine / 腦樂靜</td><td><code>20064 / 20972</code></td></tr>
-<tr><td>鎮靜/譫妄</td><td>Dexmedetomidine</td><td>普利斯德 Precedex（限ICU）</td><td><code>30111</code></td></tr>
-<tr><td>鎮靜/戒斷</td><td>Lorazepam</td><td>樂力靜 Lorazin / 樂穩 Lowen</td><td><code>23753 / 23217</code></td></tr>
-<tr><td>抗癲癇</td><td>Levetiracetam</td><td>優閒 Keppra PO/IV/液</td><td><code>20411 / 30264 / 26089</code></td></tr>
-<tr><td>抗癲癇</td><td>Phenytoin</td><td>癲能停 Dilantin</td><td><code>23126</code></td></tr>
-<tr><td>抗癲癇</td><td>Lacosamide</td><td>維帕特 Vimpat PO/IV</td><td><code>20859 / 30698</code></td></tr>
-<tr><td>抗癲癇</td><td>Valproate</td><td>帝拔癲 Depakine</td><td><code>20121</code></td></tr>
-<tr><td>止痛</td><td>Acetaminophen</td><td>利克痛 500mg</td><td><code>23263</code></td></tr>
-<tr><td>止痛</td><td>Tramadol</td><td>頓痛特 inj / 立除痛(+APAP)</td><td><code>38613 / 23383</code></td></tr>
-<tr><td>止痛</td><td>Morphine</td><td>嗎啡 PO / inj（管一）</td><td><code>38489 / 38482</code></td></tr>
-<tr><td>止痛</td><td>Fentanyl</td><td>多瑞喜貼片 / inj（管二）</td><td><code>28137 / 38208</code></td></tr>
-<tr><td>止痛(解毒)</td><td>Naloxone</td><td>解麻 0.4mg/mL</td><td><code>38524</code></td></tr>
-<tr><td>神經痛</td><td>Gabapentin</td><td>鎮頑癲 Neurontin 300mg</td><td><code>23355</code></td></tr>
-<tr><td>神經痛</td><td>Pregabalin</td><td>利瑞卡 Lyrica 75mg</td><td><code>20187</code></td></tr>
-<tr><td>神經痛</td><td>Duloxetine</td><td>定憂樂 60mg</td><td><code>20824</code></td></tr>
-<tr><td>類固醇</td><td>Hydrocortisone</td><td>Solu-Cortef 100mg inj</td><td><code>33018</code></td></tr>
-<tr><td>類固醇</td><td>Prednisolone</td><td>普列道寧 5mg</td><td><code>23788</code></td></tr>
-<tr><td>類固醇</td><td>Methylprednisolone</td><td>美蒂舒 4mg / Solu-Medrol 500mg</td><td><code>20513 / 30727</code></td></tr>
-<tr><td>類固醇</td><td>Dexamethasone</td><td>得立生 4mg / 力克爽 inj</td><td><code>23124 / 33034</code></td></tr>
-<tr><td>制酸</td><td>Omeprazole</td><td>瘍寧 20mg</td><td><code>23348</code></td></tr>
-<tr><td>制酸</td><td>Pantoprazole</td><td>胃適安 inj / 盼胃好 40mg</td><td><code>30276 / 20984</code></td></tr>
-<tr><td>制酸</td><td>Lansoprazole</td><td>泰克胃通 OD 15mg</td><td><code>20786</code></td></tr>
-<tr><td>制酸</td><td>Famotidine</td><td>悅潰止 20mg</td><td><code>23399</code></td></tr>
-<tr><td>腸胃</td><td>Sucralfate</td><td>保胃 懸乳</td><td><code>26212</code></td></tr>
-<tr><td>止吐</td><td>Metoclopramide</td><td>英百朗 inj / 胃明朗</td><td><code>33078 / 23624</code></td></tr>
-<tr><td>止吐</td><td>Domperidone</td><td>除胃障 10mg</td><td><code>23137</code></td></tr>
-<tr><td>止吐</td><td>Ondansetron</td><td>蘇普瑞 8mg inj</td><td><code>30962</code></td></tr>
-<tr><td>瀉劑</td><td>Senna</td><td>清立飄</td><td><code>23789</code></td></tr>
-<tr><td>瀉劑</td><td>Bisacodyl</td><td>樂可舒 5mg / 栓</td><td><code>23216 / 28054</code></td></tr>
-<tr><td>瀉劑/降氨</td><td>Lactulose</td><td>樂多糖漿</td><td><code>26450</code></td></tr>
-<tr><td>止瀉</td><td>Loperamide</td><td>洛普拉 2mg</td><td><code>23119</code></td></tr>
-<tr><td>制酸/緩瀉</td><td>MgO</td><td>氧化鎂 250mg</td><td><code>23274</code></td></tr>
-<tr><td>抗組織胺</td><td>Diphenhydramine inj</td><td>二苯胺明 30mg</td><td><code>33062</code></td></tr>
-<tr><td>抗組織胺</td><td>Cetirizine/Levocetirizine</td><td>勝克敏 / 舒敏寧</td><td><code>26901 / 23139</code></td></tr>
-<tr><td>抗組織胺</td><td>Loratadine</td><td>特敏福</td><td><code>23188</code></td></tr>
-<tr><td>止暈</td><td>Betahistine</td><td>眩耳聰 24mg</td><td><code>20542</code></td></tr>
-<tr><td>止咳</td><td>Dextromethorphan</td><td>癒咳 30mg</td><td><code>23373</code></td></tr>
-<tr><td>化痰</td><td>Acetylcysteine</td><td>愛克痰 600mg</td><td><code>20182</code></td></tr>
-<tr><td>化痰</td><td>Ambroxol</td><td>平痰息 30mg</td><td><code>23069</code></td></tr>
-<tr><td>泌尿</td><td>Tamsulosin</td><td>活路利淨 OCAS 0.4mg / Tamso 0.2mg</td><td><code>20295 / 23358</code></td></tr>
-<tr><td>泌尿</td><td>Finasteride</td><td>柔沛 1mg（自費）</td><td><code>20612</code></td></tr>
-<tr><td>泌尿</td><td>Solifenacin</td><td>衛喜康 5mg</td><td><code>20811</code></td></tr>
-<tr><td>泌尿</td><td>Mirabegron</td><td>貝坦利 50mg</td><td><code>20881</code></td></tr>
-<tr><td>抗生素</td><td>Oxacillin</td><td>歐西林 Ocillina 500mg inj</td><td><code>33019</code></td></tr>
-<tr><td>抗生素</td><td>Amoxicillin</td><td>安蒙西林 250mg</td><td><code>23114</code></td></tr>
-<tr><td>抗生素</td><td>Amox/clav</td><td>雙合黴素 Soonmelt inj</td><td><code>30733</code></td></tr>
-<tr><td>抗生素</td><td>Amp/sulbactam</td><td>優合西林 Subacillin 1.5g</td><td><code>30738</code></td></tr>
-<tr><td>抗生素</td><td>Piperacillin/tazo</td><td>達比黴素 Tapimycin 2.25g</td><td><code>30780</code></td></tr>
-<tr><td>抗生素</td><td>Cefazolin</td><td>賜爾寧 Stazolin 1g</td><td><code>30177</code></td></tr>
-<tr><td>抗生素</td><td>Cephalexin</td><td>賜福力欣 500mg</td><td><code>23410</code></td></tr>
-<tr><td>抗生素</td><td>Cefoxitin</td><td>樂華淨 Lofatin 2g</td><td><code>30157</code></td></tr>
-<tr><td>抗生素</td><td>Ceftriaxone</td><td>西特亞 2g inj</td><td><code>30320</code></td></tr>
-<tr><td>抗生素</td><td>Flomoxef</td><td>氟黴寧 Flumarin 1g</td><td><code>30645</code></td></tr>
-<tr><td>抗生素</td><td>Cefepime</td><td>革菌素 Antifect 1g</td><td><code>30072</code></td></tr>
-<tr><td>抗生素</td><td>Ceftaroline</td><td>捷復寧 Zinforo 600mg</td><td><code>30158</code></td></tr>
-<tr><td>抗生素(MDRO)</td><td>Ceftazidime/avibactam</td><td>贊飛得 Zavicefta 2g/0.5g</td><td><code>30421</code></td></tr>
-<tr><td>抗生素</td><td>Ertapenem</td><td>厄他培南 1g</td><td><code>30995</code></td></tr>
-<tr><td>抗生素</td><td>Meropenem</td><td>美平 Mepem / 美樂平 Mexopem 1g</td><td><code>30362 / 30420</code></td></tr>
-<tr><td>抗生素</td><td>Ciprofloxacin</td><td>喜博欣 PO / 賜保欣 Seforce inj</td><td><code>23968 / 30278</code></td></tr>
-<tr><td>抗生素</td><td>Levofloxacin</td><td>可樂必妥 Cravit 500mg PO/IV</td><td><code>20699 / 30349</code></td></tr>
-<tr><td>抗生素</td><td>Gentamicin</td><td>健達黴素 80mg/2mL</td><td><code>33054</code></td></tr>
-<tr><td>抗生素</td><td>Amikacin</td><td>安炎 Aminfec 250mg</td><td><code>30182</code></td></tr>
-<tr><td>抗生素</td><td>Vancomycin</td><td>安克 Vanco 500mg</td><td><code>30835</code></td></tr>
-<tr><td>抗生素</td><td>Teicoplanin</td><td>得時高 Targocid / 康可明 Tecopin</td><td><code>30765 / 30110</code></td></tr>
-<tr><td>抗生素</td><td>Linezolid</td><td>采福適 Zyvox 600mg PO/IV</td><td><code>20964 / 30955</code></td></tr>
-<tr><td>抗生素</td><td>Tigecycline</td><td>老虎黴素 Tygacil 50mg</td><td><code>30785</code></td></tr>
-<tr><td>抗生素</td><td>Metronidazole</td><td>沙普 SABS inj / 妳樂淨 PO</td><td><code>33489 / 23970</code></td></tr>
-<tr><td>抗生素</td><td>Clindamycin</td><td>克力欣 Clincin inj / 帝達黴素 PO</td><td><code>33031 / 23341</code></td></tr>
-<tr><td>抗生素</td><td>Azithromycin</td><td>日舒 Zithromax 250mg</td><td><code>20957</code></td></tr>
-<tr><td>抗生素</td><td>Doxycycline</td><td>多喜黴素 100mg</td><td><code>23264</code></td></tr>
-<tr><td>抗生素</td><td>TMP-SMX</td><td>孟克杏 PO / 雪白淨 Sevatrim inj</td><td><code>23344 / 30041</code></td></tr>
-<tr><td>抗黴菌</td><td>Fluconazole</td><td>膚康 IV / 膚肯 Flu-D PO</td><td><code>30220 / 20215</code></td></tr>
-<tr><td>抗黴菌</td><td>Micafungin</td><td>米方淨 Myfungin 50mg</td><td><code>30225</code></td></tr>
-<tr><td>抗黴菌</td><td>Amphotericin B</td><td>防治黴 Fungizone 50mg</td><td><code>30019</code></td></tr>
-<tr><td>抗病毒</td><td>Acyclovir</td><td>剋庖 Virless / 熱威樂素 Zovirax inj</td><td><code>30378 / 30951</code></td></tr>
-<tr><td>抗病毒</td><td>Oseltamivir</td><td>易剋冒（公費）/ 克流感 Tamiflu</td><td><code>36312 / 20776</code></td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Apixaban</td><td>艾必克凝 Eliquis 2.5mg / 5mg</td><td><code>20267 / 20229</code></td><td class="pay">NVAF須符合:曾中風/全身栓塞、LVEF&lt;40%、CHF NYHA≥2、≥75歲、或65–74歲+DM/HTN/CAD之一；排除嚴重瓣膜病/14天內中風/6個月內嚴重中風/出血風險/CrCl&lt;15/活動性肝病/孕。VTE另有療程。§2.1.4.3</td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Rivaroxaban</td><td>拜瑞妥 Xarelto 2.5 / 15 / 20mg</td><td><code>20745 / 20976 / 20856</code></td><td class="pay">NVAF條件同其他DOAC；另2.5mg+aspirin可用於高風險CAD/PAD。VTE 1–21日BID後QD。§2.1.4.2</td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Edoxaban</td><td>里先安 Lixiana 30 / 60mg</td><td><code>20744 / 20173</code></td><td class="pay">NVAF條件同DOAC（另排除CrCl&gt;95）；VTE需先注射抗凝≥5日。§2.1.4.4</td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Dabigatran</td><td>普栓達 Pradaxa 110mg</td><td><code>20183</code></td><td class="pay">NVAF條件同DOAC；CrCl&lt;30不給付。§2.1.5</td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Warfarin</td><td>可化凝 Cofarin 1 / 5mg</td><td><code>23370 / 23143</code></td><td class="pay"></td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Enoxaparin</td><td>克立生 Clexane 6000IU/0.6mL</td><td><code>30080</code></td><td class="pay">DVT&lt;10天；ACS 60mg BID 2–8天；術後預防40或30mg QD 7–10天。§2.1.3.2</td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Heparin (UFH)</td><td>海派 Hepac 5000U/mL ×5mL</td><td><code>33035</code></td><td class="pay"></td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Idarucizumab(解藥)</td><td>達栓普 Praxbind 2.5g/50mL</td><td><code>30977</code></td><td class="pay"></td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Protamine(解藥)</td><td>硫酸魚精蛋白 50mg/5mL</td><td><code>30618</code></td><td class="pay"></td></tr>
+<tr data-cat="抗凝血"><td>抗凝血</td><td>Vitamin K</td><td>嘉體民 Katimin 10mg/amp</td><td><code>30405</code></td><td class="pay"></td></tr>
+<tr data-cat="抗血小板"><td>抗血小板</td><td>Aspirin</td><td>Bokey 100mg</td><td><code>⚠️院內確認</code></td><td class="pay"></td></tr>
+<tr data-cat="抗血小板"><td>抗血小板</td><td>Clopidogrel</td><td>保栓通 Plavix / 舒栓寧 75mg</td><td><code>20622 / 20869</code></td><td class="pay"></td></tr>
+<tr data-cat="抗血小板"><td>抗血小板</td><td>Ticagrelor</td><td>百無凝 Brilinta 90 / 60mg</td><td><code>20977 / 23457</code></td><td class="pay">限已發作ACS住院、合併aspirin，最長9個月，病歷註明住院時間。§2.1.1.9</td></tr>
+<tr data-cat="抗血小板"><td>抗血小板</td><td>Prasugrel</td><td>抑凝安 Efient 3.75 / 20mg</td><td><code>20857 / 20821</code></td><td class="pay">限需PCI之ACS住院、合併aspirin，最長12個月。§2.1.1.10</td></tr>
+<tr data-cat="抗血小板"><td>抗血小板</td><td>Tirofiban</td><td>雅瑞 Aggrastat 0.25mg/mL</td><td><code>30033</code></td><td class="pay"></td></tr>
+<tr data-cat="抗血小板"><td>抗血小板</td><td>Cilostazol</td><td>普達 Pletaal 50mg</td><td><code>20623</code></td><td class="pay"></td></tr>
+<tr data-cat="抗血小板"><td>抗血小板</td><td>Dipyridamole</td><td>心滴舒 Sandel 50mg</td><td><code>23377</code></td><td class="pay"></td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Sacubitril/Valsartan</td><td>健安心 Entresto 100mg</td><td><code>20174</code></td><td class="pay">慢性收縮HF NYHA2–4、LVEF≤35%（或36–40%且SGLT2i不耐受）；需ACEI/ARB+BB+SGLT2i治療12週仍LVEF≤35%；與ACEI間隔36h；血管性水腫禁用。§2.14</td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Carvedilol</td><td>心全 Syntrend 6.25 / 25mg</td><td><code>23349 / 23350</code></td><td class="pay"></td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Bisoprolol</td><td>康肯 Concor 1.25 / 5mg</td><td><code>23116 / 20263</code></td><td class="pay"></td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Spironolactone</td><td>歐得通 25mg</td><td><code>23748</code></td><td class="pay"></td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Eplerenone</td><td>迎甦心 Inspra 50mg</td><td><code>20366</code></td><td class="pay"></td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Dapagliflozin</td><td>福適佳 Forxiga 10mg</td><td><code>20987</code></td><td class="pay">HFrEF(LVEF≤40%)NYHA2–4經ACEI/ARB+BB仍有症狀；另有HFmrEF、糖尿病、CKD適應症。§2.16</td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Empagliflozin</td><td>恩排糖 Jardiance 10 / 25mg</td><td><code>20260 / 20236</code></td><td class="pay">同dapagliflozin（HF/糖尿病/CKD），HF限10mg。§2.16</td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Ivabradine</td><td>康立來 Coralan 5mg</td><td><code>20980</code></td><td class="pay">限收縮性HF、竇性心律HR≥70且已用最大耐受β-blocker等條件，詳見給付規定。</td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Digoxin</td><td>隆我心 Lanoxin 0.25mg PO / 0.5mg inj</td><td><code>23125 / 33684</code></td><td class="pay"></td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Furosemide</td><td>來適泄 Lasix 40mg PO / 20mg inj</td><td><code>23060 / 30441</code></td><td class="pay"></td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Torsemide</td><td>妥速適 Torsix 5mg PO / 20mg inj</td><td><code>23395 / 33536</code></td><td class="pay"></td></tr>
+<tr data-cat="心衰竭"><td>心衰竭</td><td>Vericiguat</td><td>偉卡沃 Verquvo 10mg（自費）</td><td><code>20758</code></td><td class="pay">目前自費。</td></tr>
+<tr data-cat="心衰竭/升壓"><td>心衰竭/升壓</td><td>Dobutamine</td><td>健多博 250mg inj</td><td><code>30143</code></td><td class="pay"></td></tr>
+<tr data-cat="心衰竭/升壓"><td>心衰竭/升壓</td><td>Milrinone</td><td>Primacor 10mg/10mL inj</td><td><code>30549</code></td><td class="pay"></td></tr>
+<tr data-cat="升壓"><td>升壓</td><td>Norepinephrine</td><td>諾比奈芬 4mg/4mL</td><td><code>30144</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓"><td>高血壓</td><td>Ramipril (ACEI)</td><td>心達舒 Tritace 10mg</td><td><code>20784</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓"><td>高血壓</td><td>Losartan (ARB)</td><td>暢壓 Losart 50mg</td><td><code>20074</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓"><td>高血壓</td><td>Valsartan (ARB)</td><td>得安穩 Diovan 160mg</td><td><code>20141</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓"><td>高血壓</td><td>Telmisartan (ARB)</td><td>泰迷平 80mg</td><td><code>23396</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓"><td>高血壓</td><td>Amlodipine (CCB)</td><td>脈優 Norvasc 5mg</td><td><code>20531</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓"><td>高血壓</td><td>Nifedipine (CCB)</td><td>壓悅達 Adapine SR 30mg</td><td><code>23380</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓"><td>高血壓</td><td>Diltiazem (non-DHP)</td><td>合必爽 Herbesser 30mg PO / 50mg inj</td><td><code>23715 / 30295</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓"><td>高血壓</td><td>Indapamide (thiazide-like)</td><td>迅順 Indap SR 1.5mg</td><td><code>23225</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓"><td>高血壓</td><td>Doxazosin (α-block)</td><td>可迅 Doxaben XL 4mg</td><td><code>20140</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓急症"><td>高血壓急症</td><td>Nicardipine inj</td><td>欣立定 Holdipine 20mg/20mL</td><td><code>30384</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓急症"><td>高血壓急症</td><td>Labetalol inj</td><td>湍泰低 Trandate 25mg/5mL</td><td><code>30772</code></td><td class="pay"></td></tr>
+<tr data-cat="高血壓急症"><td>高血壓急症</td><td>Esmolol inj</td><td>律平 100mg/10mL（自費）</td><td><code>30163</code></td><td class="pay"></td></tr>
+<tr data-cat="血管擴張"><td>血管擴張</td><td>Nitroglycerin</td><td>Nitrostat SL 0.6mg</td><td><code>23524</code></td><td class="pay"></td></tr>
+<tr data-cat="降血脂"><td>降血脂</td><td>Atorvastatin</td><td>立普妥 Lipitor 10 / 40mg</td><td><code>20449 / 20979</code></td><td class="pay">依風險分層之LDL-C起治門檻與目標給付（ASCVD起治LDL-C≥70、目標&lt;70）。詳見血脂給付規定表§2.6.1</td></tr>
+<tr data-cat="降血脂"><td>降血脂</td><td>Rosuvastatin</td><td>冠脂妥 Crestor 10mg</td><td><code>20119</code></td><td class="pay">同statin血脂給付規定表（高強度statin為PCSK9前提）。§2.6.1</td></tr>
+<tr data-cat="降血脂"><td>降血脂</td><td>Pitavastatin</td><td>力清之 Livalo 2mg / 平脂 Zulitor 4mg</td><td><code>20158 / 23971</code></td><td class="pay">同statin血脂給付規定表。§2.6.1</td></tr>
+<tr data-cat="降血脂"><td>降血脂</td><td>Ezetimibe</td><td>怡妥 Ezetrol 10mg</td><td><code>20176</code></td><td class="pay">血脂給付規定；為PCSK9給付前必須先合併使用。§2.6</td></tr>
+<tr data-cat="降血脂"><td>降血脂</td><td>Bempedoic acid</td><td>寧脂德 Nilemdo 180mg（自費）</td><td><code>20710</code></td><td class="pay">目前自費。</td></tr>
+<tr data-cat="降血脂"><td>降血脂</td><td>Evolocumab (PCSK9i)</td><td>瑞百安 Repatha 140mg（自費）</td><td><code>30147</code></td><td class="pay">事前審查；重大心血管事件後1年內+最大耐受statin+ezetimibe 3個月仍LDL-C&gt;100（或statin不耐受）；療效&lt;30%停給付。§2.6.4.1</td></tr>
+<tr data-cat="降血脂"><td>降血脂</td><td>Alirocumab (PCSK9i)</td><td>保脂通 Praluent 75mg（事審）</td><td><code>30449</code></td><td class="pay">事前審查；條件同Repatha（重大心血管事件後1年內、statin+ezetimibe後LDL-C&gt;100）。§2.6.4.2</td></tr>
+<tr data-cat="降血脂"><td>降血脂</td><td>Fenofibrate</td><td>弗尼利脂寧 Lipanthyl 160mg</td><td><code>20455</code></td><td class="pay"></td></tr>
+<tr data-cat="降血脂"><td>降血脂</td><td>Gemfibrozil</td><td>脂佳 Lipdown 300mg</td><td><code>23354</code></td><td class="pay"></td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>NaCl 3%（升鈉）</td><td>氯化鈉 3% 500mL</td><td><code>33560 / 33521</code></td><td class="pay"></td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>Tolvaptan</td><td>伸舒康 Samsca 15mg</td><td><code>20796</code></td><td class="pay">Samsca限住院、HF或SIADH低血鈉&lt;125且傳統治療48h無效，鈉≥125停；每年≤3療程、每療程≤4日。Jinarc限腎臟科ADPKD、事前審查。§2.13</td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>KCl（口服）</td><td>舒補鉀 Const-K 10mEq/tab</td><td><code>23259</code></td><td class="pay"></td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>KCl（注射）</td><td>氯化鉀 15% 10mEq/5mL / 20mEq/10mL</td><td><code>30511 / 30402</code></td><td class="pay"></td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>SZC（降鉀）</td><td>利控鉀 Lokelma 5g（自費）</td><td><code>26743</code></td><td class="pay">目前自費。</td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>Ca polystyrene（降鉀）</td><td>鉀利安 Chalian 5g</td><td><code>26003</code></td><td class="pay"></td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>Calcium chloride</td><td>vitaCAL</td><td><code>33050</code></td><td class="pay"></td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>NaHCO₃</td><td>重曹注射液 / 碳酸氫鈉錠</td><td><code>33724 / 23731</code></td><td class="pay"></td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>MgSO₄</td><td>硫酸鎂注射液</td><td><code>33481 / 30548</code></td><td class="pay"></td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>Lanthanum（降磷）</td><td>福斯利諾 Fosrenol 750mg（自費）</td><td><code>20269</code></td><td class="pay">限透析/CKD高血磷且鈣基結合劑控制不佳等條件（自費品項另計）。</td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>Ferric citrate（降磷）</td><td>拿百磷 Nephoxil 500mg（自費）</td><td><code>20823</code></td><td class="pay">限透析高血磷等條件。</td></tr>
+<tr data-cat="電解質"><td>電解質</td><td>Calcitriol</td><td>鈣注益 / 骨活醇 Macalol</td><td><code>33013 / 20688</code></td><td class="pay"></td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Glargine U300</td><td>糖德仕 Toujeo 450U/1.5mL</td><td><code>30309</code></td><td class="pay"></td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Degludec</td><td>諾胰保 Tresiba 300IU/3mL</td><td><code>30720</code></td><td class="pay"></td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Aspart（速效）</td><td>諾和瑞 NovoRapid</td><td><code>30540 / 30119</code></td><td class="pay"></td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>NPH（中效）</td><td>優泌林 N</td><td><code>30486</code></td><td class="pay"></td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>NPH/Reg 70/30</td><td>優泌林 70/30</td><td><code>30300 / 30299</code></td><td class="pay"></td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Aspart 預混30</td><td>諾和密斯 NovoMix 30</td><td><code>30118</code></td><td class="pay"></td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Metformin</td><td>漢伏醣 Henformin 500mg</td><td><code>23630</code></td><td class="pay"></td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Dulaglutide (GLP-1)</td><td>易週糖 Trulicity 1.5mg</td><td><code>30978</code></td><td class="pay">糖尿病：需口服降糖藥控制不佳等條件。詳見降血糖給付規定。</td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Semaglutide (GLP-1)</td><td>胰妥讚 Ozempic 4mg/3mL</td><td><code>30656</code></td><td class="pay">Ozempic糖尿病給付有條件；Rybelsus/Wegovy自費。</td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Sitagliptin (DPP4)</td><td>佳糖維 Januvia 100mg</td><td><code>20400</code></td><td class="pay">糖尿病：與metformin等併用之給付條件。</td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Linagliptin (DPP4)</td><td>糖漸平 Trajenta 5mg</td><td><code>23078</code></td><td class="pay">糖尿病給付條件；不需依腎調。</td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Glimepiride (SU)</td><td>瑪爾胰 Amaryl 2mg</td><td><code>20009</code></td><td class="pay"></td></tr>
+<tr data-cat="血糖"><td>血糖</td><td>Gliclazide (SU)</td><td>代蜜 Diamin MR 30mg</td><td><code>23253</code></td><td class="pay"></td></tr>
+<tr data-cat="胸腔"><td>胸腔</td><td>SABA/SAMA 噴霧</td><td>冠喘衛 Combivent UDV</td><td><code>28093</code></td><td class="pay"></td></tr>
+<tr data-cat="胸腔"><td>胸腔</td><td>ICS-formoterol(MART)</td><td>吸必擴 Symbicort / 肺舒坦 Foster</td><td><code>28111 / 28114·28119</code></td><td class="pay"></td></tr>
+<tr data-cat="胸腔"><td>胸腔</td><td>ICS-LABA</td><td>使肺泰 Seretide / 潤娃 Relvar</td><td><code>28736 / 28110</code></td><td class="pay"></td></tr>
+<tr data-cat="胸腔"><td>胸腔</td><td>LAMA</td><td>適喘樂 Spiriva</td><td><code>28016</code></td><td class="pay"></td></tr>
+<tr data-cat="胸腔"><td>胸腔</td><td>LABA/LAMA</td><td>適倍樂 Spiolto / 安肺樂 Anoro / 必肺宜 Bevespi</td><td><code>28099 / 28098 / 26208</code></td><td class="pay"></td></tr>
+<tr data-cat="胸腔"><td>胸腔</td><td>三合一 ICS/LAMA/LABA</td><td>必肺暢 Breztri / 肺樂喜 Trelegy</td><td><code>26211 / 28115</code></td><td class="pay"></td></tr>
+<tr data-cat="胸腔"><td>胸腔</td><td>Theophylline</td><td>善寧 Xanthium 200mg</td><td><code>23891</code></td><td class="pay"></td></tr>
+<tr data-cat="胸腔"><td>胸腔</td><td>Montelukast</td><td>欣流 Singulair / 敏喘克 Anxokast</td><td><code>20735 / 20217</code></td><td class="pay"></td></tr>
+<tr data-cat="骨鬆"><td>骨鬆</td><td>Zoledronic acid</td><td>骨力強 Aclasta 5mg/100mL</td><td><code>30148</code></td><td class="pay"></td></tr>
+<tr data-cat="骨鬆"><td>骨鬆</td><td>Denosumab</td><td>保骼麗 Prolia 60mg / 癌骨瓦 Xgeva 120mg</td><td><code>30343 / 30360</code></td><td class="pay">Prolia骨鬆/Xgeva骨轉移各有條件、需符合骨鬆給付（T-score/骨折）。§5.5.4</td></tr>
+<tr data-cat="骨鬆"><td>骨鬆</td><td>Romosozumab</td><td>益穩挺 Evenity 105mg</td><td><code>30694</code></td><td class="pay">嚴重骨鬆、事前審查、限12個月且與其他骨形成劑擇一、不得互換。§5.5</td></tr>
+<tr data-cat="骨鬆"><td>骨鬆</td><td>Teriparatide</td><td>骨穩 Forteo / 艾歐骨得 Alvosteo</td><td><code>30218 / 30223</code></td><td class="pay">嚴重骨鬆、事前審查、療程上限、與romosozumab擇一。</td></tr>
+<tr data-cat="骨鬆"><td>骨鬆</td><td>Raloxifene</td><td>鈣穩 Evista 60mg</td><td><code>20169</code></td><td class="pay"></td></tr>
+<tr data-cat="鎮靜/譫妄"><td>鎮靜/譫妄</td><td>Haloperidol</td><td>易寧優 Binin-U inj / 和寧 Hopan</td><td><code>30043 / 23271·23353</code></td><td class="pay"></td></tr>
+<tr data-cat="鎮靜/譫妄"><td>鎮靜/譫妄</td><td>Quetiapine</td><td>瑰樂平 Quepine / 腦樂靜</td><td><code>20064 / 20972</code></td><td class="pay"></td></tr>
+<tr data-cat="鎮靜/譫妄"><td>鎮靜/譫妄</td><td>Dexmedetomidine</td><td>普利斯德 Precedex（限ICU）</td><td><code>30111</code></td><td class="pay"></td></tr>
+<tr data-cat="鎮靜/戒斷"><td>鎮靜/戒斷</td><td>Lorazepam</td><td>樂力靜 Lorazin / 樂穩 Lowen</td><td><code>23753 / 23217</code></td><td class="pay"></td></tr>
+<tr data-cat="抗癲癇"><td>抗癲癇</td><td>Levetiracetam</td><td>優閒 Keppra PO/IV/液</td><td><code>20411 / 30264 / 26089</code></td><td class="pay"></td></tr>
+<tr data-cat="抗癲癇"><td>抗癲癇</td><td>Phenytoin</td><td>癲能停 Dilantin</td><td><code>23126</code></td><td class="pay"></td></tr>
+<tr data-cat="抗癲癇"><td>抗癲癇</td><td>Lacosamide</td><td>維帕特 Vimpat PO/IV</td><td><code>20859 / 30698</code></td><td class="pay"></td></tr>
+<tr data-cat="抗癲癇"><td>抗癲癇</td><td>Valproate</td><td>帝拔癲 Depakine</td><td><code>20121</code></td><td class="pay"></td></tr>
+<tr data-cat="止痛"><td>止痛</td><td>Acetaminophen</td><td>利克痛 500mg</td><td><code>23263</code></td><td class="pay"></td></tr>
+<tr data-cat="止痛"><td>止痛</td><td>Tramadol</td><td>頓痛特 inj / 立除痛(+APAP)</td><td><code>38613 / 23383</code></td><td class="pay"></td></tr>
+<tr data-cat="止痛"><td>止痛</td><td>Morphine</td><td>嗎啡 PO / inj（管一）</td><td><code>38489 / 38482</code></td><td class="pay"></td></tr>
+<tr data-cat="止痛"><td>止痛</td><td>Fentanyl</td><td>多瑞喜貼片 / inj（管二）</td><td><code>28137 / 38208</code></td><td class="pay"></td></tr>
+<tr data-cat="止痛(解毒)"><td>止痛(解毒)</td><td>Naloxone</td><td>解麻 0.4mg/mL</td><td><code>38524</code></td><td class="pay"></td></tr>
+<tr data-cat="神經痛"><td>神經痛</td><td>Gabapentin</td><td>鎮頑癲 Neurontin 300mg</td><td><code>23355</code></td><td class="pay"></td></tr>
+<tr data-cat="神經痛"><td>神經痛</td><td>Pregabalin</td><td>利瑞卡 Lyrica 75mg</td><td><code>20187</code></td><td class="pay"></td></tr>
+<tr data-cat="神經痛"><td>神經痛</td><td>Duloxetine</td><td>定憂樂 60mg</td><td><code>20824</code></td><td class="pay"></td></tr>
+<tr data-cat="類固醇"><td>類固醇</td><td>Hydrocortisone</td><td>Solu-Cortef 100mg inj</td><td><code>33018</code></td><td class="pay"></td></tr>
+<tr data-cat="類固醇"><td>類固醇</td><td>Prednisolone</td><td>普列道寧 5mg</td><td><code>23788</code></td><td class="pay"></td></tr>
+<tr data-cat="類固醇"><td>類固醇</td><td>Methylprednisolone</td><td>美蒂舒 4mg / Solu-Medrol 500mg</td><td><code>20513 / 30727</code></td><td class="pay"></td></tr>
+<tr data-cat="類固醇"><td>類固醇</td><td>Dexamethasone</td><td>得立生 4mg / 力克爽 inj</td><td><code>23124 / 33034</code></td><td class="pay"></td></tr>
+<tr data-cat="制酸"><td>制酸</td><td>Omeprazole</td><td>瘍寧 20mg</td><td><code>23348</code></td><td class="pay"></td></tr>
+<tr data-cat="制酸"><td>制酸</td><td>Pantoprazole</td><td>胃適安 inj / 盼胃好 40mg</td><td><code>30276 / 20984</code></td><td class="pay"></td></tr>
+<tr data-cat="制酸"><td>制酸</td><td>Lansoprazole</td><td>泰克胃通 OD 15mg</td><td><code>20786</code></td><td class="pay"></td></tr>
+<tr data-cat="制酸"><td>制酸</td><td>Famotidine</td><td>悅潰止 20mg</td><td><code>23399</code></td><td class="pay"></td></tr>
+<tr data-cat="腸胃"><td>腸胃</td><td>Sucralfate</td><td>保胃 懸乳</td><td><code>26212</code></td><td class="pay"></td></tr>
+<tr data-cat="止吐"><td>止吐</td><td>Metoclopramide</td><td>英百朗 inj / 胃明朗</td><td><code>33078 / 23624</code></td><td class="pay"></td></tr>
+<tr data-cat="止吐"><td>止吐</td><td>Domperidone</td><td>除胃障 10mg</td><td><code>23137</code></td><td class="pay"></td></tr>
+<tr data-cat="止吐"><td>止吐</td><td>Ondansetron</td><td>蘇普瑞 8mg inj</td><td><code>30962</code></td><td class="pay"></td></tr>
+<tr data-cat="瀉劑"><td>瀉劑</td><td>Senna</td><td>清立飄</td><td><code>23789</code></td><td class="pay"></td></tr>
+<tr data-cat="瀉劑"><td>瀉劑</td><td>Bisacodyl</td><td>樂可舒 5mg / 栓</td><td><code>23216 / 28054</code></td><td class="pay"></td></tr>
+<tr data-cat="瀉劑/降氨"><td>瀉劑/降氨</td><td>Lactulose</td><td>樂多糖漿</td><td><code>26450</code></td><td class="pay"></td></tr>
+<tr data-cat="止瀉"><td>止瀉</td><td>Loperamide</td><td>洛普拉 2mg</td><td><code>23119</code></td><td class="pay"></td></tr>
+<tr data-cat="制酸/緩瀉"><td>制酸/緩瀉</td><td>MgO</td><td>氧化鎂 250mg</td><td><code>23274</code></td><td class="pay"></td></tr>
+<tr data-cat="抗組織胺"><td>抗組織胺</td><td>Diphenhydramine inj</td><td>二苯胺明 30mg</td><td><code>33062</code></td><td class="pay"></td></tr>
+<tr data-cat="抗組織胺"><td>抗組織胺</td><td>Cetirizine/Levocetirizine</td><td>勝克敏 / 舒敏寧</td><td><code>26901 / 23139</code></td><td class="pay"></td></tr>
+<tr data-cat="抗組織胺"><td>抗組織胺</td><td>Loratadine</td><td>特敏福</td><td><code>23188</code></td><td class="pay"></td></tr>
+<tr data-cat="止暈"><td>止暈</td><td>Betahistine</td><td>眩耳聰 24mg</td><td><code>20542</code></td><td class="pay"></td></tr>
+<tr data-cat="止咳"><td>止咳</td><td>Dextromethorphan</td><td>癒咳 30mg</td><td><code>23373</code></td><td class="pay"></td></tr>
+<tr data-cat="化痰"><td>化痰</td><td>Acetylcysteine</td><td>愛克痰 600mg</td><td><code>20182</code></td><td class="pay"></td></tr>
+<tr data-cat="化痰"><td>化痰</td><td>Ambroxol</td><td>平痰息 30mg</td><td><code>23069</code></td><td class="pay"></td></tr>
+<tr data-cat="泌尿"><td>泌尿</td><td>Tamsulosin</td><td>活路利淨 OCAS 0.4mg / Tamso 0.2mg</td><td><code>20295 / 23358</code></td><td class="pay"></td></tr>
+<tr data-cat="泌尿"><td>泌尿</td><td>Finasteride</td><td>柔沛 1mg（自費）</td><td><code>20612</code></td><td class="pay"></td></tr>
+<tr data-cat="泌尿"><td>泌尿</td><td>Solifenacin</td><td>衛喜康 5mg</td><td><code>20811</code></td><td class="pay"></td></tr>
+<tr data-cat="泌尿"><td>泌尿</td><td>Mirabegron</td><td>貝坦利 50mg</td><td><code>20881</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Oxacillin</td><td>歐西林 Ocillina 500mg inj</td><td><code>33019</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Amoxicillin</td><td>安蒙西林 250mg</td><td><code>23114</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Amox/clav</td><td>雙合黴素 Soonmelt inj</td><td><code>30733</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Amp/sulbactam</td><td>優合西林 Subacillin 1.5g</td><td><code>30738</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Piperacillin/tazo</td><td>達比黴素 Tapimycin 2.25g</td><td><code>30780</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Cefazolin</td><td>賜爾寧 Stazolin 1g</td><td><code>30177</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Cephalexin</td><td>賜福力欣 500mg</td><td><code>23410</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Cefoxitin</td><td>樂華淨 Lofatin 2g</td><td><code>30157</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Ceftriaxone</td><td>西特亞 2g inj</td><td><code>30320</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Flomoxef</td><td>氟黴寧 Flumarin 1g</td><td><code>30645</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Cefepime</td><td>革菌素 Antifect 1g</td><td><code>30072</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Ceftaroline</td><td>捷復寧 Zinforo 600mg</td><td><code>30158</code></td><td class="pay">限特定適應症、感染科。詳見抗微生物製劑給付規定。</td></tr>
+<tr data-cat="抗生素(MDRO)"><td>抗生素(MDRO)</td><td>Ceftazidime/avibactam</td><td>贊飛得 Zavicefta 2g/0.5g</td><td><code>30421</code></td><td class="pay">限特定抗藥菌、感染症專科、多需事前審查。詳見抗微生物製劑給付規定。</td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Ertapenem</td><td>厄他培南 1g</td><td><code>30995</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Meropenem</td><td>美平 Mepem / 美樂平 Mexopem 1g</td><td><code>30362 / 30420</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Ciprofloxacin</td><td>喜博欣 PO / 賜保欣 Seforce inj</td><td><code>23968 / 30278</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Levofloxacin</td><td>可樂必妥 Cravit 500mg PO/IV</td><td><code>20699 / 30349</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Gentamicin</td><td>健達黴素 80mg/2mL</td><td><code>33054</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Amikacin</td><td>安炎 Aminfec 250mg</td><td><code>30182</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Vancomycin</td><td>安克 Vanco 500mg</td><td><code>30835</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Teicoplanin</td><td>得時高 Targocid / 康可明 Tecopin</td><td><code>30765 / 30110</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Linezolid</td><td>采福適 Zyvox 600mg PO/IV</td><td><code>20964 / 30955</code></td><td class="pay">限MRSA/VRE等特定抗藥菌、多需事前審查。</td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Tigecycline</td><td>老虎黴素 Tygacil 50mg</td><td><code>30785</code></td><td class="pay">限多重抗藥菌等特定情形、感染科。</td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Metronidazole</td><td>沙普 SABS inj / 妳樂淨 PO</td><td><code>33489 / 23970</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Clindamycin</td><td>克力欣 Clincin inj / 帝達黴素 PO</td><td><code>33031 / 23341</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Azithromycin</td><td>日舒 Zithromax 250mg</td><td><code>20957</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>Doxycycline</td><td>多喜黴素 100mg</td><td><code>23264</code></td><td class="pay"></td></tr>
+<tr data-cat="抗生素"><td>抗生素</td><td>TMP-SMX</td><td>孟克杏 PO / 雪白淨 Sevatrim inj</td><td><code>23344 / 30041</code></td><td class="pay"></td></tr>
+<tr data-cat="抗黴菌"><td>抗黴菌</td><td>Fluconazole</td><td>膚康 IV / 膚肯 Flu-D PO</td><td><code>30220 / 20215</code></td><td class="pay"></td></tr>
+<tr data-cat="抗黴菌"><td>抗黴菌</td><td>Micafungin</td><td>米方淨 Myfungin 50mg</td><td><code>30225</code></td><td class="pay">限侵襲性念珠菌/麴菌感染等條件。</td></tr>
+<tr data-cat="抗黴菌"><td>抗黴菌</td><td>Amphotericin B</td><td>防治黴 Fungizone 50mg</td><td><code>30019</code></td><td class="pay"></td></tr>
+<tr data-cat="抗病毒"><td>抗病毒</td><td>Acyclovir</td><td>剋庖 Virless / 熱威樂素 Zovirax inj</td><td><code>30378 / 30951</code></td><td class="pay"></td></tr>
+<tr data-cat="抗病毒"><td>抗病毒</td><td>Oseltamivir</td><td>易剋冒（公費）/ 克流感 Tamiflu</td><td><code>36312 / 20776</code></td><td class="pay"></td></tr>
 </tbody></table>
-<p style="font-size:12px;color:var(--mut)">醫令碼來自光田西藥品項查詢系統；公開系統不含健保價。⚠️ 標示者請院內確認。</p>
+<p style="font-size:12px;color:var(--mut)">醫令碼來自光田西藥品項查詢系統（不含健保價）。健保給付重點摘自《完整給付規定 115.5.22》，<b>僅摘要</b>，完整條文與最新異動以健保署公告為準；空白者多為一般給付。⚠️ 標示者請院內確認。</p>
 </section>
 <section id="ch0" class="chapter" data-title="抗生素A：光田品項+腎調">
 <div class="chhead"><h2 class="chtitle">抗生素A：光田品項+腎調</h2>
@@ -5371,11 +5378,13 @@ function doSearch(){const term=q.value.trim();clearHL();const oe=document.getEle
  document.getElementById('cnt').textContent='符合 '+hits+' 章';
  oe.style.display='inline-block';oe.href='https://www.openevidence.com/?oe_q='+encodeURIComponent(term);}
 q.addEventListener('input',doSearch);
-// 藥品速查表：即時列篩選
-const dq=document.getElementById('drugq');
+// 藥品速查表：分類下拉 + 關鍵字即時篩選
+const dq=document.getElementById('drugq'),dc=document.getElementById('drugcat');
 if(dq){const rows=[...document.querySelectorAll('.drugtable tbody tr')];
- dq.addEventListener('input',()=>{const t=dq.value.trim().toLowerCase();let v=0;
-  rows.forEach(r=>{const show=!t||r.textContent.toLowerCase().includes(t);r.style.display=show?'':'none';if(show)v++;});});}
+ function fd(){const t=dq.value.trim().toLowerCase();const cat=dc?dc.value:'';let v=0;
+  rows.forEach(r=>{const okc=!cat||r.dataset.cat===cat;const okt=!t||r.textContent.toLowerCase().includes(t);const show=okc&&okt;r.style.display=show?'':'none';if(show)v++;});
+  const c=document.getElementById('drugcnt');if(c)c.textContent='顯示 '+v+' 項';}
+ dq.addEventListener('input',fd);if(dc)dc.addEventListener('change',fd);fd();}
 document.getElementById('menu').addEventListener('click',()=>document.body.classList.toggle('navopen'));
 navlinks.forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('navopen')));
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navlinks.forEach(a=>a.classList.toggle('active',a.dataset.target===e.target.id));}});},{rootMargin:'-50px 0px -70% 0px'});
