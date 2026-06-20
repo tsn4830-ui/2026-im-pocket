@@ -52,6 +52,27 @@ mark.hl{background:#ffe36b;color:#000;padding:0 1px}
 .drugtable thead th{position:sticky;top:48px;z-index:2}
 .drugtable td:first-child{color:var(--mut);white-space:nowrap;font-size:12.5px}
 .drugtable td.pay{font-size:12px;color:var(--mut);min-width:230px;line-height:1.45}
+.bwps{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:14px 16px;margin:6px 0 20px}
+.bwps-h{font-weight:700;color:var(--blue);margin-bottom:4px}
+.bwps-sub{font-size:12px;color:var(--mut);margin-bottom:8px}
+.bwps-row{padding:8px 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bwps-row:first-of-type{border-top:none}
+.bwps-lbl{flex:0 0 120px;font-size:13.5px;font-weight:600}
+.bwps-opts{display:flex;flex-wrap:wrap;gap:6px;flex:1}
+.bwps-opts button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:7px;padding:5px 9px;font-size:12.5px;cursor:pointer;font-family:inherit}
+.bwps-opts button:hover{border-color:var(--blue)}
+.bwps-opts button.sel{background:var(--blue);color:#fff;border-color:var(--blue)}
+.bwps-result{margin-top:12px;padding-top:12px;border-top:2px solid var(--line);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bwps-result .sc{font-size:14px}
+.bwps-result .sc b{font-size:26px;color:var(--blue);vertical-align:-3px}
+.bwps-interp{font-weight:700;padding:5px 11px;border-radius:7px;font-size:13px}
+.bwps-interp.hi{background:#fde2dd;color:#a8331f}
+.bwps-interp.mid{background:#fbefe0;color:#8a4a12}
+.bwps-interp.lo{background:#e7f4ec;color:#15623a}
+html[data-theme="dark"] .bwps-interp.hi{background:#3a1c17;color:#ff9b88}
+html[data-theme="dark"] .bwps-interp.mid{background:#3a2a14;color:#f0b070}
+html[data-theme="dark"] .bwps-interp.lo{background:#16301f;color:#8fd6a8}
+#bwps-reset{margin-left:auto;border:1px solid var(--line);background:var(--bg);color:var(--mut);border-radius:7px;padding:5px 12px;cursor:pointer;font-family:inherit}
 footer{text-align:center;color:var(--mut);font-size:12px;padding:18px;border-top:1px solid var(--line)}
 .wm{position:fixed;right:8px;bottom:6px;color:var(--mut);opacity:.55;font-size:11px;pointer-events:none;z-index:5}
 @media(max-width:780px){
@@ -4053,7 +4074,7 @@ Contrast Media Guidelines 2025（PDF）</a></li>
 <section id="ch9" class="chapter" data-title="內分泌急症">
 <div class="chhead"><h2 class="chtitle">內分泌急症</h2>
 <a class="oebtn" href="https://www.openevidence.com/?oe_q=endocrine emergency thyroid storm adrenal crisis myxedema hypercalcemia pituitary apoplexy" target="_blank" rel="noopener">🔎 在 OpenEvidence 查</a></div>
-<h1 id="內分泌急症endocrine-emergencies">內分泌急症（Endocrine
+<div class="bwps"><div class="bwps-h">🧮 Burch-Wartofsky (BWPS) 甲狀腺風暴計算器</div><div class="bwps-sub">點選各項即時計分。≥45 高度符合、25–44 即將發生、&lt;25 不太可能。臨床輔助，非醫囑。</div><div class="bwps-row"><div class="bwps-lbl">體溫 °C</div><div class="bwps-opts"><button type="button" data-v="5">37.2–37.7</button><button type="button" data-v="10">37.8–38.2</button><button type="button" data-v="15">38.3–38.8</button><button type="button" data-v="20">38.9–39.3</button><button type="button" data-v="25">39.4–39.9</button><button type="button" data-v="30">≥40</button></div></div><div class="bwps-row"><div class="bwps-lbl">中樞神經</div><div class="bwps-opts"><button type="button" data-v="0">無</button><button type="button" data-v="10">輕·躁動</button><button type="button" data-v="20">中·譫妄/精神病</button><button type="button" data-v="30">重·癲癇/昏迷</button></div></div><div class="bwps-row"><div class="bwps-lbl">腸胃/肝</div><div class="bwps-opts"><button type="button" data-v="0">無</button><button type="button" data-v="10">中·腹瀉噁吐腹痛</button><button type="button" data-v="20">重·不明黃疸</button></div></div><div class="bwps-row"><div class="bwps-lbl">心率 bpm</div><div class="bwps-opts"><button type="button" data-v="5">90–109</button><button type="button" data-v="10">110–119</button><button type="button" data-v="15">120–129</button><button type="button" data-v="20">130–139</button><button type="button" data-v="25">≥140</button></div></div><div class="bwps-row"><div class="bwps-lbl">心衰</div><div class="bwps-opts"><button type="button" data-v="0">無</button><button type="button" data-v="5">輕·足踝水腫</button><button type="button" data-v="10">中·濕囉音</button><button type="button" data-v="15">重·肺水腫</button></div></div><div class="bwps-row"><div class="bwps-lbl">心房顫動</div><div class="bwps-opts"><button type="button" data-v="0">無</button><button type="button" data-v="10">有</button></div></div><div class="bwps-row"><div class="bwps-lbl">誘因</div><div class="bwps-opts"><button type="button" data-v="0">無</button><button type="button" data-v="10">有</button></div></div><div class="bwps-result"><span class="sc">總分 <b id="bwps-score">0</b></span><span id="bwps-interp" class="bwps-interp lo">請選擇各項</span><button type="button" id="bwps-reset">重置</button></div></div><script>(function(){var box=document.querySelector('.bwps');if(!box)return;var rows=[].slice.call(box.querySelectorAll('.bwps-row'));function rc(){var t=0,d=0;rows.forEach(function(r){var v=r.getAttribute('data-val');if(v!==null){t+=parseInt(v,10);d++;}});box.querySelector('#bwps-score').textContent=t;var el=box.querySelector('#bwps-interp');var rem=rows.length-d;var note=rem>0?'（尚 '+rem+' 項未選）':'';var lab,cls;if(t>=45){lab='\u226545：高度符合甲狀腺風暴';cls='hi';}else if(t>=25){lab='25–44：即將發生 impending';cls='mid';}else{lab='\u003c25：不太可能';cls='lo';}el.textContent=lab+note;el.className='bwps-interp '+cls;}rows.forEach(function(r){[].slice.call(r.querySelectorAll('button')).forEach(function(b){b.addEventListener('click',function(){[].slice.call(r.querySelectorAll('button')).forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');r.setAttribute('data-val',b.getAttribute('data-v'));rc();});});});box.querySelector('#bwps-reset').addEventListener('click',function(){rows.forEach(function(r){r.removeAttribute('data-val');[].slice.call(r.querySelectorAll('button')).forEach(function(x){x.classList.remove('sel');});});rc();});rc();})();</script><h1 id="內分泌急症endocrine-emergencies">內分泌急症（Endocrine
 Emergencies）</h1>
 <blockquote>
 <p><strong>2026 新增</strong> ｜
